@@ -84,6 +84,9 @@ importers:
       '@diditui/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@diditui/icons-react':
+        specifier: workspace:*
+        version: link:../../packages/icons-react
       '@diditui/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -179,6 +182,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@diditui/icons-react':
+        specifier: workspace:*
+        version: link:../icons-react
       react:
         specifier: ^18.2.0
         version: 18.3.1

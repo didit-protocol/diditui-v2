@@ -16,6 +16,10 @@
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo node_modules dist"
   },
+  "dependencies": {
+    "@diditui/icons-react": "workspace:*",
+    "react": "^18.2.0"
+  },
   "devDependencies": {
     "@diditui/eslint-config": "workspace:*",
     "@types/react": "^18.2.61",
@@ -24,9 +28,6 @@
     "@diditui/typescript-config": "workspace:*",
     "tsup": "^8.0.2",
     "typescript": "5.5.4"
-  },
-  "dependencies": {
-    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
