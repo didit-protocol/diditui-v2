@@ -59,7 +59,7 @@ export const parseMatter = (icon) => {
 const getSvgContent = (svg, type, name) => {
   return svg
     .replace(/<svg([^>]+)>/, (m, m1) => {
-      return `<svg${m1}  class="icon icon-tabler icons-tabler-${type} icon-tabler-${name}"\n>\n  ${blankSquare}`;
+      return `<svg${m1}  class="icon diditi-icon didit-icon-${type} diditi-icon-${name}"\n>\n  ${blankSquare}`;
     })
     .trim();
 };

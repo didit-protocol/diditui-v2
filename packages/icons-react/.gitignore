@@ -1,3 +1,7 @@
 src/aliases.ts
 src/icons-list.ts
 src/dynamic-imports.ts
+
+src/*.d.ts.map
+src/*.d.ts
+src/*.js
