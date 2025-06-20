@@ -1,0 +1,27 @@
+{
+  "name": "@diditui/icons",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": {
+    "./*": [
+      "./icons/*"
+    ]
+  },
+  "sideEffects": false,
+  "files": [
+    "icons.json",
+    "icons-nodes-linear.json",
+    "icons-nodes-bold.json",
+    "icons/*",
+    "categories/*",
+    "docs/*"
+  ],
+  "scripts": {
+    "build": "pnpm run clean && pnpm run build:icons",
+    "build:icons": "node build.mjs",
+    "clean": "rm -rf .turbo dist && find . ! -name '.gitkeep' -path '*/categories/*' -exec rm -rf {} + && rm -rf dist && find . ! -name '.gitkeep' -path '*/icons/*' -exec rm -rf {} +"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

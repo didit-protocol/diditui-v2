@@ -2,8 +2,8 @@
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
     "build": {
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", "storybook-static/**"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*", "assets/**"],
+      "outputs": ["dist/**", "storybook-static/**", "src/icons/**"],
       "dependsOn": ["^build"]
     },
     "lint": {
