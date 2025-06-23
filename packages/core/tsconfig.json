@@ -1,0 +1,15 @@
+{
+  "extends": "@diditui/typescript-config/react-library.json",
+
+  "compilerOptions": {
+    "types": ["react", "react-dom"],
+    "baseUrl": ".",
+    /* Paths */
+    "paths": {
+      "@/*": ["src/*"]
+    },
+  },
+
+  "include": ["src/**/*.ts", "src/**/*.tsx", "package.json"],
+  "exclude": ["dist", "build", "node_modules"]
+}

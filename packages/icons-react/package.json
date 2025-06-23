@@ -21,9 +21,12 @@
   "devDependencies": {
     "@diditui/eslint-config": "workspace:*",
     "@diditui/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.10",
     "@types/react": "18.2.60",
+    "postcss": "^8.5.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tailwindcss": "^4.1.10",
     "typescript": "5.5.4"
   },
   "peerDependencies": {

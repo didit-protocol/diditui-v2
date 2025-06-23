@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@diditui/ui/button";
+import { CTAButton } from "@diditui/core";
+import { Icon24SupportBold } from "@diditui/icons-react";
 
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof CTAButton> = {
+  component: CTAButton,
   argTypes: {
     type: {
       control: { type: "radio" },
@@ -14,7 +15,7 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof CTAButton>;
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -23,15 +24,19 @@ type Story = StoryObj<typeof Button>;
  */
 export const Primary: Story = {
   render: (props) => (
-    <Button
+    <CTAButton
       {...props}
+      label={'Test Button'}
+      size={'large'}
+      design={'filled_pink'}
+      icon={<Icon24SupportBold />}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
         alert("Hello from Turborepo!");
       }}
     >
       Hello
-    </Button>
+    </CTAButton>
   ),
   name: "Button",
   args: {
