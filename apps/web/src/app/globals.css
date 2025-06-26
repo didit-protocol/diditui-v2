@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "../../node_modules/@diditui/core/dist/theme.css";
+@import "@diditui/core/theme.css";
 
 :root {
   --background: #ffffff;

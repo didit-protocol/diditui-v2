@@ -1,5 +1,7 @@
 {
-  "extends": "@diditui/typescript-config/react-app.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
