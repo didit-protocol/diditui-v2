@@ -1,7 +1,7 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import { globalIgnores } from "eslint/config";
 
-import turboConfig from 'eslint-config-turbo/flat';
+import turboConfig from "eslint-config-turbo/flat";
 
 const compat = new FlatCompat({
   // import.meta.dirname is available after Node.js v20.11.0
@@ -16,15 +16,15 @@ const eslintConfig = [
   }),
   {
     rules: {
-      'turbo/no-undeclared-env-vars': [
-        'error',
+      "turbo/no-undeclared-env-vars": [
+        "error",
         {
-          allowList: ['^ENV_[A-Z]+$'],
+          allowList: ["^ENV_[A-Z]+$"],
         },
       ],
-      'no-html-link-for-pages': 'off',
+      "no-html-link-for-pages": "off",
     },
-  }
+  },
 ];
 
 export default eslintConfig;

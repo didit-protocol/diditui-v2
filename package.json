@@ -1,6 +1,7 @@
 {
   "name": "diditui",
   "private": true,
+  "type": "module",
   "sideEffects": false,
   "author": "Didit <didit.me>",
   "license": "MIT",

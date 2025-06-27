@@ -1,69 +1,76 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react'
-import { cn } from '../utils'
-import { tv, type VariantProps } from 'tailwind-variants'
-import { IconProps } from '@diditui/icons-react'
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import { cn } from "../utils";
+import { tv, type VariantProps } from "tailwind-variants";
+import { IconProps } from "@diditui/icons-react";
 
 export const ctaButton = tv({
   base: [
-    'flex flex-row-reverse items-center justify-center min-h-[40px] gap-2 max-w-[256px]',
-    ' text-link-button whitespace-nowrap cursor-pointer border border-transparent',
-    'transition-colors duration-200 ease-in-out',
+    "flex flex-row-reverse items-center justify-center min-h-[40px] gap-2 max-w-[256px]",
+    " text-link-button whitespace-nowrap cursor-pointer border border-transparent",
+    "transition-colors duration-200 ease-in-out",
   ],
   variants: {
     size: {
-      medium: 'py-[6px] px-[24px]',
-      large: 'py-[11px] px-[24px]'
+      medium: "py-[6px] px-[24px]",
+      large: "py-[11px] px-[24px]",
     },
     variant: {
-      primary: 'text-neutral-white bg-brand-primary hover:bg-brand-hover focus:outline-1 focus:outline-brand-primary focus:border-neutral-white',
-      secondary: 'border-neutral-black text-neutral-black hover:bg-neutral-black hover:text-neutral-white focus:text-neutral-mid-high',
-      tertiary: 'bg-neutral-ultrasoft hover:bg-neutral-soft text-neutral-black focus:outline-1 focus:outline-neutral-mid-soft',
-      destructive: 'text-neutral-white bg-error-primary hover:bg-error-hover focus:outline-1 focus:outline-error-primary focus:border-neutral-white',
-      destructive_secondary: 'text-error-primary border-error-primary hover:bg-transparent-low-70 focus:border-neutral-white focus:outline-1 focus:outline-error-primary focus:bg-surface-error-secondary',
-      success: 'text-neutral-white bg-success-primary hover:bg-success-hover focus:outline-1 focus:outline-success-primary focus:border-neutral-white',
-      ghost: 'text-neutral-mid hover:bg-neutral-ultrasoft focus:outline-1 focus:outline-neutral-soft focus:border-neutral-white focus:bg-neutral-ultrasoft',
+      primary:
+        "text-neutral-white bg-brand-primary hover:bg-brand-hover focus:outline-1 focus:outline-brand-primary focus:border-neutral-white",
+      secondary:
+        "border-neutral-black text-neutral-black hover:bg-neutral-black hover:text-neutral-white focus:text-neutral-mid-high",
+      tertiary:
+        "bg-neutral-ultrasoft hover:bg-neutral-soft text-neutral-black focus:outline-1 focus:outline-neutral-mid-soft",
+      destructive:
+        "text-neutral-white bg-error-primary hover:bg-error-hover focus:outline-1 focus:outline-error-primary focus:border-neutral-white",
+      destructive_secondary:
+        "text-error-primary border-error-primary hover:bg-transparent-low-70 focus:border-neutral-white focus:outline-1 focus:outline-error-primary focus:bg-surface-error-secondary",
+      success:
+        "text-neutral-white bg-success-primary hover:bg-success-hover focus:outline-1 focus:outline-success-primary focus:border-neutral-white",
+      ghost:
+        "text-neutral-mid hover:bg-neutral-ultrasoft focus:outline-1 focus:outline-neutral-soft focus:border-neutral-white focus:bg-neutral-ultrasoft",
     },
     disabled: {
-      true: 'pointer-events-none opacity-50'
+      true: "pointer-events-none opacity-50",
     },
     rounded: {
-      true: 'rounded-full',
-      false: 'rounded-sm'
+      true: "rounded-full",
+      false: "rounded-sm",
     },
     reversed: {
-      true: 'flex-row'
+      true: "flex-row",
     },
     leftAlign: {
-      true: 'justify-start'
+      true: "justify-start",
     },
     hasIcon: {
-      true: 'pl-3 pr-2'
-    }
+      true: "pl-3 pr-2",
+    },
   },
   compoundVariants: [
     {
-      variant: ['primary', 'tertiary'],
+      variant: ["primary", "tertiary"],
       disabled: true,
-      class: 'text-neutral-mid-soft bg-neutral-ultrasoft'
+      class: "text-neutral-mid-soft bg-neutral-ultrasoft",
     },
     {
-      variant: 'secondary',
+      variant: "secondary",
       disabled: true,
-      class: 'text-neutral-mid-soft bg-neutral-ultrasoft border-neutral-mid-soft'
+      class: "text-neutral-mid-soft bg-neutral-ultrasoft border-neutral-mid-soft",
     },
     {
       hasIcon: true,
       reversed: true,
-      class: 'pr-3 pl-2'
-    }
-  ]
-})
+      class: "pr-3 pl-2",
+    },
+  ],
+});
 
-type CTAButtonVariants = Omit<VariantProps<typeof ctaButton>, 'hasIcon'>
+type CTAButtonVariants = Omit<VariantProps<typeof ctaButton>, "hasIcon">;
 
 export interface CTAButtonProps extends CTAButtonVariants, ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string
-  icon?: React.ComponentType<IconProps>
+  label: string;
+  icon?: React.ComponentType<IconProps>;
 }
 
 export const CTAButton = ({
@@ -76,17 +83,12 @@ export const CTAButton = ({
   icon: Icon = undefined,
   className,
   ...props
-
 }: CTAButtonProps): ReactNode => {
-  const buttonClasses = ctaButton({ size, variant, disabled, rounded, reversed, hasIcon: !!Icon })
+  const buttonClasses = ctaButton({ size, variant, disabled, rounded, reversed, hasIcon: !!Icon });
   return (
-    <button
-      data-testid={`cta-button-${label}`}
-      className={cn(buttonClasses, className)}
-      {...props}
-    >
+    <button data-testid={`cta-button-${label}`} className={cn(buttonClasses, className)} {...props}>
       {Icon && <Icon className="size-6" />}
-      <span className=' text-li whitespace-nowrapnk-button'>{label}</span>
+      <span className="text-li whitespace-nowrapnk-button">{label}</span>
     </button>
-  )
-}
+  );
+};
