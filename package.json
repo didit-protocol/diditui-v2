@@ -38,7 +38,8 @@
       "path": "@commitlint/cz-commitlint"
     }
   },
-  "devDependencies": {
+  "packageManager": "pnpm@8.15.6",
+  "dependencies": {
     "@changesets/cli": "^2.27.2",
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
@@ -46,12 +47,13 @@
     "@manypkg/cli": "^0.21.4",
     "cheerio": "^1.0.0-rc.12",
     "child_process": "^1.0.2",
+    "commitizen": "^4.3.1",
     "fs-extra": "^11.2.0",
     "glob": "10.3.10",
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
-    "minimist": "1.2.8",
     "husky": "^9.1.5",
+    "minimist": "1.2.8",
     "parse-svg-path": "^0.1.2",
     "path": "^0.12.7",
     "prettier": "^3.2.5",
@@ -69,6 +71,5 @@
     "svgson": "^5.3.1",
     "turbo": "^2.5.4",
     "url": "^0.11.4"
-  },
-  "packageManager": "pnpm@8.15.6"
+  }
 }

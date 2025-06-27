@@ -30,14 +30,14 @@ const buildSvgs = () => {
   console.log('Building svgs')
 
   Object.entries(icons).forEach(([type, icons]) => {
-    fs.mkdirSync(`./icons/${type}`, { recursive: true });
+    fs.mkdirSync(`./src/icons/${type}`, { recursive: true });
 
     icons.forEach(({ name, content, category }) => {
-      fs.writeFileSync(`./icons/${type}/${name}.svg`, content);
+      fs.writeFileSync(`./src/icons/${type}/${name}.svg`, content);
 
       if (category) {
-        fs.mkdirSync(`./categories/${type}/${category}`, { recursive: true });
-        fs.writeFileSync(`./categories/${type}/${category}/${name}.svg`, content);
+        fs.mkdirSync(`./src/categories/${type}/${category}`, { recursive: true });
+        fs.writeFileSync(`./src/categories/${type}/${category}/${name}.svg`, content);
       }
     })
   })

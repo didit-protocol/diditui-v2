@@ -20,3 +20,7 @@
 **/icons-*.json
 **/vite.config.ts
 **/vitest.shims.d.ts
+
+packages/icons-react/src/aliases.ts
+packages/icons-react/src/dynamic-imports.ts
+packages/icons-react/src/icons-list.ts

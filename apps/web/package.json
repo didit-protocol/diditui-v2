@@ -14,18 +14,18 @@
     "@diditui/core": "workspace:*",
     "@diditui/icons-react": "workspace:*",
     "next": "15.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@diditui/typescript-config": "workspace:*",
     "@diditui/eslint-config": "workspace:*",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@diditui/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/node": "^24.0.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "eslint": "^9.29.0",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "tailwindcss": "^4.1.10",
+    "typescript": "~5.8.3"
   }
 }

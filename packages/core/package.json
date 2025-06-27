@@ -35,13 +35,13 @@
     "@diditui/typescript-config": "workspace:*",
     "@tailwindcss/vite": "^4.1.10",
     "@types/node": "^24.0.3",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.29.0",
-    "typescript": "~5.8.3",
     "tailwindcss": "^4.1.10",
-    "vite": "^6.3.5",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-static-copy": "^3.0.2"
   }

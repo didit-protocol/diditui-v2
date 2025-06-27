@@ -14,10 +14,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "@diditui/core": "workspace:*",
-    "@diditui/icons-react": "workspace:*"
+    "@diditui/icons-react": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
