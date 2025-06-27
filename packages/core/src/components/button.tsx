@@ -1,12 +1,14 @@
-import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 import { cn } from "../utils";
 import { tv, type VariantProps } from "tailwind-variants";
 import { IconProps } from "@diditui/icons-react";
 
-export const ctaButton = tv({
+import { Slot } from "@radix-ui/react-slot";
+
+export const buttonVariants = tv({
   base: [
     "flex flex-row-reverse items-center justify-center min-h-[40px] gap-2 max-w-[256px]",
-    " text-link-button whitespace-nowrap cursor-pointer border border-transparent",
+    "text-link-button whitespace-nowrap cursor-pointer border border-transparent",
     "transition-colors duration-200 ease-in-out",
   ],
   variants: {
@@ -66,14 +68,16 @@ export const ctaButton = tv({
   ],
 });
 
-type CTAButtonVariants = Omit<VariantProps<typeof ctaButton>, "hasIcon">;
+type ButtonVariants = Omit<VariantProps<typeof buttonVariants>, "hasIcon">;
 
-export interface CTAButtonProps extends CTAButtonVariants, ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
-  icon?: React.ComponentType<IconProps>;
-}
+type ButtonProps = React.ComponentProps<"button"> &
+  ButtonVariants & {
+    asChild?: boolean;
+    label?: string;
+    icon?: React.ComponentType<IconProps>;
+  };
 
-export const CTAButton = ({
+export const Button = ({
   label,
   size = "medium",
   variant = "primary",
@@ -82,13 +86,21 @@ export const CTAButton = ({
   reversed = false,
   icon: Icon = undefined,
   className,
+  asChild,
   ...props
-}: CTAButtonProps): ReactNode => {
-  const buttonClasses = ctaButton({ size, variant, disabled, rounded, reversed, hasIcon: !!Icon });
+}: ButtonProps): ReactNode => {
+  const Comp = asChild ? Slot : "button";
+
   return (
-    <button data-testid={`cta-button-${label}`} className={cn(buttonClasses, className)} {...props}>
+    <Comp
+      data-testid={`cta-button-${label}`}
+      className={cn(
+        buttonVariants({ size, variant, disabled, rounded, reversed, hasIcon: !!Icon, className }),
+      )}
+      {...props}
+    >
       {Icon && <Icon className="size-6" />}
-      <span className="text-li whitespace-nowrapnk-button">{label}</span>
-    </button>
+      {label || props.children}
+    </Comp>
   );
 };

@@ -7,6 +7,9 @@
   "access": "public",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "@repo/docs"
+    "@diditui/docs",
+    "@diditui/web",
+    "@diditui/typescript-config",
+    "@diditui/eslint-config"
   ]
 }

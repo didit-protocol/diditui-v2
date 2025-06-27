@@ -1,4 +1,4 @@
-import { CTAButton, cn } from "@diditui/core";
+import { Button, cn } from "@diditui/core";
 import { Icon3dcubeBold, IconAddCircle } from "@diditui/icons-react";
 
 export default function Home() {
@@ -230,24 +230,18 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
-          <CTAButton
-            variant="primary"
-            size="large"
-            reversed
-            icon={IconAddCircle}
-            label="Deploy now"
-          />
-          <CTAButton variant="secondary" size="large" label="Deploy now" />
-          <CTAButton variant="tertiary" size="large" icon={Icon3dcubeBold} label="Deploy now" />
-          <CTAButton variant="destructive" size="large" label="Deploy now" />
-          <CTAButton
+          <Button variant="primary" size="large" reversed icon={IconAddCircle} label="Deploy now" />
+          <Button variant="secondary" size="large" label="Deploy now" />
+          <Button variant="tertiary" size="large" icon={Icon3dcubeBold} label="Deploy now" />
+          <Button variant="destructive" size="large" label="Deploy now" />
+          <Button
             variant="destructive_secondary"
             size="large"
             icon={Icon3dcubeBold}
             label="Deploy now"
           />
-          <CTAButton variant="success" size="large" label="Deploy now" />
-          <CTAButton variant="ghost" size="large" icon={IconAddCircle} label="Deploy now" />
+          <Button variant="success" size="large" label="Deploy now" />
+          <Button variant="ghost" size="large" icon={IconAddCircle} label="Deploy now" />
         </div>
       </main>
     </div>
