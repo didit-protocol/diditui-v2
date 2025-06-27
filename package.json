@@ -1,19 +1,48 @@
 {
+  "name": "diditui",
   "private": true,
   "sideEffects": false,
+  "author": "Didit <didit.me>",
+  "license": "MIT",
+  "homepage": "https://docs.didit.me/docs/unified-access-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didit-protocol/diditui-v2.git"
+  },
+  "bugs": {
+    "url": "git+https://github.com/didit-protocol/diditui-v2/issues"
+  },
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "build": "turbo run build",
+    "storybook": "turbo run preview-storybook",
+    "typecheck": "turbo run typecheck",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prettier": "prettier --check \"apps/**/*.{js,ts,jsx,tsx,json}\" \"packages/**/*.{js,ts,jsx,tsx,json}\"",
+    "format": "prettier --write \"apps/**/*.{js,ts,jsx,tsx,json}\" \"packages/**/*.{js,ts,jsx,tsx,json}\"",
+    "CI": "pnpm typecheck; pnpm lint; pnpm build",
     "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish",
-    "preview-storybook": "turbo run preview-storybook"
+    "changeset:version": "changeset version",
+    "release": "turbo run build && changeset publish",
+    "postinstall": "manypkg check",
+    "manypkg:check": "manypkg check",
+    "manypkg:fix": "manypkg fix",
+    "prepare": "husky",
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.2",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cz-commitlint": "^19.4.0",
+    "@manypkg/cli": "^0.21.4",
     "cheerio": "^1.0.0-rc.12",
     "child_process": "^1.0.2",
     "fs-extra": "^11.2.0",
@@ -21,9 +50,11 @@
     "gray-matter": "^4.0.3",
     "html-minifier": "^4.0.0",
     "minimist": "1.2.8",
+    "husky": "^9.1.5",
     "parse-svg-path": "^0.1.2",
     "path": "^0.12.7",
     "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "rollup": "^4.12.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-esbuild": "^6.1.1",
@@ -38,6 +69,5 @@
     "turbo": "^2.5.4",
     "url": "^0.11.4"
   },
-  "packageManager": "pnpm@8.15.6",
-  "name": "design-system"
+  "packageManager": "pnpm@8.15.6"
 }

@@ -1,27 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 @import "@diditui/core/theme.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-neutral-white text-neutral-black font-inter;
+}
+
+
+.gradient-gray-100-900 {
+  background: var(--gradient-gray-100-900);
+}
+
+.gradient-gray-100-300 {
+  background: var(--gradient-gray-100-300);
+}
+
+.gradient-gray-600-500 {
+  background: var(--gradient-gray-600-500);
+}
+
+.gradient-gray-700-500 {
+  background: var(--gradient-gray-700-500);
+}
+
+.gradient-gray-900-800 {
+  background: var(--gradient-gray-900-800);
+}
+
+.gradient-band-custom {
+  background: var(--gradient-band-custom);
+}
+.gradient-band-custom-2 {
+  background: var(--gradient-band-custom-2);
+}
+
+.gradient-band-100-300 {
+  background: var(--gradient-band-100-300);
+}
+
+.gradient-band-600-500 {
+  background: var(--gradient-band-600-500);
+}
+
+.gradient-band-700-500 {
+  background: var(--gradient-band-700-500);
+}
+
+.gradient-band-900-800 {
+  background: var(--gradient-band-900-800);
 }

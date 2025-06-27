@@ -1,17 +1,23 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*", "assets/**"],
-      "outputs": ["dist/**", "storybook-static/**", "src/icons/**"],
+      "outputs": ["dist/**", "storybook-static/**", "src/icons/**", ".next/**", "out/**"],
       "dependsOn": ["^build"]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
+    "lint:fix": {
+      "dependsOn": ["^lint:fix"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
     },
     "clean": {
       "cache": false

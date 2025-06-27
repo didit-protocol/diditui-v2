@@ -4,13 +4,13 @@ import {
   buildJsIcons,
   buildIconsList,
   buildIconsDynamicImport,
-} from '../../.build/build-icons.mjs';
+} from "../../.build/build-icons.mjs";
 
 const componentTemplate = ({ type, name, namePascal, children }) => `\
 import createReactComponent from '../createReactComponent';
 export default createReactComponent('${type}', '${name}', '${namePascal}', ${JSON.stringify(children)});`;
 
-const indexItemTemplate = ({ name, namePascal }) =>
+const indexItemTemplate = ({ namePascal }) =>
   `export { default as ${namePascal} } from './${namePascal}';`;
 
 const aliasTemplate = ({ fromPascal, toPascal }) =>

@@ -1,45 +1,41 @@
-const { resolve } = require("node:path");
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
 
-const project = resolve(process.cwd(), "tsconfig.json");
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import prettier from 'eslint-config-prettier'
+import { globalIgnores } from 'eslint/config'
+import turboConfig from 'eslint-config-turbo/flat';
 
-/*
- * This is a custom ESLint configuration for use with
- * typescript packages.
- *
- * This config extends the Vercel Engineering Style Guide.
- * For more information, see https://github.com/vercel/style-guide
- *
- */
-
-module.exports = {
-  extends: [
-    "plugin:storybook/recommended",
-    "plugin:mdx/recommended",
-    ...[
-      "@vercel/style-guide/eslint/node",
-      "@vercel/style-guide/eslint/typescript",
-      "@vercel/style-guide/eslint/browser",
-      "@vercel/style-guide/eslint/react",
-    ].map(require.resolve),
-  ],
-  parserOptions: {
-    project,
-  },
-  plugins: ["only-warn"],
-  globals: {
-    React: true,
-    JSX: true,
-  },
-  settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
+export default tseslint.config([
+  globalIgnores(['dist', '.turbo', 'node_modules', 'eslint.config.mjs']),
+  ...turboConfig,
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs['recommended-latest'],
+      reactRefresh.configs.vite,
+      prettier,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
     },
+    ignores: ['!.storybook'],
   },
-  ignorePatterns: ["node_modules/", "dist/"],
-  // add rules configurations here
-  rules: {
-    "import/no-default-export": "off",
-  },
-};
+  {
+    rules: {
+      'turbo/no-undeclared-env-vars': [
+        'error',
+        {
+          allowList: ['^ENV_[A-Z]+$'],
+        },
+      ],
+    },
+  }
+], storybook.configs["flat/recommended"]);

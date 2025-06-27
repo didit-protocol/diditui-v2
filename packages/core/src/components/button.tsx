@@ -1,82 +1,92 @@
-import React, {ButtonHTMLAttributes, ReactNode} from 'react'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import { cn } from '../utils'
 import { tv, type VariantProps } from 'tailwind-variants'
+import { IconProps } from '@diditui/icons-react'
 
 export const ctaButton = tv({
-  base: 'inline-flex items-center max-w-[500px] hover:cursor-pointer',
+  base: [
+    'flex flex-row-reverse items-center justify-center min-h-[40px] gap-2 max-w-[256px]',
+    ' text-link-button whitespace-nowrap cursor-pointer border border-transparent',
+    'transition-colors duration-200 ease-in-out',
+  ],
   variants: {
     size: {
-      large: 'h-[44px] py-[12px] px-[16px] gap-1 rounded-lg',
-      medium: 'h-[32px] py-[6px] px-[12px] gap-1 rounded-lg',
-      small: 'h-[28px] py-[6px] px-[12px] gap-1 rounded-lg'
+      medium: 'py-[6px] px-[24px]',
+      large: 'py-[11px] px-[24px]'
     },
-    design: {
-      outline_light:
-        'border border-greyscale-light-2 text-greyscale-light-2 hover:bg-greyscale-light-2 hover:text-greyscale-dark-1 hover:border-0',
-      outline_dark:
-        'border border-greyscale-dark-2 text-greyscale-dark-2 hover:bg-greyscale-dark-2 hover:text-greyscale-white hover:border-0',
-      filled_light: 'bg-greyscale-light-2 text-greyscale-dark-1 hover:bg-pink hover:text-greyscale-white',
-      filled_dark: 'bg-greyscale-dark-2 text-greyscale-white hover:bg-dark-pink hover:text-pink',
-      filled_pink: 'bg-pink text-greyscale-white hover:bg-dark-pink hover:text-pink',
-      neutral_dark: 'text-greyscale-dark-2 hover:bg-greyscale-light-2 hover:text-greyscale-dark-1',
-      neutral_light: 'text-greyscale-light-2 hover:bg-greyscale-light-2 hover:text-greyscale-dark-1'
+    variant: {
+      primary: 'text-neutral-white bg-brand-primary hover:bg-brand-hover focus:outline-1 focus:outline-brand-primary focus:border-neutral-white',
+      secondary: 'border-neutral-black text-neutral-black hover:bg-neutral-black hover:text-neutral-white focus:text-neutral-mid-high',
+      tertiary: 'bg-neutral-ultrasoft hover:bg-neutral-soft text-neutral-black focus:outline-1 focus:outline-neutral-mid-soft',
+      destructive: 'text-neutral-white bg-error-primary hover:bg-error-hover focus:outline-1 focus:outline-error-primary focus:border-neutral-white',
+      destructive_secondary: 'text-error-primary border-error-primary hover:bg-transparent-low-70 focus:border-neutral-white focus:outline-1 focus:outline-error-primary focus:bg-surface-error-secondary',
+      success: 'text-neutral-white bg-success-primary hover:bg-success-hover focus:outline-1 focus:outline-success-primary focus:border-neutral-white',
+      ghost: 'text-neutral-mid hover:bg-neutral-ultrasoft focus:outline-1 focus:outline-neutral-soft focus:border-neutral-white focus:bg-neutral-ultrasoft',
     },
     disabled: {
-      true: 'pointer-events-none'
+      true: 'pointer-events-none opacity-50'
+    },
+    rounded: {
+      true: 'rounded-full',
+      false: 'rounded-sm'
+    },
+    reversed: {
+      true: 'flex-row'
+    },
+    leftAlign: {
+      true: 'justify-start'
+    },
+    hasIcon: {
+      true: 'pl-3 pr-2'
     }
   },
   compoundVariants: [
     {
-      design: ['filled_dark', 'filled_pink'],
+      variant: ['primary', 'tertiary'],
       disabled: true,
-      class: 'bg-greyscale-light-1 text-greyscale-light-2'
+      class: 'text-neutral-mid-soft bg-neutral-ultrasoft'
     },
     {
-      design: 'filled_light',
+      variant: 'secondary',
       disabled: true,
-      class: 'text-greyscale-medium-3 bg-greyscale-light-1'
+      class: 'text-neutral-mid-soft bg-neutral-ultrasoft border-neutral-mid-soft'
     },
     {
-      design: 'outline_light',
-      disabled: true,
-      class: 'text-greyscale-medium-3 border-greyscale-medium-3'
-    },
-    {
-      design: 'outline_dark',
-      disabled: true,
-      class: 'text-greyscale-light-1 border-greyscale-light-1'
-    },
-    {
-      design: 'neutral_dark',
-      disabled: true,
-      class: 'text-greyscale-light-1'
-    },
-    {
-      design: 'neutral_light',
-      disabled: true,
-      class: 'text-greyscale-medium-3'
+      hasIcon: true,
+      reversed: true,
+      class: 'pr-3 pl-2'
     }
   ]
 })
 
-type CTAButtonVariants = VariantProps<typeof ctaButton>
+type CTAButtonVariants = Omit<VariantProps<typeof ctaButton>, 'hasIcon'>
 
-export interface CTAButtonProps extends CTAButtonVariants, Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
+export interface CTAButtonProps extends CTAButtonVariants, ButtonHTMLAttributes<HTMLButtonElement> {
   label: string
-  icon?: React.ReactNode
+  icon?: React.ComponentType<IconProps>
 }
 
-export const CTAButton = ({ label, size, design, disabled = false, icon = undefined, ...props }: CTAButtonProps): ReactNode => {
+export const CTAButton = ({
+  label,
+  size = "medium",
+  variant = "primary",
+  disabled = false,
+  rounded = false,
+  reversed = false,
+  icon: Icon = undefined,
+  className,
+  ...props
+
+}: CTAButtonProps): ReactNode => {
+  const buttonClasses = ctaButton({ size, variant, disabled, rounded, reversed, hasIcon: !!Icon })
   return (
     <button
       data-testid={`cta-button-${label}`}
-      className={ctaButton({ size: size, design: design, disabled: disabled })}
+      className={cn(buttonClasses, className)}
       {...props}
     >
-      {/* optional icon */}
-      {icon && <>{icon}</>}
-
-      {/* label */}
-      <span>{label}</span>
+      {Icon && <Icon className="size-6" />}
+      <span className=' text-li whitespace-nowrapnk-button'>{label}</span>
     </button>
   )
 }

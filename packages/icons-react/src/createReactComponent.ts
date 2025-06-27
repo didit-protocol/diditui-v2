@@ -39,7 +39,7 @@ const createReactComponent = (
       ),
   );
 
-  Component.displayName = `${iconNamePascal}`;
+  Component.displayName = iconNamePascal;
 
   return Component;
 };

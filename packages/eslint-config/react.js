@@ -1,39 +1,30 @@
-const { resolve } = require("node:path");
+import { FlatCompat } from "@eslint/eslintrc";
+import { globalIgnores } from "eslint/config";
 
-const project = resolve(process.cwd(), "tsconfig.json");
+import turboConfig from 'eslint-config-turbo/flat';
 
-/*
- * This is a custom ESLint configuration for use a library
- * that utilizes React.
- *
- * This config extends the Vercel Engineering Style Guide.
- * For more information, see https://github.com/vercel/style-guide
- *
- */
+const compat = new FlatCompat({
+  // import.meta.dirname is available after Node.js v20.11.0
+  baseDirectory: import.meta.dirname,
+});
 
-module.exports = {
-  extends: [
-    "@vercel/style-guide/eslint/browser",
-    "@vercel/style-guide/eslint/typescript",
-    "@vercel/style-guide/eslint/react",
-  ].map(require.resolve),
-  parserOptions: {
-    project,
-  },
-  plugins: ["only-warn"],
-  globals: {
-    JSX: true,
-  },
-  settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
+const eslintConfig = [
+  globalIgnores(["dist", ".turbo", "node_modules", "eslint.config.mjs"]),
+  ...turboConfig,
+  ...compat.config({
+    extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+  }),
+  {
+    rules: {
+      'turbo/no-undeclared-env-vars': [
+        'error',
+        {
+          allowList: ['^ENV_[A-Z]+$'],
+        },
+      ],
+      'no-html-link-for-pages': 'off',
     },
-  },
-  ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js", "**/*.css"],
-  // add rules configurations here
-  rules: {
-    "import/no-default-export": "off",
-  },
-};
+  }
+];
+
+export default eslintConfig;

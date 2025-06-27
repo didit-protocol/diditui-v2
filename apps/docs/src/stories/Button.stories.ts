@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 
 import { CTAButton } from "@diditui/core"
+import { IconAddCircle } from "@diditui/icons-react"
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -16,7 +18,32 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    // backgroundColor: { control: 'color' },
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary', 'destructive', 'destructive_secondary', 'success', 'ghost'],
+      defaultValue: 'primary',
+    },
+    size: {
+      control: 'select',
+      options: ['medium', 'large'],
+      defaultValue: 'medium',
+    },
+    disabled: {
+      control: 'boolean',
+      defaultValue: false,
+    },
+    rounded: {
+      control: 'boolean',
+      defaultValue: false,
+    },
+    reversed: {
+      control: 'boolean',
+      defaultValue: false,
+    },
+    leftAlign: {
+      control: 'boolean',
+      defaultValue: false,
+    },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -25,30 +52,26 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+
 export const Primary: Story = {
   args: {
-    // primary: true,
-    label: 'Button',
+    variant: 'primary',
+    label: 'Create App',
   },
 };
 
-export const Secondary: Story = {
+export const WithIcon: Story = {
   args: {
-    label: 'Button',
+    variant: 'secondary',
+    label: 'Create App',
+    icon: IconAddCircle,
   },
 };
-
-export const Large: Story = {
+export const WithIconReversed: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    variant: 'destructive',
+    label: 'Create App',
+    icon: IconAddCircle,
+    reversed: true,
   },
 };

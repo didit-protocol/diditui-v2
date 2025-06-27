@@ -3,5 +3,29 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+    // TailwindCss
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "theme"],
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\(([^)]*)\\)"],
+    ["cn\\(([^)]*)\\)"],
+    ["clsx\\(([^)]*)\\)"],
+    ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["createTheme(?:<\\w+>)?\\s*\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"],
+    ["tv(?:<\\w+>)?\\s*\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"],
+    ["cn(?:<\\w+>)?\\s*\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"],
+    ["clsx(?:<\\w+>)?\\s*\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]
+  ],
+  // ESLint
+  "eslint.validate": ["javascript", "javascriptreact", "html", "typescriptreact"],
+  "eslint.enable": true,
+  "eslint.useFlatConfig": true,
+  // required in vscode-eslint < v3.0.10 only
+  "eslint.format.enable": true,
+
+  // Prettier
+  "prettier.enable": true
 }

@@ -1,6 +1,6 @@
-import fs from 'fs';
-import { getRollupConfig } from '../../.build/rollup-plugins.mjs';
+import fs from 'node:fs';
 import dts from 'rollup-plugin-dts';
+import { getRollupConfig } from "../../.build/rollup-plugins.mjs";
 
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
 

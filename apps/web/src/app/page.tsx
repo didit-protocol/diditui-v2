@@ -1,106 +1,353 @@
-import Image from "next/image";
-import { CTAButton } from "@diditui/core";
-import { Icon3dcubeBold } from "@diditui/icons-react";
+import { CTAButton, cn } from "@diditui/core";
+import { Icon3dcubeBold, IconAddCircle } from "@diditui/icons-react";
 
 export default function Home() {
+
+  const colorCard = cn("size-20 border border-neutral-200 rounded-sm flex items-center justify-center text-center text-white");
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <CTAButton design="outline_dark" icon={<Icon3dcubeBold />} label="Deploy now" />
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="flex flex-col gap-2">
+          <div>
+            <h1 className="text-display-large">Display Large Web Desktop</h1>
+            <h1 className="text-display-mid">Display Mid Web Desktop</h1>
+            <h1 className="text-display-small">Display Small Web Desktop</h1>
+          </div>
+          <div>
+            <h2 className="text-headline-large">Headline Large Web Desktop</h2>
+            <h2 className="text-headline-mid">Headline Mid Web Desktop</h2>
+            <h2 className="text-headline-small">Headline Small Web Desktop</h2>
+          </div>
+          <div>
+            <p className="text-paragraph-large">Paragraph Large Web Desktop</p>
+            <p className="text-paragraph-mid">Paragraph Mid Web Desktop</p>
+            <p className="text-paragraph-small">Paragraph Small Web Desktop</p>
+            <p className="text-paragraph-small-regular">Paragraph Small Regular Web Desktop</p>
+          </div>
+          <div>
+            <h3 className="text-label-large">Label Large Web Desktop</h3>
+            <h3 className="text-label-mid">Label Mid Web Desktop</h3>
+            <h3 className="text-label-small">Label Small Web Desktop</h3>
+            <h3 className="text-label-extra-small">Label Extra Small Web Desktop</h3>
+            <h3 className="text-label-styled uppercase">Label Styled Web Desktop</h3>
+            <h3 className="text-label-bold">Label Bold Web Desktop</h3>
+            <h3 className="text-label-inputs uppercase">Label Inputs Web Desktop</h3>
+          </div>
+          <div>
+            <h4 className="text-link-button">Link Button Web Desktop</h4>
+            <h4 className="text-link-mid">Link Mid Web Desktop</h4>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className={`${colorCard} bg-[var(--color-neutral-white)]`}>
+              neutral-white
+            </div>
+            <div className={`${colorCard} bg-[var(--color-neutral-black)]`}>
+              neutral-black
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className={`${colorCard} bg-[var(--color-gray-100)]`}>
+              gray-100
+            </div>
+            <div className={`${colorCard} bg-[var(--color-gray-200)]`}>
+              gray-200
+            </div>
+            <div className={`${colorCard} bg-[var(--color-gray-300)]`}>
+              gray-300
+            </div>
+            <div className={`${colorCard} bg-[var(--color-gray-400)]`}>
+              gray-400
+            </div>
+            <div className={`${colorCard} bg-[var(--color-gray-500)]`}>
+              gray-500
+            </div>
+            <div className={`${colorCard} bg-[var(--color-gray-600)]`}>
+              gray-600
+            </div>
+              <div className={`${colorCard} bg-[var(--color-gray-700)]`}>
+              gray-700
+            </div>
+            <div className={`${colorCard} bg-[var(--color-gray-800)]`}>
+              gray-800
+            </div>
+            <div className={`${colorCard} bg-[var(--color-gray-900)]`}>
+              gray-900
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className={`${colorCard} bg-[var(--color-blue-100)]`}>
+              blue-100
+            </div>
+            <div className={`${colorCard} bg-[var(--color-blue-200)]`}>
+              blue-200
+            </div>
+            <div className={`${colorCard} bg-[var(--color-blue-300)]`}>
+              blue-300
+            </div>
+            <div className={`${colorCard} bg-[var(--color-blue-400)]`}>
+              blue-400
+            </div>
+            <div className={`${colorCard} bg-[var(--color-blue-500)]`}>
+              blue-500
+            </div>
+            <div className={`${colorCard} bg-[var(--color-blue-600)]`}>
+              blue-600
+            </div>
+            <div className={`${colorCard} bg-[var(--color-blue-700)]`}>
+              blue-700
+              </div>
+            <div className={`${colorCard} bg-[var(--color-blue-800)]`}>
+              blue-800
+            </div>
+            <div className={`${colorCard} bg-[var(--color-blue-900)]`}>
+              blue-900
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className={`${colorCard} bg-[var(--color-lime-100)]`}>
+              lime-100
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-200)]`}>
+              lime-200
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-300)]`}>
+              lime-300
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-400)]`}>
+                lime-400
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-500)]`}>
+              lime-500
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-600)]`}>
+              lime-600
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-700)]`}>
+              lime-700
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-800)]`}>
+              lime-800
+            </div>
+            <div className={`${colorCard} bg-[var(--color-lime-900)]`}>
+              lime-900
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+                <div className={`${colorCard} bg-[var(--color-green-100)]`}>
+              green-200
+            </div>
+            <div className={`${colorCard} bg-[var(--color-green-300)]`}>
+              green-300
+            </div>
+            <div className={`${colorCard} bg-[var(--color-green-400)]`}>
+              green-400
+            </div>
+            <div className={`${colorCard} bg-[var(--color-green-500)]`}>
+              green-500
+            </div>
+            <div className={`${colorCard} bg-[var(--color-green-600)]`}>
+              green-600
+            </div>
+            <div className={`${colorCard} bg-[var(--color-green-700)]`}>
+              green-700
+            </div>
+            <div className={`${colorCard} bg-[var(--color-green-800)]`}>
+              green-800
+            </div>
+            <div className={`${colorCard} bg-[var(--color-green-900)]`}>
+              green-900
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className={`${colorCard} bg-[var(--color-orange-100)]`}>
+              orange-100
+            </div>
+            <div className={`${colorCard} bg-[var(--color-orange-200)]`}>
+              orange-200
+            </div>
+            <div className={`${colorCard} bg-[var(--color-orange-300)]`}>
+              orange-300
+            </div>
+            <div className={`${colorCard} bg-[var(--color-orange-400)]`}>
+              orange-500
+            </div>
+            <div className={`${colorCard} bg-[var(--color-orange-600)]`}>
+              orange-600
+            </div>
+            <div className={`${colorCard} bg-[var(--color-orange-700)]`}>
+              orange-700
+            </div>
+            <div className={`${colorCard} bg-[var(--color-orange-800)]`}>
+              orange-800
+            </div>
+            <div className={`${colorCard} bg-[var(--color-orange-900)]`}>
+              orange-900
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className={`${colorCard} bg-[var(--color-navy-100)]`} />
+            <div className={`${colorCard} bg-[var(--color-navy-200)]`}>
+              navy-200
+            </div>
+            <div className={`${colorCard} bg-[var(--color-navy-300)]`}>
+              navy-300
+            </div>
+            <div className={`${colorCard} bg-[var(--color-navy-400)]`}>
+              navy-400
+            </div>
+              <div className={`${colorCard} bg-[var(--color-navy-500)]`}>
+              navy-500
+            </div>
+            <div className={`${colorCard} bg-[var(--color-navy-600)]`}>
+              navy-600
+            </div>
+            <div className={`${colorCard} bg-[var(--color-navy-700)]`}>
+              navy-700
+            </div>
+            <div className={`${colorCard} bg-[var(--color-navy-800)]`}>
+              navy-800
+            </div>
+            <div className={`${colorCard} bg-[var(--color-navy-900)]`}>
+              navy-900
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className={`${colorCard} bg-[var(--color-measurement)]`}>
+              measurement
+            </div>
+            <div className={`${colorCard} bg-[var(--color-measurement-2)]`}>
+              measurement-2
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-gray-100-900 flex items-center justify-center text-center text-white">
+              gradient-gray-100-900
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-gray-100-300 flex items-center justify-center text-center text-black">
+              gradient-gray-100-300
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-gray-600-500 flex items-center justify-center text-center text-white">
+              gradient-gray-600-500
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-gray-700-500 flex items-center justify-center text-center text-white">
+              gradient-gray-700-500
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-gray-900-800 flex items-center justify-center text-center text-white">
+              gradient-gray-900-800
+            </div>
+          </div>
+          <div className="flex gap-2 flex-wrap items-center flex-col sm:flex-row">
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-band-custom flex items-center justify-center text-center text-white" >
+              gradient-band-custom
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-band-100-300 flex items-center justify-center text-center  text-white" >
+              gradient-band-100-300
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-band-600-500 flex items-center justify-center text-center text-white" >
+              gradient-band-600-500
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-band-700-500 flex items-center justify-center text-center text-white" >
+              gradient-band-700-500
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-band-900-800 flex items-center justify-center text-center text-white" >
+              gradient-band-900-800
+            </div>
+            <div className="size-36 border border-neutral-200 rounded-sm gradient-band-custom-2 flex items-center justify-center text-center text-white" >
+              gradient-band-custom-2
+            </div>
+          </div>
+        </div>
+        <div className="flex gap-4 flex-wrap items-center flex-col sm:flex-row">
+          <div className="size-30 rounded-sm shadow-xs flex items-center justify-center">
+            shadow-xs
+            </div>
+            <div className="size-30 rounded-sm shadow-sm flex items-center justify-center">
+              shadow-sm
+            </div>
+            <div className="size-30 rounded-sm shadow-md flex items-center justify-center">
+              shadow-md
+            </div>
+            <div className="size-30 rounded-sm shadow-lg flex items-center justify-center">
+              shadow-lg
+            </div>
+            <div className="size-30 rounded-sm shadow-xl flex items-center justify-center">
+              shadow-xl
+            </div>
+            <div className="size-30 rounded-sm shadow-2xl flex items-center justify-center">
+              shadow-2xl
+            </div>
+            <div className="size-30 rounded-sm shadow-3xl flex items-center justify-center">
+              shadow-3xl
+            </div>
+        </div>
+        <div className="flex w-full justify-between p-4 rounded-sm bg-red-100">
+          <div className="flex flex-col gap-2">
+            <div className=" w-[420px] h-[120px] rounded-sm overflow-hidden relative">
+              <div className="blur-sm  bg-white/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-sm - light
+              </div>
+            </div>
+            <div className=" w-[420px] h-[120px] rounded-sm overflow-hidden relative">
+              <div className="blur-md  bg-white/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-md - light
+              </div>
+            </div>
+            <div className=" w-[420px] h-[120px] rounded-sm overflow-hidden relative">
+              <div className="blur-lg  bg-white/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-lg - light
+              </div>
+            </div>
+            <div className=" w-[420px] h-[120px]  rounded-sm overflow-hidden relative">
+              <div className="blur-xl  bg-white/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-xl - light
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className=" w-[420px] h-[120px]  rounded-sm overflow-hidden relative">
+              <div className="blur-sm  bg-black/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-sm - dark
+              </div>
+            </div>
+            <div className=" w-[420px] h-[120px]  rounded-sm overflow-hidden relative">
+              <div className="blur-md  bg-black/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-md - dark
+              </div>
+            </div>
+            <div className=" w-[420px] h-[120px]  rounded-sm overflow-hidden relative">
+              <div className="blur-lg  bg-black/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-lg - dark
+              </div>
+            </div>
+            <div className=" w-[420px] h-[120px]  rounded-sm overflow-hidden relative">
+              <div className="blur-xl  bg-black/60 absolute inset-0" />
+              <div className="size-full flex items-center justify-center relative z-10">
+                backdrop-blur-xl - dark
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex gap-4 flex-wrap items-center flex-col sm:flex-row">
+          <CTAButton variant="primary" size="large" reversed icon={IconAddCircle} label="Deploy now" />
+          <CTAButton variant="secondary" size="large" label="Deploy now" />
+          <CTAButton variant="tertiary" size="large" icon={Icon3dcubeBold} label="Deploy now" />
+          <CTAButton variant="destructive" size="large" label="Deploy now" />
+          <CTAButton variant="destructive_secondary" size="large" icon={Icon3dcubeBold} label="Deploy now" />
+          <CTAButton variant="success" size="large"  label="Deploy now" />
+          <CTAButton variant="ghost" size="large" icon={IconAddCircle} label="Deploy now" />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }

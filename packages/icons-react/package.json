@@ -15,7 +15,9 @@
     "build:bundles": "rollup -c ./rollup.config.mjs",
     "clean": "rm -rf dist && pnpm run clean:icons",
     "clean:icons": "find . ! -name '.gitkeep' -path '*/src/icons/*' -exec rm -rf {} +",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "imports-check": "attw $(npm pack)"
   },
   "devDependencies": {
@@ -23,6 +25,7 @@
     "@diditui/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.10",
     "@types/react": "18.2.60",
+    "eslint": "^9.29.0",
     "postcss": "^8.5.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",

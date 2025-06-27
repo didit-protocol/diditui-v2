@@ -1,4 +1,4 @@
-export default {
+const defaultAttributes = {
   linear: {
     xmlns: 'http://www.w3.org/2000/svg',
     width: 24,
@@ -19,3 +19,5 @@ export default {
     stroke: 'none',
   },
 };
+
+export default defaultAttributes;
