@@ -24,7 +24,7 @@
     "@diditui/eslint-config": "workspace:*",
     "@storybook/addon-a11y": "^9.0.13",
     "@storybook/addon-docs": "^9.0.13",
-    "@storybook/addon-vitest": "^9.0.13",
+    "@storybook/addon-vitest": "^9.0.14",
     "@storybook/react-vite": "^9.0.13",
     "@tailwindcss/vite": "^4.1.10",
     "@types/react": "^19.1.8",
