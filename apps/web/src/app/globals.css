@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
 @import "@diditui/core/theme.css";
 
 body {
   @apply bg-neutral-white text-neutral-black font-inter;
 }
-
 
 .gradient-gray-100-900 {
   background: var(--gradient-gray-100-900);
@@ -27,25 +27,25 @@ body {
   background: var(--gradient-gray-900-800);
 }
 
-.gradient-band-custom {
-  background: var(--gradient-band-custom);
+.gradient-brand-custom {
+  background: var(--gradient-brand-custom);
 }
-.gradient-band-custom-2 {
-  background: var(--gradient-band-custom-2);
-}
-
-.gradient-band-100-300 {
-  background: var(--gradient-band-100-300);
+.gradient-brand-custom-2 {
+  background: var(--gradient-brand-custom-2);
 }
 
-.gradient-band-600-500 {
-  background: var(--gradient-band-600-500);
+.gradient-brand-100-300 {
+  background: var(--gradient-brand-100-300);
 }
 
-.gradient-band-700-500 {
-  background: var(--gradient-band-700-500);
+.gradient-brand-600-500 {
+  background: var(--gradient-brand-600-500);
 }
 
-.gradient-band-900-800 {
-  background: var(--gradient-band-900-800);
+.gradient-brand-700-500 {
+  background: var(--gradient-brand-700-500);
+}
+
+.gradient-brand-900-800 {
+  background: var(--gradient-brand-900-800);
 }

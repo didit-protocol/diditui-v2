@@ -1,26 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Calendar } from "@diditui/core";
+import { CheckboxExample } from "../../examples/checkbox";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Components/Calendar",
-  component: Calendar,
+  title: "Components/Checkbox",
+  component: CheckboxExample,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof Calendar>;
+} satisfies Meta<typeof CheckboxExample>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    mode: "single",
-    className: "rounded-lg border",
-  },
+export const Default: Story = {
+  args: {},
 };

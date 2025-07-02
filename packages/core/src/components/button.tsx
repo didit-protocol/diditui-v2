@@ -1,20 +1,23 @@
-import { ReactNode } from "react";
-import { cn } from "../utils";
-import { tv, type VariantProps } from "tailwind-variants";
-import { IconProps } from "@diditui/icons-react";
+"use client";
 
-import { Slot } from "@radix-ui/react-slot";
+import { ReactNode } from "react";
+import { cn } from "@/utils";
+import { tv, type VariantProps } from "tailwind-variants";
+
+import { Slot, Slottable } from "@radix-ui/react-slot";
+import { IconSpinner } from "@diditui/icons-react";
 
 export const buttonVariants = tv({
   base: [
-    "flex flex-row-reverse items-center justify-center min-h-[40px] gap-2 max-w-[256px]",
+    "flex items-center justify-center gap-2 max-w-[256px]",
     "text-link-button whitespace-nowrap cursor-pointer border border-transparent",
     "transition-colors duration-200 ease-in-out",
   ],
   variants: {
     size: {
-      medium: "py-[6px] px-[24px]",
-      large: "py-[11px] px-[24px]",
+      icon: "rounded-full size-8 [&>svg]:size-4.5",
+      md: "rounded-full py-1.5 px-3 h-8 [&>svg]:size-4",
+      lg: "py-2.5 px-3 h-12 rounded-sm [&>svg]:size-6",
     },
     variant: {
       primary:
@@ -35,18 +38,8 @@ export const buttonVariants = tv({
     disabled: {
       true: "pointer-events-none opacity-50",
     },
-    rounded: {
-      true: "rounded-full",
-      false: "rounded-sm",
-    },
-    reversed: {
-      true: "flex-row",
-    },
-    leftAlign: {
-      true: "justify-start",
-    },
-    hasIcon: {
-      true: "pl-3 pr-2",
+    isLoading: {
+      true: "pointer-events-none",
     },
   },
   compoundVariants: [
@@ -60,47 +53,35 @@ export const buttonVariants = tv({
       disabled: true,
       class: "text-neutral-mid-soft bg-neutral-ultrasoft border-neutral-mid-soft",
     },
-    {
-      hasIcon: true,
-      reversed: true,
-      class: "pr-3 pl-2",
-    },
   ],
 });
 
-type ButtonVariants = Omit<VariantProps<typeof buttonVariants>, "hasIcon">;
+type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 type ButtonProps = React.ComponentProps<"button"> &
   ButtonVariants & {
     asChild?: boolean;
-    label?: string;
-    icon?: React.ComponentType<IconProps>;
   };
 
 export const Button = ({
-  label,
-  size = "medium",
+  size = "md",
   variant = "primary",
   disabled = false,
-  rounded = false,
-  reversed = false,
-  icon: Icon = undefined,
   className,
   asChild,
+  isLoading = false,
+  children,
   ...props
 }: ButtonProps): ReactNode => {
   const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
-      data-testid={`cta-button-${label}`}
-      className={cn(
-        buttonVariants({ size, variant, disabled, rounded, reversed, hasIcon: !!Icon, className }),
-      )}
+      className={cn(buttonVariants({ size, variant, disabled, isLoading, className }))}
       {...props}
     >
-      {Icon && <Icon className="size-6" />}
-      {label || props.children}
+      {size === "icon" && isLoading ? null : <Slottable>{children}</Slottable>}
+      {isLoading && <IconSpinner className="animate-spin" />}
     </Comp>
   );
 };

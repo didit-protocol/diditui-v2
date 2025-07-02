@@ -7,7 +7,7 @@
     },
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*", "assets/**"],
-      "outputs": ["dist/**", "storybook-static/**", "src/icons/**", ".next/**", "out/**"],
+      "outputs": ["dist/**", "storybook-static/**", ".next/**", "out/**"],
       "dependsOn": ["^build"]
     },
     "lint": {
@@ -23,9 +23,7 @@
       "cache": false
     },
     "preview-storybook": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "cache": false
     }
   }

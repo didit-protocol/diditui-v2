@@ -1,5 +1,8 @@
-import { Button, cn } from "@diditui/core";
+"use client";
+
+import { Button, cn, Spinner } from "@diditui/core";
 import { Icon3dcubeBold, IconAddCircle } from "@diditui/icons-react";
+import { SheetDemoLeft, SheetDemoRight, SheetDemoTop, SheetDemoBottom } from "./components/Sheet";
 
 export default function Home() {
   const colorCard = cn(
@@ -29,7 +32,10 @@ export default function Home() {
             <h3 className="text-label-large">Label Large Web Desktop</h3>
             <h3 className="text-label-mid">Label Mid Web Desktop</h3>
             <h3 className="text-label-small">Label Small Web Desktop</h3>
-            <h3 className="text-label-extra-small">Label Extra Small Web Desktop</h3>
+            {/* text-neutral-mid */}
+            <h3 className={cn("text-label-extra-small text-neutral-mid")}>
+              Label Extra Small Web Desktop
+            </h3>
             <h3 className="text-label-styled uppercase">Label Styled Web Desktop</h3>
             <h3 className="text-label-bold">Label Bold Web Desktop</h3>
             <h3 className="text-label-inputs uppercase">Label Inputs Web Desktop</h3>
@@ -132,23 +138,23 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col flex-wrap items-center gap-2 sm:flex-row">
-            <div className="gradient-band-custom flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
-              gradient-band-custom
+            <div className="gradient-brand-custom flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
+              gradient-brand-custom
             </div>
-            <div className="gradient-band-100-300 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
-              gradient-band-100-300
+            <div className="gradient-brand-100-300 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
+              gradient-brand-100-300
             </div>
-            <div className="gradient-band-600-500 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
-              gradient-band-600-500
+            <div className="gradient-brand-600-500 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
+              gradient-brand-600-500
             </div>
-            <div className="gradient-band-700-500 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
-              gradient-band-700-500
+            <div className="gradient-brand-700-500 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
+              gradient-brand-700-500
             </div>
-            <div className="gradient-band-900-800 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
-              gradient-band-900-800
+            <div className="gradient-brand-900-800 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
+              gradient-brand-900-800
             </div>
-            <div className="gradient-band-custom-2 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
-              gradient-band-custom-2
+            <div className="gradient-brand-custom-2 flex size-36 items-center justify-center rounded-sm border border-neutral-200 text-center text-white">
+              gradient-brand-custom-2
             </div>
           </div>
         </div>
@@ -175,73 +181,222 @@ export default function Home() {
             shadow-3xl
           </div>
         </div>
-        <div className="flex w-full justify-between rounded-sm bg-red-100 p-4">
+        <div className="flex w-full justify-between rounded-sm bg-[url(https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center p-4">
           <div className="flex flex-col gap-2">
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-white/60 blur-sm" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-sm - light
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-white/50 backdrop-blur-sm">
+              backdrop-blur-sm - light
             </div>
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-white/60 blur-md" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-md - light
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-white/50 backdrop-blur-md">
+              backdrop-blur-md - light
             </div>
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-white/60 blur-lg" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-lg - light
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-white/50 backdrop-blur-lg">
+              backdrop-blur-lg - light
             </div>
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-white/60 blur-xl" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-xl - light
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-white/50 backdrop-blur-xl">
+              backdrop-blur-xl - light
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-black/60 blur-sm" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-sm - dark
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-black/60 text-white backdrop-blur-sm">
+              backdrop-blur-sm - dark
             </div>
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-black/60 blur-md" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-md - dark
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-black/60 text-white backdrop-blur-md">
+              backdrop-blur-md - dark
             </div>
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-black/60 blur-lg" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-lg - dark
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-black/60 text-white backdrop-blur-lg">
+              backdrop-blur-lg - dark
             </div>
-            <div className="relative h-[120px] w-[420px] overflow-hidden rounded-sm">
-              <div className="absolute inset-0 bg-black/60 blur-xl" />
-              <div className="relative z-10 flex size-full items-center justify-center">
-                backdrop-blur-xl - dark
-              </div>
+            <div className="flex h-[120px] w-[420px] items-center justify-center overflow-hidden rounded-sm bg-black/60 text-white backdrop-blur-xl">
+              backdrop-blur-xl - dark
             </div>
           </div>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
-          <Button variant="primary" size="large" reversed icon={IconAddCircle} label="Deploy now" />
-          <Button variant="secondary" size="large" label="Deploy now" />
-          <Button variant="tertiary" size="large" icon={Icon3dcubeBold} label="Deploy now" />
-          <Button variant="destructive" size="large" label="Deploy now" />
-          <Button
-            variant="destructive_secondary"
-            size="large"
-            icon={Icon3dcubeBold}
-            label="Deploy now"
-          />
-          <Button variant="success" size="large" label="Deploy now" />
-          <Button variant="ghost" size="large" icon={IconAddCircle} label="Deploy now" />
+          <div className="flex w-14 flex-col items-center justify-center rounded-sm bg-white p-4">
+            <Spinner size="sm" />
+            <Spinner size="md" />
+            <Spinner size="lg" />
+            <Spinner size="xl" />
+          </div>
+          <div className="bg-neutral-high flex w-14 flex-col items-center justify-center rounded-sm p-4">
+            <Spinner size="sm" className="text-neutral-soft" />
+            <Spinner size="md" className="text-neutral-soft" />
+            <Spinner size="lg" className="text-neutral-soft" />
+            <Spinner size="xl" className="text-neutral-soft" />
+          </div>
+        </div>
+        <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
+          <Button variant="primary" size="lg">
+            <IconAddCircle />
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="secondary" size="lg">
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="tertiary" size="lg">
+            <Icon3dcubeBold />
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="destructive" size="lg">
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="destructive_secondary" size="lg">
+            <Icon3dcubeBold />
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="success" size="lg">
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="ghost" size="lg">
+            <IconAddCircle />
+            <span>Deploy now</span>
+          </Button>
+        </div>
+        <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
+          <Button variant="primary" size="lg" isLoading>
+            <IconAddCircle />
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="secondary" size="lg" isLoading>
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="tertiary" size="lg" isLoading>
+            <Icon3dcubeBold />
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="destructive" size="lg" isLoading>
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="destructive_secondary" size="lg" isLoading>
+            <Icon3dcubeBold />
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="success" size="lg" isLoading>
+            <span>Deploy now</span>
+          </Button>
+          <Button variant="ghost" size="lg" isLoading>
+            <IconAddCircle />
+            <span>Deploy now</span>
+          </Button>
+        </div>
+        <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
+          <Button variant="primary" size="md">
+            <IconAddCircle />
+            <span>Button</span>
+            <IconAddCircle />
+          </Button>
+          <Button variant="secondary" size="md">
+            <IconAddCircle />
+            <span>Button</span>
+            <IconAddCircle />
+          </Button>
+          <Button variant="tertiary" size="md">
+            <Icon3dcubeBold />
+            <span>Button</span>
+            <Icon3dcubeBold />
+          </Button>
+          <Button variant="destructive" size="md">
+            <IconAddCircle />
+            <span>Button</span>
+            <IconAddCircle />
+          </Button>
+          <Button variant="destructive_secondary" size="md">
+            <Icon3dcubeBold />
+            <span>Button</span>
+            <Icon3dcubeBold />
+          </Button>
+          <Button variant="success" size="md">
+            <IconAddCircle />
+            <span>Button</span>
+            <IconAddCircle />
+          </Button>
+          <Button variant="ghost" size="md">
+            <IconAddCircle />
+            <span>Button</span>
+            <IconAddCircle />
+          </Button>
+        </div>
+        <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
+          <Button variant="primary" size="md" isLoading>
+            <IconAddCircle />
+            <span>Button</span>
+          </Button>
+          <Button variant="secondary" size="md" isLoading>
+            <IconAddCircle />
+            <span>Button</span>
+          </Button>
+          <Button variant="tertiary" size="md" isLoading>
+            <Icon3dcubeBold />
+            <span>Button</span>
+          </Button>
+          <Button variant="destructive" size="md" isLoading>
+            <IconAddCircle />
+            <span>Button</span>
+          </Button>
+          <Button variant="destructive_secondary" size="md" isLoading>
+            <Icon3dcubeBold />
+            <span>Button</span>
+          </Button>
+          <Button variant="success" size="md" isLoading>
+            <IconAddCircle />
+            <span>Button</span>
+          </Button>
+          <Button variant="ghost" size="md" isLoading>
+            <IconAddCircle />
+            <span>Button</span>
+          </Button>
+        </div>
+        <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
+          <Button variant="primary" size="icon">
+            <IconAddCircle />
+          </Button>
+          <Button variant="secondary" size="icon">
+            <IconAddCircle />
+          </Button>
+          <Button variant="tertiary" size="icon">
+            <Icon3dcubeBold />
+          </Button>
+          <Button variant="destructive" size="icon">
+            <IconAddCircle />
+          </Button>
+          <Button variant="destructive_secondary" size="icon">
+            <Icon3dcubeBold />
+          </Button>
+          <Button variant="success" size="icon">
+            <IconAddCircle />
+          </Button>
+          <Button variant="ghost" size="icon">
+            <IconAddCircle />
+          </Button>
+        </div>
+        <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
+          <Button variant="primary" size="icon" isLoading>
+            <IconAddCircle />
+          </Button>
+          <Button variant="secondary" size="icon" isLoading>
+            <IconAddCircle />
+          </Button>
+          <Button variant="tertiary" size="icon" isLoading>
+            <Icon3dcubeBold />
+          </Button>
+          <Button variant="destructive" size="icon" isLoading>
+            <IconAddCircle />
+          </Button>
+          <Button variant="destructive_secondary" size="icon" isLoading>
+            <Icon3dcubeBold />
+          </Button>
+          <Button variant="success" size="icon" isLoading>
+            <IconAddCircle />
+          </Button>
+          <Button variant="ghost" size="icon" isLoading>
+            <IconAddCircle />
+          </Button>
+        </div>
+        <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
+          <SheetDemoRight />
+          <SheetDemoLeft />
+          <SheetDemoTop />
+          <SheetDemoBottom />
         </div>
       </main>
     </div>

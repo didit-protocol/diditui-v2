@@ -1,5 +1,6 @@
 import { useState, useEffect, type ComponentType } from "react";
 import * as icons from "@diditui/icons-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@diditui/core";
 
 interface IconsProps {
   type?: "linear" | "bold";
@@ -69,14 +70,28 @@ export const Icons = ({ type = "linear" }: IconsProps) => {
       <div className="flex flex-wrap items-center justify-center gap-2">
         {type === "linear"
           ? regularIcons.map(({ name, component: IconComponent }) => (
-              <div key={name} title={name}>
-                <IconComponent size={24} className="mx-auto w-fit text-black" />
-              </div>
+              <Tooltip key={name}>
+                <TooltipTrigger asChild>
+                  <div className="bg-neutral-soft rounded-md p-3">
+                    <IconComponent size={24} className="mx-auto w-fit text-black" />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{name}</p>
+                </TooltipContent>
+              </Tooltip>
             ))
           : boldIcons.map(({ name, component: IconComponent }) => (
-              <div key={name} title={name}>
-                <IconComponent size={24} className="mx-auto w-fit text-black" />
-              </div>
+              <Tooltip key={name}>
+                <TooltipTrigger asChild>
+                  <div className="bg-neutral-soft rounded-md p-3">
+                    <IconComponent size={24} className="mx-auto w-fit text-black" />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{name}</p>
+                </TooltipContent>
+              </Tooltip>
             ))}
       </div>
     </div>

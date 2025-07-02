@@ -1,50 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
 @import "@diditui/core/theme.css";
 body {
   @apply bg-neutral-white text-neutral-black font-inter;
 }
 
+@layer components {
+  .gradient-gray-100-900 {
+    background: var(--gradient-gray-100-900);
+  }
 
-.gradient-gray-100-900 {
-  background: var(--gradient-gray-100-900);
-}
+  .gradient-gray-100-300 {
+    background: var(--gradient-gray-100-300);
+  }
 
-.gradient-gray-100-300 {
-  background: var(--gradient-gray-100-300);
-}
+  .gradient-gray-600-500 {
+    background: var(--gradient-gray-600-500);
+  }
 
-.gradient-gray-600-500 {
-  background: var(--gradient-gray-600-500);
-}
+  .gradient-gray-700-500 {
+    background: var(--gradient-gray-700-500);
+  }
 
-.gradient-gray-700-500 {
-  background: var(--gradient-gray-700-500);
-}
+  .gradient-gray-900-800 {
+    background: var(--gradient-gray-900-800);
+  }
 
-.gradient-gray-900-800 {
-  background: var(--gradient-gray-900-800);
-}
+  .gradient-brand-custom {
+    background: var(--gradient-brand-custom);
+  }
+  .gradient-brand-custom-2 {
+    background: var(--gradient-brand-custom-2);
+  }
 
-.gradient-brand-custom {
-  background: var(--gradient-brand-custom);
-}
-.gradient-brand-custom-2 {
-  background: var(--gradient-brand-custom-2);
-}
+  .gradient-brand-100-300 {
+    background: var(--gradient-brand-100-300);
+  }
 
-.gradient-brand-100-300 {
-  background: var(--gradient-brand-100-300);
-}
+  .gradient-brand-600-500 {
+    background: var(--gradient-brand-600-500);
+  }
 
-.gradient-brand-600-500 {
-  background: var(--gradient-brand-600-500);
-}
+  .gradient-brand-700-500 {
+    background: var(--gradient-brand-700-500);
+  }
 
-.gradient-brand-700-500 {
-  background: var(--gradient-brand-700-500);
-}
-
-.gradient-brand-900-800 {
-  background: var(--gradient-brand-900-800);
+  .gradient-brand-900-800 {
+    background: var(--gradient-brand-900-800);
+  }
 }
