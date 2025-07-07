@@ -9,7 +9,6 @@
   "ignore": [
     "@diditui/docs",
     "@diditui/web",
-    "@diditui/typescript-config",
-    "@diditui/eslint-config"
+    "v4"
   ]
 }
