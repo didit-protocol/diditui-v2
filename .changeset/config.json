@@ -8,7 +8,6 @@
   "updateInternalDependencies": "patch",
   "ignore": [
     "@diditui/docs",
-    "@diditui/web",
-    "v4"
+    "@diditui/web"
   ]
 }
