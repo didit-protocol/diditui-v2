@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { IconArrowLeft1, IconArrowDown, IconArrowRight1 } from "@diditui/icons-react";
+import { ArrowLeft1Icon, ArrowDownIcon, ArrowRight1Icon } from "@diditui/icons-react";
 import { DayButton, DayPicker, getDefaultClassNames } from "react-day-picker";
 import type { DateRange } from "react-day-picker";
 
@@ -66,9 +66,10 @@ function Calendar({
         dropdown: cn("absolute inset-0 opacity-0", defaultClassNames.dropdown),
         caption_label: cn(
           "text-paragraph-small text-neutral-mid-high select-none",
-          captionLayout === "label"
-            ? "text-sm"
-            : "[&>svg]:text-neutral-mid-high flex h-8 items-center gap-1 rounded-md pl-2 pr-1 [&>svg]:size-3.5",
+          {
+            "[&>svg]:text-neutral-mid-high flex h-8 items-center gap-1 rounded-md pl-2 pr-1 [&>svg]:size-3.5":
+              captionLayout !== "label",
+          },
           defaultClassNames.caption_label,
         ),
         table: "w-full border-collapse",
@@ -113,14 +114,14 @@ function Calendar({
         },
         Chevron: ({ className, orientation, ...props }) => {
           if (orientation === "left") {
-            return <IconArrowLeft1 className={cn("size-4", className)} {...props} />;
+            return <ArrowLeft1Icon className={cn("size-4", className)} {...props} />;
           }
 
           if (orientation === "right") {
-            return <IconArrowRight1 className={cn("size-4", className)} {...props} />;
+            return <ArrowRight1Icon className={cn("size-4", className)} {...props} />;
           }
 
-          return <IconArrowDown className={cn("size-2", className)} {...props} />;
+          return <ArrowDownIcon className={cn("size-2", className)} {...props} />;
         },
         DayButton: CalendarDayButton,
         WeekNumber: ({ children, ...props }) => {
@@ -156,7 +157,7 @@ function CalendarDayButton({
     "border border-transparent",
     "aria-invalid:ring-error-secondary aria-invalid:border-error-primary inline-flex",
     "rounded-xs shrink-0 items-center justify-center gap-2 outline-none transition-all",
-    "focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
+    "focus-visible:ring-fill-primary focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
     "[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
     "hover:bg-fill-tertiary size-9 whitespace-nowrap",
     "data-[selected-single=true]:bg-brand-primary data-[selected-single=true]:text-neutral-white",
@@ -165,7 +166,7 @@ function CalendarDayButton({
     "group-data-[focused=true]/day:border-neutral-ultrasoft group-data-[focused=true]/day:ring-brand-primary",
     "min-w-(--cell-size) flex aspect-square size-auto",
     "group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10",
-    "group-data-[focused=true]/day:ring-[3px] [&>span]:text-xs [&>span]:opacity-70",
+    "[&>span]:text-label-mid group-data-[focused=true]/day:ring-[3px] [&>span]:opacity-70",
     defaultClassNames.day,
     className,
   );

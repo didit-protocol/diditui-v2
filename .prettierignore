@@ -7,6 +7,10 @@
 **/storybook-static
 **/.storybook
 **/.turbo
+**/.next
+**/build
+**/node_modules
+**/.contentlayer
 
 
 **/tsconfig.json

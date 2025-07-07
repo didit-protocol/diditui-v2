@@ -9,6 +9,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export const switchVariants = tv({
   base: [
     "peer inline-flex items-center h-5 w-[46px] shrink-0 rounded-full",
+    "focus-visible:ring-[3px] focus-visible:ring-brand-primary",
     "data-[state=unchecked]:bg-fill-secondary outline-none",
     "transition-all disabled:cursor-not-allowed disabled:opacity-50 relative",
   ],

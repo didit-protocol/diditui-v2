@@ -14,7 +14,7 @@ const indexItemTemplate = ({ namePascal }) =>
   `export { default as ${namePascal} } from './${namePascal}';`;
 
 const aliasTemplate = ({ fromPascal, toPascal }) =>
-  `export { default as Icon${fromPascal} } from './icons/Icon${toPascal}';\n`;
+  `export { default as ${fromPascal}Icon } from './icons/${toPascal}Icon';\n`;
 
 buildJsIcons({
   name: 'icons-react',

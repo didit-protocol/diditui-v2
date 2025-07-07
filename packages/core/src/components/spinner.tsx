@@ -1,6 +1,6 @@
 "use client";
 
-import { IconSpinner, type IconProps } from "@diditui/icons-react";
+import { SpinnerIcon, type IconProps } from "@diditui/icons-react";
 
 import { cn } from "@/utils";
 import { tv, VariantProps } from "tailwind-variants";
@@ -25,7 +25,7 @@ type SpinnerVariants = VariantProps<typeof spinnerVariants>;
 type SpinnerProps = IconProps & SpinnerVariants;
 
 function Spinner({ className, size, ...props }: SpinnerProps) {
-  return <IconSpinner className={cn(spinnerVariants({ className, size }))} {...props} />;
+  return <SpinnerIcon className={cn(spinnerVariants({ className, size }))} {...props} />;
 }
 
 export { Spinner };

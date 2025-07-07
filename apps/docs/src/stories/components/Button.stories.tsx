@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 
 import { Button } from "@diditui/core";
-import { IconAddCircle } from "@diditui/icons-react";
+import { AddCircleIcon } from "@diditui/icons-react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -32,22 +32,10 @@ const meta = {
     },
     size: {
       control: "select",
-      options: ["medium", "large"],
-      defaultValue: "medium",
+      options: ["md", "lg", "icon"],
+      defaultValue: "md",
     },
     disabled: {
-      control: "boolean",
-      defaultValue: false,
-    },
-    rounded: {
-      control: "boolean",
-      defaultValue: false,
-    },
-    reversed: {
-      control: "boolean",
-      defaultValue: false,
-    },
-    leftAlign: {
       control: "boolean",
       defaultValue: false,
     },
@@ -62,22 +50,29 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: "primary",
-    label: "Create App",
+    children: "Create App",
   },
 };
 
 export const WithIcon: Story = {
   args: {
     variant: "secondary",
-    label: "Create App",
-    icon: IconAddCircle,
+    children: (
+      <>
+        <AddCircleIcon />
+        <span>Create App</span>
+      </>
+    ),
   },
 };
 export const WithIconReversed: Story = {
   args: {
     variant: "destructive",
-    label: "Create App",
-    icon: IconAddCircle,
-    reversed: true,
+    children: (
+      <>
+        <AddCircleIcon />
+        <span>Create App</span>
+      </>
+    ),
   },
 };

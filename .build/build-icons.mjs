@@ -3,6 +3,22 @@ import path from 'path';
 import { PACKAGES_DIR, getAliases, toPascalCase, getAllIcons } from './helpers.mjs';
 import { stringify } from 'svgson';
 
+const kebabToCamelCase = (str) => {
+  return str.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+};
+
+const convertSVGAttributesToCamelCase = (attributes) => {
+  const convertedAttributes = {};
+
+  Object.keys(attributes).forEach(key => {
+    // Convert kebab-case to camelCase
+    const camelCaseKey = kebabToCamelCase(key);
+    convertedAttributes[camelCaseKey] = attributes[key];
+  });
+
+  return convertedAttributes;
+};
+
 /**
  * Build icons
  *
@@ -42,8 +58,7 @@ export const buildJsIcons = ({
           }
 
           if (pascalCase) {
-            attributes.strokeWidth = attributes['stroke-width'];
-            delete attributes['stroke-width'];
+            attributes = convertSVGAttributesToCamelCase(attributes);
           }
 
           return [name, attributes];

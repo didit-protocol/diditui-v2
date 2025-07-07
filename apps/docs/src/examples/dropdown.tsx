@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
   type DropdownMenuCheckboxItemProps,
 } from "@diditui/core";
-import { IconAddCircle, IconLogout1 } from "@diditui/icons-react";
+import { AddCircleIcon, Logout1Icon } from "@diditui/icons-react";
 import { useState } from "react";
 
 export function DropdownMenuDemo() {
@@ -35,9 +35,7 @@ export function DropdownMenuDemo() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger className="text-neutral-mid-high">
-              Invite users
-            </DropdownMenuSubTrigger>
+            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuItem>Email</DropdownMenuItem>
@@ -49,16 +47,16 @@ export function DropdownMenuDemo() {
             </DropdownMenuPortal>
           </DropdownMenuSub>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-neutral-mid-high">Account settings</DropdownMenuItem>
+          <DropdownMenuItem>Account settings</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-neutral-mid-high">
+          <DropdownMenuItem>
             Create organization
-            <IconAddCircle />
+            <AddCircleIcon />
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem variant="destructive">
             Log out
-            <IconLogout1 />
+            <Logout1Icon />
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

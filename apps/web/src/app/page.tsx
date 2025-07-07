@@ -1,8 +1,23 @@
 "use client";
 
 import { Button, cn, Spinner } from "@diditui/core";
-import { Icon3dcubeBold, IconAddCircle } from "@diditui/icons-react";
+import { Cube3dIconBold, AddCircleIcon } from "@diditui/icons-react";
 import { SheetDemoLeft, SheetDemoRight, SheetDemoTop, SheetDemoBottom } from "./components/Sheet";
+import { TeamSwitcher } from "./components/team-switcher";
+
+const teams = [
+  {
+    name: "Team 1",
+    logo: "https://github.com/shadcn.png",
+    plan: "",
+  },
+
+  {
+    name: "Team 2",
+    logo: "https://github.com/shadcn.png",
+    plan: "3 members - 19.234 verifications",
+  },
+];
 
 export default function Home() {
   const colorCard = cn(
@@ -11,6 +26,9 @@ export default function Home() {
   return (
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-[32px] sm:items-start">
+        <div>
+          <TeamSwitcher teams={teams} />
+        </div>
         <div className="flex flex-col gap-2">
           <div>
             <h1 className="text-display-large">Display Large Web Desktop</h1>
@@ -227,169 +245,169 @@ export default function Home() {
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
           <Button variant="primary" size="lg">
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Deploy now</span>
           </Button>
           <Button variant="secondary" size="lg">
             <span>Deploy now</span>
           </Button>
           <Button variant="tertiary" size="lg">
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Deploy now</span>
           </Button>
           <Button variant="destructive" size="lg">
             <span>Deploy now</span>
           </Button>
           <Button variant="destructive_secondary" size="lg">
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Deploy now</span>
           </Button>
           <Button variant="success" size="lg">
             <span>Deploy now</span>
           </Button>
           <Button variant="ghost" size="lg">
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Deploy now</span>
           </Button>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
           <Button variant="primary" size="lg" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Deploy now</span>
           </Button>
           <Button variant="secondary" size="lg" isLoading>
             <span>Deploy now</span>
           </Button>
           <Button variant="tertiary" size="lg" isLoading>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Deploy now</span>
           </Button>
           <Button variant="destructive" size="lg" isLoading>
             <span>Deploy now</span>
           </Button>
           <Button variant="destructive_secondary" size="lg" isLoading>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Deploy now</span>
           </Button>
           <Button variant="success" size="lg" isLoading>
             <span>Deploy now</span>
           </Button>
           <Button variant="ghost" size="lg" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Deploy now</span>
           </Button>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
           <Button variant="primary" size="md">
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="secondary" size="md">
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="tertiary" size="md">
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Button</span>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
           </Button>
           <Button variant="destructive" size="md">
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="destructive_secondary" size="md">
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Button</span>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
           </Button>
           <Button variant="success" size="md">
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="ghost" size="md">
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
           <Button variant="primary" size="md" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
           </Button>
           <Button variant="secondary" size="md" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
           </Button>
           <Button variant="tertiary" size="md" isLoading>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Button</span>
           </Button>
           <Button variant="destructive" size="md" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
           </Button>
           <Button variant="destructive_secondary" size="md" isLoading>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
             <span>Button</span>
           </Button>
           <Button variant="success" size="md" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
           </Button>
           <Button variant="ghost" size="md" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
             <span>Button</span>
           </Button>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
           <Button variant="primary" size="icon">
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="secondary" size="icon">
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="tertiary" size="icon">
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
           </Button>
           <Button variant="destructive" size="icon">
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="destructive_secondary" size="icon">
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
           </Button>
           <Button variant="success" size="icon">
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="ghost" size="icon">
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
           <Button variant="primary" size="icon" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="secondary" size="icon" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="tertiary" size="icon" isLoading>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
           </Button>
           <Button variant="destructive" size="icon" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="destructive_secondary" size="icon" isLoading>
-            <Icon3dcubeBold />
+            <Cube3dIconBold />
           </Button>
           <Button variant="success" size="icon" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
           <Button variant="ghost" size="icon" isLoading>
-            <IconAddCircle />
+            <AddCircleIcon />
           </Button>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">

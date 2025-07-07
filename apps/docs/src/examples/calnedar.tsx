@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { IconCalendar } from "@diditui/icons-react";
+import { CalendarIcon } from "@diditui/icons-react";
 import {
   Button,
   Calendar,
@@ -107,7 +107,7 @@ export function CalendarPopover() {
             className="bg-neutral-white [&>svg]:text-neutral-high text-paragraph-mid text-neutral-mid-high border-neutral-soft w-48 justify-between p-4 [&>svg]:size-5"
           >
             {date ? date.toLocaleDateString() : "Select date"}
-            <IconCalendar />
+            <CalendarIcon />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto overflow-hidden p-0" align="end" side="bottom">

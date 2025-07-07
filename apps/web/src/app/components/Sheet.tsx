@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@diditui/core";
+import { Save2Icon } from "@diditui/icons-react";
 
 export function SheetDemoRight() {
   return (
@@ -24,7 +25,7 @@ export function SheetDemoRight() {
             Make changes to your profile here. Click save when you&apos;re done.
           </SheetDescription>
         </SheetHeader>
-        <div className="grid flex-1 auto-rows-min gap-6 border px-4">
+        <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-name">Name</Label>
             {/* <Input id="sheet-demo-name" defaultValue="Pedro Duarte" /> */}
@@ -35,9 +36,14 @@ export function SheetDemoRight() {
           </div>
         </div>
         <SheetFooter>
-          <Button type="submit">Save changes</Button>
+          <Button size="lg" type="submit">
+            <span>Save changes</span>
+            <Save2Icon />
+          </Button>
           <SheetClose asChild>
-            <Button variant="secondary">Close</Button>
+            <Button size="lg" variant="secondary">
+              Close
+            </Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

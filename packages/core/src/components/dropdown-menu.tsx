@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { IconArrowRight1, IconCircle } from "@diditui/icons-react";
+import { ArrowRight1Icon, CircleIcon } from "@diditui/icons-react";
 export type { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 
 import { cn } from "@/utils";
@@ -70,13 +70,14 @@ function DropdownMenuItem({
   variant?: "default" | "destructive";
 }) {
   const itemClassName = cn(
-    "outline-hidden text-paragraph-small text-neutral-high font-normal",
-    "relative flex h-12 cursor-default select-none items-center justify-between gap-2 px-4 font-normal",
+    "outline-hidden text-paragraph-small-regular text-neutral-mid-high rounded-sm",
+    "relative flex min-h-12 cursor-default select-none items-center justify-between gap-2 px-4",
     "focus:bg-neutral-ultrasoft focus:text-neutral-high data-[disabled]:pointer-events-none",
     "data-[variant=destructive]:text-error-primary data-[variant=destructive]:focus:bg-surface-error-secondary/50",
     "data-[variant=destructive]:focus:text-error-primary data-[variant=destructive]:*:[svg]:!text-error-primary",
     "data-[inset]:pl-8 data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-5",
     "truncate whitespace-nowrap [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    "[&_span]:truncate [&_span]:whitespace-nowrap",
     className,
   );
   return (
@@ -99,7 +100,9 @@ function DropdownMenuCheckboxItem({
   const checkboxItemClassName = cn(
     "focus:bg-neutral-ultrasoft focus:text-neutral-high outline-hidden relative flex",
     "h-12 cursor-default select-none items-center justify-between gap-2 px-4",
-    "text-paragraph-small data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    "text-paragraph-small text-neutral-high data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    "truncate whitespace-nowrap [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    "[&_svg:not([class*='size-'])]:size-3",
     className,
   );
 
@@ -125,23 +128,36 @@ function DropdownMenuRadioGroup({
 function DropdownMenuRadioItem({
   className,
   children,
+  spellCheck,
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>) {
+  const radioItemClassName = cn(
+    "focus:bg-neutral-ultrasoft focus:text-neutral-high outline-hidden relative flex",
+    "h-12 cursor-default select-none items-center justify-between gap-2 px-4",
+    "text-paragraph-small text-neutral-high data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    "truncate whitespace-nowrap [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    "[&_svg:not([class*='size-'])]:size-3",
+    className,
+  );
+
+  const indicatorClassName = cn(
+    "border-fill-secondary text-primary data-[state=checked]:border-brand-primary",
+    "shadow-xs aspect-square size-4 shrink-0 rounded-full border-2 outline-none",
+    "flex items-center justify-center transition-[color,box-shadow]",
+  );
   return (
     <DropdownMenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
-      className={cn(
-        "focus:bg-accent focus:text-accent-foreground outline-hidden relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        className,
-      )}
+      className={radioItemClassName}
+      spellCheck={spellCheck}
       {...props}
     >
-      <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
+      {children}
+      <span className={indicatorClassName}>
         <DropdownMenuPrimitive.ItemIndicator>
-          <IconCircle className="size-2 fill-current" />
+          <CircleIcon className="fill-brand-primary size-2.5 text-transparent" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
-      {children}
     </DropdownMenuPrimitive.RadioItem>
   );
 }
@@ -192,10 +208,10 @@ function DropdownMenuSubTrigger({
   inset?: boolean;
 }) {
   const subTriggerClassName = cn(
-    "flex items-center justify-between",
-    "focus:bg-neutral-ultrasoft focus:text-neutral-high outline-hidden flex cursor-default",
+    "text-paragraph-small-regular text-neutral-black flex items-center justify-between",
+    "focus:bg-neutral-ultrasoft focus:text-neutral-high outline-hidden cursor-default",
     "data-[state=open]:bg-neutral-ultrasoft data-[state=open]:text-neutral-high",
-    "text-paragraph-small h-12 select-none px-4 data-[inset]:pl-8",
+    "h-12 select-none px-4 data-[inset]:pl-8",
     className,
   );
   return (
@@ -206,7 +222,7 @@ function DropdownMenuSubTrigger({
       {...props}
     >
       {children}
-      <IconArrowRight1 className="ml-auto size-4" />
+      <ArrowRight1Icon className="ml-auto size-4" />
     </DropdownMenuPrimitive.SubTrigger>
   );
 }

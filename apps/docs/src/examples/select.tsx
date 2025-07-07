@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@diditui/core";
-import { IconData2 } from "@diditui/icons-react";
+import { Data2Icon } from "@diditui/icons-react";
 
 const fruits = [
   { label: "Apple", value: "apple" },
@@ -54,7 +54,7 @@ export function SelectExampleWithIcons() {
             <>
               <SelectItem key={option} value={option}>
                 <div className="flex items-center gap-1.5">
-                  <IconData2 className="text-neutral-mid size-4" />
+                  <Data2Icon className="text-neutral-mid size-4" />
                   {option}
                 </div>
               </SelectItem>

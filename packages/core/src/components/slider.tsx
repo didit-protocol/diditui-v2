@@ -10,7 +10,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 const thumbVariants = tv({
   base: [
     "bg-neutral-white focus-visible:outline-hidden block  shrink-0 rounded-full",
-    "ring-fill-tertiary shadow-md transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4",
+    "ring-fill-primary shadow-md transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4",
     "disabled:pointer-events-none disabled:opacity-50",
   ],
   variants: {

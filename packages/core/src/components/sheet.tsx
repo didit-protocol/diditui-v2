@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
-import { IconClose } from "@diditui/icons-react";
+import { CloseIcon } from "@diditui/icons-react";
 
 import { cn } from "@/utils";
 import { Button } from "./button";
@@ -73,7 +73,7 @@ function SheetContent({
             size="icon"
             className="bg-neutral-soft text-neutral-mid absolute right-4 top-4"
           >
-            <IconClose className="text-bg-neutral-mid size-full" />
+            <CloseIcon className="text-bg-neutral-mid size-full" />
             <span className="sr-only">Close</span>
           </Button>
         </SheetPrimitive.Close>

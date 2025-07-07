@@ -5,10 +5,10 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 
 import { cn } from "@/utils";
 import {
-  IconArrowDown,
-  IconArrowUp1,
-  IconChevronDown,
-  IconTickCircleBold,
+  ArrowDownIcon,
+  ArrowUp1Icon,
+  ChevronDownIcon,
+  TickCircleIconBold,
 } from "@diditui/icons-react";
 
 function Select({ ...props }: React.ComponentProps<typeof SelectPrimitive.Root>) {
@@ -33,7 +33,7 @@ function SelectTrigger({
 }) {
   const triggerClassName = cn(
     "data-[placeholder]:text-neutral-mid-soft text-neutral-black text-paragraph-mid font-normal",
-    "focus-visible:border-neutral-mid-soft focus-visible:ring-neutral-soft",
+    "focus-visible:border-neutral-mid-soft focus-visible:ring-fill-primary",
     "aria-invalid:ring-surface-error-secondary aria-invalid:border-error-primary",
     "border-neutral-soft flex w-fit items-center justify-between gap-6 rounded-sm border",
     "truncate whitespace-nowrap bg-transparent p-4 outline-none transition-[color,box-shadow]",
@@ -51,7 +51,7 @@ function SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <IconChevronDown className="text-neutral-black pointer-events-none size-5 shrink-0 opacity-50" />
+        <ChevronDownIcon className="text-neutral-black pointer-events-none size-5 shrink-0 opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );
@@ -133,7 +133,7 @@ function SelectItem({
       </SelectPrimitive.ItemText>
       <span className="flex shrink-0 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <IconTickCircleBold className="text-brand-primary size-5" />
+          <TickCircleIconBold className="text-brand-primary size-5" />
         </SelectPrimitive.ItemIndicator>
       </span>
     </SelectPrimitive.Item>
@@ -163,7 +163,7 @@ function SelectScrollUpButton({
       className={cn("flex cursor-default items-center justify-center py-1", className)}
       {...props}
     >
-      <IconArrowUp1 className="text-neutral-mid-soft size-4" />
+      <ArrowUp1Icon className="text-neutral-mid-soft size-4" />
     </SelectPrimitive.ScrollUpButton>
   );
 }
@@ -178,7 +178,7 @@ function SelectScrollDownButton({
       className={cn("flex cursor-default items-center justify-center py-1", className)}
       {...props}
     >
-      <IconArrowDown className="text-neutral-mid-soft size-4" />
+      <ArrowDownIcon className="text-neutral-mid-soft size-4" />
     </SelectPrimitive.ScrollDownButton>
   );
 }

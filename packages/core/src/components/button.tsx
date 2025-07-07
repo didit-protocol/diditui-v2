@@ -5,19 +5,22 @@ import { cn } from "@/utils";
 import { tv, type VariantProps } from "tailwind-variants";
 
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { IconSpinner } from "@diditui/icons-react";
+import { SpinnerIcon } from "@diditui/icons-react";
 
 export const buttonVariants = tv({
   base: [
-    "flex items-center justify-center gap-2 max-w-[256px]",
+    "inline-flex items-center justify-center gap-2 max-w-[256px]",
     "text-link-button whitespace-nowrap cursor-pointer border border-transparent",
-    "transition-colors duration-200 ease-in-out",
+    "transition-colors duration-200 ease-in-out shrink-0 [&_svg]:shrink-0",
+    "disabled:pointer-events-none disabled:text-neutral-mid-soft disabled:bg-neutral-ultrasoft",
+    "focus-visible:border-surface-brand-secondary focus-visible:ring-fill-primary focus-visible:ring-[3px]",
+    "aria-invalid:ring-surface-error-secondary aria-invalid:border-error-primary [&_svg]:pointer-events-none",
   ],
   variants: {
     size: {
-      icon: "rounded-full size-8 [&>svg]:size-4.5",
-      md: "rounded-full py-1.5 px-3 h-8 [&>svg]:size-4",
-      lg: "py-2.5 px-3 h-12 rounded-sm [&>svg]:size-6",
+      icon: "rounded-full size-8 [&_svg:not([class*='size-'])]:size-4.5",
+      md: "rounded-full py-1.5 px-3 h-8 [&_svg:not([class*='size-'])]:size-4",
+      lg: "py-2.5 px-3 h-12 rounded-sm [&_svg:not([class*='size-'])]:size-6",
     },
     variant: {
       primary:
@@ -36,7 +39,7 @@ export const buttonVariants = tv({
         "text-neutral-mid hover:bg-neutral-ultrasoft focus:outline-1 focus:outline-neutral-soft focus:border-neutral-white focus:bg-neutral-ultrasoft",
     },
     disabled: {
-      true: "pointer-events-none opacity-50",
+      true: "pointer-events-none text-neutral-mid-soft bg-neutral-ultrasoft",
     },
     isLoading: {
       true: "pointer-events-none",
@@ -44,14 +47,24 @@ export const buttonVariants = tv({
   },
   compoundVariants: [
     {
-      variant: ["primary", "tertiary"],
+      variant: ["secondary"],
       disabled: true,
-      class: "text-neutral-mid-soft bg-neutral-ultrasoft",
+      class: "border-neutral-mid-soft",
     },
     {
-      variant: "secondary",
+      variant: ["tertiary"],
       disabled: true,
-      class: "text-neutral-mid-soft bg-neutral-ultrasoft border-neutral-mid-soft",
+      class: "text-neutral-mid",
+    },
+    {
+      variant: "destructive_secondary",
+      disabled: true,
+      class: "bg-transparent text-surface-error-secondary border-surface-error-secondary",
+    },
+    {
+      variant: ["ghost"],
+      disabled: true,
+      class: "bg-transparent",
     },
   ],
 });
@@ -66,8 +79,8 @@ type ButtonProps = React.ComponentProps<"button"> &
 export const Button = ({
   size = "md",
   variant = "primary",
-  disabled = false,
   className,
+  disabled = false,
   asChild,
   isLoading = false,
   children,
@@ -81,7 +94,7 @@ export const Button = ({
       {...props}
     >
       {size === "icon" && isLoading ? null : <Slottable>{children}</Slottable>}
-      {isLoading && <IconSpinner className="animate-spin" />}
+      {isLoading && <SpinnerIcon className="animate-spin" />}
     </Comp>
   );
 };

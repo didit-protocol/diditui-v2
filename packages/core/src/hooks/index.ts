@@ -1,1 +1,1 @@
-export const useCCC = () => "CCC";
+export * from "./use-mobile";

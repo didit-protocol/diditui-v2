@@ -17,3 +17,6 @@ export * from "./separator";
 export * from "./skeleton";
 export * from "./sheet";
 export * from "./spinner";
+export * from "./tabs";
+export * from "./sonner";
+export * from "./sidebar";
