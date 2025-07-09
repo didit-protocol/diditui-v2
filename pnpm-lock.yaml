@@ -124,8 +124,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/eslint-config
       '@storybook/addon-a11y':
-        specifier: ^9.0.13
-        version: 9.0.13(storybook@9.0.13)
+        specifier: ^9.0.16
+        version: 9.0.16(storybook@9.0.13)
       '@storybook/addon-docs':
         specifier: ^9.0.15
         version: 9.0.16(@types/react@19.1.8)(storybook@9.0.13)
@@ -3554,10 +3554,10 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /@storybook/addon-a11y@9.0.13(storybook@9.0.13):
-    resolution: {integrity: sha512-MVkfZx7ZeAOMGzeRLH6Rf2NMMA5ubTRR8EzW0x0kGXIfYhZxRj+hDEZl3ggMUo+A30w+hOi4d8OGFfWm45DTeg==}
+  /@storybook/addon-a11y@9.0.16(storybook@9.0.13):
+    resolution: {integrity: sha512-pi9ipxhs9bA2yCHDGp2+yWy6E2LywDFTqWcFh3aw/LRxnlRTf52QiVJkWpJbNFEXgk4QrKVrAruf9LLiXpTcOA==}
     peerDependencies:
-      storybook: ^9.0.13
+      storybook: ^9.0.16
     dependencies:
       '@storybook/global': 5.0.0
       axe-core: 4.10.3
