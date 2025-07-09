@@ -1,8 +1,6 @@
 # Tabler Icons for React
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/tabler/tabler-icons/main/.github/packages/og-package-react.png" alt="Tabler Icons" width="838">
-</p>
+![icons-react](https://github.com/user-attachments/assets/db8fff16-ebbe-4454-8236-fe90e5d00c41)
 
 <p align="center">
 Implementation of the Tabler Icons library for React applications.
