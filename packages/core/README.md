@@ -2,7 +2,7 @@
 
 Accessible and customizable components that you can copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
-![hero](apps/www/public/og.jpg)
+![cover](https://github.com/user-attachments/assets/2ded346b-2427-4b04-82d9-d40de8a6c9b4)
 
 ## Installation
 
@@ -124,7 +124,17 @@ Add the following to your styles/globals.css file.
 
 You can now start adding components to your project.
 
-</Steps>
+```tsx showLineNumbers title="app/index.tsx"
+import { Button } from "diditui/core";
+
+export default function Page() {
+  return (
+    <div>
+      <Button variant="primary" size="md"> Create App </Buttom>
+    </div>
+  );
+}
+```
 
 <!-- ## Documentation
 
