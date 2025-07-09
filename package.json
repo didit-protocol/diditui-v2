@@ -56,7 +56,7 @@
     "minimist": "1.2.8",
     "parse-svg-path": "^0.1.2",
     "path": "^0.12.7",
-    "prettier": "^3.2.5",
+    "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.13",
     "rollup": "^4.12.0",
     "rollup-plugin-dts": "^6.1.0",
