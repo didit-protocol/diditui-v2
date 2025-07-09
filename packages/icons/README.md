@@ -1,8 +1,6 @@
-# Tabler Icons
+# Didit Icons
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/tabler/tabler-icons/main/.github/packages/og-core.png" alt="Tabler Icons" width="838">
-</p>
+![Money](https://github.com/user-attachments/assets/81b365d8-8e66-4a3e-99c2-06deed491558)
 
 <p align="center">
     A set of <!--icons-count-->5944<!--/icons-count--> free MIT-licensed high-quality SVG icons for you to use in your web projects. Each icon is designed on a 24x24 grid and a 2px stroke.
