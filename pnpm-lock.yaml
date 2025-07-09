@@ -127,8 +127,8 @@ importers:
         specifier: ^9.0.13
         version: 9.0.13(storybook@9.0.13)
       '@storybook/addon-docs':
-        specifier: ^9.0.13
-        version: 9.0.13(@types/react@19.1.8)(storybook@9.0.13)
+        specifier: ^9.0.15
+        version: 9.0.15(@types/react@19.1.8)(storybook@9.0.13)
       '@storybook/addon-vitest':
         specifier: ^9.0.13
         version: 9.0.13(@vitest/browser@3.2.4)(react-dom@19.1.0)(react@19.1.0)(storybook@9.0.13)(vitest@3.2.4)
@@ -3242,15 +3242,15 @@ packages:
       storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.5.3)
     dev: true
 
-  /@storybook/addon-docs@9.0.13(@types/react@19.1.8)(storybook@9.0.13):
-    resolution: {integrity: sha512-e9mCzgxsSz/FIHz08Gex71jF2tz5WNPgSxEg6Lb8jMWbfdgb2lEFyby/RV5qj8ajTXhheiGKZ3K9JESfLWm0ng==}
+  /@storybook/addon-docs@9.0.15(@types/react@19.1.8)(storybook@9.0.13):
+    resolution: {integrity: sha512-HOb45DkF23T1tRzakb9q33qnBRso15S/GM28ippPZWi5ZXR9RAyKVgOSMA/ViEpK4ezASxN+Tee+H7m4ksEFZw==}
     peerDependencies:
-      storybook: ^9.0.13
+      storybook: ^9.0.15
     dependencies:
       '@mdx-js/react': 3.1.0(@types/react@19.1.8)(react@19.1.0)
-      '@storybook/csf-plugin': 9.0.13(storybook@9.0.13)
+      '@storybook/csf-plugin': 9.0.15(storybook@9.0.13)
       '@storybook/icons': 1.4.0(react-dom@19.1.0)(react@19.1.0)
-      '@storybook/react-dom-shim': 9.0.13(react-dom@19.1.0)(react@19.1.0)(storybook@9.0.13)
+      '@storybook/react-dom-shim': 9.0.15(react-dom@19.1.0)(react@19.1.0)(storybook@9.0.13)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.5.3)
@@ -3307,6 +3307,15 @@ packages:
       unplugin: 1.16.1
     dev: true
 
+  /@storybook/csf-plugin@9.0.15(storybook@9.0.13):
+    resolution: {integrity: sha512-KszyGjrocMiNbkmpBGARF1ugLYMVaw1J8Z31kmwTHsMgMZwAKcOsofJ0fPgFno0yV59DUVkWxVBdPs9V0hhvxA==}
+    peerDependencies:
+      storybook: ^9.0.15
+    dependencies:
+      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.5.3)
+      unplugin: 1.16.1
+    dev: true
+
   /@storybook/global@5.0.0:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
     dev: true
@@ -3328,6 +3337,18 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^9.0.13
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.5.3)
+    dev: true
+
+  /@storybook/react-dom-shim@9.0.15(react-dom@19.1.0)(react@19.1.0)(storybook@9.0.13):
+    resolution: {integrity: sha512-X5VlYKoZSIMU9HEshIwtNzp41nPt4kiJtJ2c5HzFa5F6M8rEHM5n059CGcCZQqff3FnZtK/y6v/kCVZO+8oETA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
+      storybook: ^9.0.15
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
