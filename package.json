@@ -64,7 +64,7 @@
     "rollup-plugin-filesize": "10.0.0",
     "rollup-plugin-license": "^3.2.0",
     "rollup-plugin-peer-deps-external": "2.2.4",
-    "rollup-plugin-visualizer": "^5.12.0",
+    "rollup-plugin-visualizer": "^6.0.3",
     "slash": "^5.1.0",
     "svgo": "^4.0.0",
     "svgpath": "^2.6.0",
