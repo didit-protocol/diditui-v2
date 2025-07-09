@@ -1,54 +1,131 @@
-# React + TypeScript + Vite
+# shadcn/ui
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Accessible and customizable components that you can copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
-Currently, two official plugins are available:
+![hero](apps/www/public/og.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+### Add Tailwind CSS 4
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
+
+### Add dependencies
+
+Add the following dependencies to your project:
+
+```bash
+npm install  @diditui/icons-react @diditui/core tw-animate-css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Add `Inter` font
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Next js
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Use [next/font](https://nextjs.org/docs/app/getting-started/fonts) module to add the font in your nextjs app
+
+```tsx showLineNumbers title="app/layout.tsx"
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={inter.className}>
+      <body>{children}</body>
+    </html>
+  );
+}
 ```
+
+#### Google Font `css @import`
+
+```css showLineNumbers title="src/styles/globals.css"
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@diditui/core/theme.css";
+...
+```
+
+### Configure styles
+
+Add the following to your styles/globals.css file.
+
+<CodeCollapsibleWrapper>
+
+```css showLineNumbers title="src/styles/globals.css"
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@diditui/core/theme.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  body {
+    @apply font-inter bg-neutral-white text-neutral-black;
+  }
+}
+
+@layer components {
+  .gradient-gray-100-900 {
+    background: var(--gradient-gray-100-900);
+  }
+
+  .gradient-gray-100-300 {
+    background: var(--gradient-gray-100-300);
+  }
+
+  .gradient-gray-600-500 {
+    background: var(--gradient-gray-600-500);
+  }
+
+  .gradient-gray-700-500 {
+    background: var(--gradient-gray-700-500);
+  }
+
+  .gradient-gray-900-800 {
+    background: var(--gradient-gray-900-800);
+  }
+
+  .gradient-brand-custom {
+    background: var(--gradient-brand-custom);
+  }
+  .gradient-brand-custom-2 {
+    background: var(--gradient-brand-custom-2);
+  }
+
+  .gradient-brand-100-300 {
+    background: var(--gradient-brand-100-300);
+  }
+
+  .gradient-brand-600-500 {
+    background: var(--gradient-brand-600-500);
+  }
+
+  .gradient-brand-700-500 {
+    background: var(--gradient-brand-700-500);
+  }
+
+  .gradient-brand-900-800 {
+    background: var(--gradient-brand-900-800);
+  }
+}
+```
+
+</CodeCollapsibleWrapper>
+
+### That's it
+
+You can now start adding components to your project.
+
+</Steps>
+
+<!-- ## Documentation
+
+Visit https://ui.shadcn.com/docs/cli to view the documentation. -->

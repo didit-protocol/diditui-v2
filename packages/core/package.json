@@ -1,8 +1,10 @@
 {
   "name": "@diditui/core",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/core.umd.js",
   "module": "./dist/core.es.js",
   "types": "./dist/index.d.ts",

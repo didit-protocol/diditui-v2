@@ -1,57 +1,44 @@
-# Tabler Icons for React
+# Didit Icons for React
 
 ![icons-react](https://github.com/user-attachments/assets/db8fff16-ebbe-4454-8236-fe90e5d00c41)
 
 <p align="center">
-Implementation of the Tabler Icons library for React applications.
+Implementation of the Didit Icons library for React applications.
 <p>
 
 <p align="center">
-  <a href="https://tabler-icons.io/"><strong>Browse all icons at tabler-icons.io &rarr;</strong></a>
+    <a href="https://github.com/keddib/diditui/releases"><img src="https://img.shields.io/npm/v/@diditui/icons-react" alt="Latest Release"></a>
 </p>
-
-<p align="center">
-    <a href="https://github.com/tabler/tabler-icons/releases"><img src="https://img.shields.io/npm/v/@tabler/icons" alt="Latest Release"></a>
-    <a href="https://github.com/tabler/tabler-icons/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@tabler/icons.svg" alt="License"></a>
-</p>
-
-## Sponsors
-
-**If you want to support my project and help me grow it, you can [become a sponsor on GitHub](https://github.com/sponsors/codecalm) or just [donate on PayPal](https://paypal.me/codecalm) :)**
-
-<a href="https://github.com/sponsors/codecalm">
-  <img src="https://cdn.jsdelivr.net/gh/tabler/sponsors@latest/sponsors.svg" alt="Tabler sponsors">
-</a>
 
 ## Installation
 
 ```
-yarn add @tabler/icons-react
+pnpm install @diditui/icons-react
 ```
 
 or
 
 ```
-npm install @tabler/icons-react
+yarn add @diditui/icons-react
 ```
 
 or
 
 ```
-pnpm install @tabler/icons-react
+npm install @diditui/icons-react
 ```
 
-or just [download from Github](https://github.com/tabler/tabler-icons/releases).
+or just [download from Github](https://github.com/keddib/diditui/releases).
 
 ## How to use
 
 It's build with ESmodules so it's completely tree-shakable. Each icon can be imported as a component.
 
 ```js
-import { IconArrowLeft } from '@tabler/icons-react';
+import { ArrowLeftIcom } from "@diditui/icons-react";
 
 const App = () => {
-  return <IconArrowLeft />;
+  return <ArrowLeftIcom />;
 };
 
 export default App;
@@ -60,27 +47,13 @@ export default App;
 You can pass additional props to adjust the icon.
 
 ```js
-<IconArrowLeft color="red" size={48} />
+<ArrowLeftIcom color="red" size={48} />
 ```
 
 ### Props
 
-| name          | type     | default      |
-| ------------- | -------- | ------------ |
-| `size`        | _Number_ | 24           |
-| `color`       | _String_ | currentColor |
-| `stroke`      | _Number_ | 2            |
-
-## Contributing
-
-For more info on how to contribute please see the [contribution guidelines](https://github.com/tabler/tabler-icons/blob/main/CONTRIBUTING.md).
-
-Caught a mistake or want to contribute to the documentation? [Edit this page on Github](https://github.com/tabler/tabler-icons/blob/main/packages/icons-react/README.md)
-
-## License
-
-Tabler Icons is licensed under the [MIT License](https://github.com/tabler/tabler-icons/blob/master/LICENSE).
-
-## Sponsor Tabler
-
-<a href="https://github.com/sponsors/codecalm" target="_blank"><img src="https://github.com/tabler/tabler/raw/dev/src/static/sponsor-banner-readme.png?raw=true" alt="Sponsor Tabler" /></a>
+| name     | type     | default      |
+| -------- | -------- | ------------ |
+| `size`   | _Number_ | 24           |
+| `color`  | _String_ | currentColor |
+| `stroke` | _Number_ | 2            |
