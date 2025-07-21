@@ -1,4 +1,4 @@
-# shadcn/ui
+# Didit/ui
 
 Accessible and customizable components that you can copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
@@ -17,7 +17,7 @@ Components are styled using Tailwind CSS. You need to install Tailwind CSS in yo
 Add the following dependencies to your project:
 
 ```bash
-npm install  @diditui/icons-react @diditui/core tw-animate-css
+pnpm add  @diditui/icons-react @diditui/core tw-animate-css
 ```
 
 ### Add `Inter` font

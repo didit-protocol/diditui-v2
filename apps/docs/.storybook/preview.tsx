@@ -1,4 +1,6 @@
+import React from 'react';
 import type { Preview } from '@storybook/react-vite'
+import { Toaster } from '@diditui/core';
 import '../src/tailwind.css';
 
 const preview: Preview = {
@@ -17,6 +19,14 @@ const preview: Preview = {
       test: 'todo'
     }
   },
+  decorators: [
+    (Story) => (
+      <div>
+        <Story />
+        <Toaster />
+      </div>
+    ),
+  ],
 };
 
 export default preview;

@@ -32,12 +32,16 @@ function SelectTrigger({
   size?: "sm" | "default";
 }) {
   const triggerClassName = cn(
-    "data-[placeholder]:text-neutral-mid-soft text-neutral-black text-paragraph-mid font-normal",
-    "focus-visible:border-neutral-mid-soft focus-visible:ring-fill-primary",
-    "aria-invalid:ring-surface-error-secondary aria-invalid:border-error-primary",
-    "border-neutral-soft flex w-fit items-center justify-between gap-6 rounded-sm border",
-    "truncate whitespace-nowrap bg-transparent p-4 outline-none transition-[color,box-shadow]",
-    "focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+    "data-[placeholder]:text-neutral-mid-soft text-paragraph-mid h-12",
+    "border-neutral-soft hover:border-neutral-high flex w-fit items-center justify-between gap-6 rounded-sm border",
+    "truncate whitespace-nowrap bg-transparent p-4 outline-none transition-all",
+    "data-[state=open]:bg-neutral-ultrasoft data-[state=open]:border-neutral-black",
+    "data-[state=open]:ring-neutral-black data-[state=open]:ring",
+    "focus-visible:ring-neutral-black focus-visible:border-neutral-black focus-visible:ring",
+    "aria-invalid:focus-visible:ring-error-primary",
+    "aria-invalid:border-error-primary aria-invalid:text-error-secondary",
+    "disabled:pointer-events-none disabled:cursor-not-allowed",
+    "disabled:bg-neutral-ultrasoft disabled:text-neutral-mid",
     "*:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex",
     "*:data-[slot=select-value]:items-center",
     className,
@@ -51,7 +55,7 @@ function SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="text-neutral-black pointer-events-none size-5 shrink-0 opacity-50" />
+        <ChevronDownIcon className="text-neutral-mid-high size-4.5 shrink-0" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );
@@ -119,7 +123,7 @@ function SelectItem({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Item>) {
   const itemClassName = cn(
-    "outline-hidden flex w-full items-center justify-between gap-2",
+    "outline-hidden flex w-full items-center justify-between gap-2 rounded-sm",
     "*:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
     "focus:bg-neutral-ultrasoft focus:text-neutral-high",
     "text-paragraph-small h-12 cursor-default select-none pl-4 pr-1 font-normal",

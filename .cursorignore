@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+.next/
+coverage/
+.git/
+*.lock
+*.log
+.env*
+.vscode/
+public/

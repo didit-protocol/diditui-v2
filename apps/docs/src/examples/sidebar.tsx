@@ -60,6 +60,16 @@ const data = {
       logo: "https://s3-eu-west-1.amazonaws.com/tpd/logos/66e410a34358e36e3659a724/0x0.png",
       sold: "$4,923,72",
     },
+    {
+      name: "Didit",
+      logo: "https://s3-eu-west-1.amazonaws.com/tpd/logos/66e410a34358e36e3659a724/0x0.png",
+      sold: "$43.234",
+    },
+    {
+      name: "Orange Inc.",
+      logo: "https://s3-eu-west-1.amazonaws.com/tpd/logos/66e410a34358e36e3659a724/0x0.png",
+      sold: "$43.234",
+    },
   ],
   navMain: [
     {

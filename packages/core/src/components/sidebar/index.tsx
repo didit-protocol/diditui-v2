@@ -27,12 +27,14 @@ function Sidebar({
   variant = "sidebar",
   collapsible = "offcanvas",
   className,
+  gapClassName,
   children,
   ...props
 }: React.ComponentProps<"div"> & {
   side?: "left" | "right";
   variant?: "sidebar" | "floating" | "inset";
   collapsible?: "offcanvas" | "icon" | "none";
+  gapClassName?: string;
 }) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
 
@@ -82,18 +84,19 @@ function Sidebar({
 
   const sidebarGapClassName = cn(
     "w-(--sidebar-width) relative bg-transparent transition-[width] duration-200 ease-linear",
-    "border-error-primary h-full border group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180",
+    "h-full group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180",
     {
       "group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]":
         variant === "floating" || variant === "inset",
       "group-data-[collapsible=icon]:w-(--sidebar-width-icon)":
         variant !== "floating" && variant !== "inset",
     },
+    gapClassName,
   );
 
   const sidebarContainerClassName = cn(
     "w-(--sidebar-width) fixed inset-y-0 z-10 hidden h-svh transition-[left,right,width]",
-    "border-brand-primary duration-200 ease-linear md:flex",
+    "duration-200 ease-linear md:flex",
     {
       "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]":
         side === "left",
@@ -141,7 +144,11 @@ function Sidebar({
   );
 }
 
-function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<typeof Button>) {
+type SidebarTriggerProps = React.ComponentProps<typeof Button> & {
+  icon?: React.ElementType;
+};
+
+function SidebarTrigger({ className, onClick, icon: Icon, ...props }: SidebarTriggerProps) {
   const { toggleSidebar } = useSidebar();
 
   const buttonClassName = cn(
@@ -167,7 +174,11 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
       }}
       {...props}
     >
-      <SidebarLeftIcon className="size-6 transition-transform group-data-[collapsible=icon]:rotate-180" />
+      {!!Icon ? (
+        <Icon className="size-6" />
+      ) : (
+        <SidebarLeftIcon className="size-6 transition-transform group-data-[collapsible=icon]:rotate-180" />
+      )}
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
@@ -397,45 +408,43 @@ export type SidebarMenuButtonProps = React.ComponentProps<"button"> & {
   tooltip?: string | React.ComponentProps<typeof TooltipContent>;
 } & VariantProps<typeof sidebarMenuButtonVariants>;
 
-function SidebarMenuButton({
-  asChild = false,
-  isActive = false,
-  tooltip,
-  className,
-  ...props
-}: SidebarMenuButtonProps) {
-  const Comp = asChild ? Slot : "button";
-  const { isMobile, state } = useSidebar();
-  const button = (
-    <Comp
-      data-slot="sidebar-menu-button"
-      data-sidebar="menu-button"
-      data-size="default"
-      data-active={isActive}
-      className={cn(sidebarMenuButtonVariants(), className)}
-      {...props}
-    />
-  );
-  if (!tooltip) {
-    return button;
-  }
-  if (typeof tooltip === "string") {
-    tooltip = {
-      children: tooltip,
-    };
-  }
-  return (
-    <Tooltip>
-      <TooltipTrigger asChild>{button}</TooltipTrigger>
-      <TooltipContent
-        side="right"
-        align="center"
-        hidden={state !== "collapsed" || isMobile}
-        {...tooltip}
+const SidebarMenuButton = React.forwardRef<HTMLButtonElement, SidebarMenuButtonProps>(
+  ({ asChild = false, isActive = false, tooltip, className, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    const { isMobile, state } = useSidebar();
+    const button = (
+      <Comp
+        ref={ref}
+        data-slot="sidebar-menu-button"
+        data-sidebar="menu-button"
+        data-size="default"
+        data-active={isActive}
+        className={cn(sidebarMenuButtonVariants(), className)}
+        {...props}
       />
-    </Tooltip>
-  );
-}
+    );
+    if (!tooltip) {
+      return button;
+    }
+    if (typeof tooltip === "string") {
+      tooltip = {
+        children: tooltip,
+      };
+    }
+    return (
+      <Tooltip>
+        <TooltipTrigger asChild>{button}</TooltipTrigger>
+        <TooltipContent
+          side="right"
+          align="center"
+          hidden={state !== "collapsed" || isMobile}
+          {...tooltip}
+        />
+      </Tooltip>
+    );
+  },
+);
+SidebarMenuButton.displayName = "SidebarMenuButton";
 
 function SidebarMenuAction({
   className,

@@ -27,7 +27,7 @@ export const labelVariants = tv({
 
 type LabelVariants = VariantProps<typeof labelVariants>;
 
-type LabelProps = React.ComponentProps<typeof LabelPrimitive.Root> & LabelVariants;
+export type LabelProps = React.ComponentProps<typeof LabelPrimitive.Root> & LabelVariants;
 
 function Label({ className, variant = "mid", ...props }: LabelProps) {
   return (

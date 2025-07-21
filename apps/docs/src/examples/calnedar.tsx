@@ -6,7 +6,6 @@ import {
   Button,
   Calendar,
   Card,
-  CardContent,
   cn,
   Label,
   Popover,
@@ -60,32 +59,30 @@ export function CalendarWithButtons() {
   );
 
   return (
-    <Card padding="none">
-      <CardContent className="flex items-stretch">
-        <div className="flex flex-col gap-0.5 p-2 pt-4">
-          <button className={buttonClassName} onClick={() => handleQuickSelect("week")}>
-            Last Week
-          </button>
-          <button className={buttonClassName} onClick={() => handleQuickSelect("month")}>
-            Last Month
-          </button>
-          <button className={buttonClassName} onClick={() => handleQuickSelect("year")}>
-            Last Year
-          </button>
-          <button className={buttonClassName} onClick={() => handleQuickSelect("year")}>
-            Custom
-          </button>
-        </div>
-        <Separator orientation="vertical" className="data-[orientation=vertical]:h-auto" />
-        <Calendar
-          className="py-2"
-          mode="range"
-          month={month}
-          onMonthChange={setMonth}
-          selected={range}
-          onSelect={setRange}
-        />
-      </CardContent>
+    <Card className="flex items-stretch">
+      <div className="flex flex-col gap-0.5 p-2 pt-4">
+        <button className={buttonClassName} onClick={() => handleQuickSelect("week")}>
+          Last Week
+        </button>
+        <button className={buttonClassName} onClick={() => handleQuickSelect("month")}>
+          Last Month
+        </button>
+        <button className={buttonClassName} onClick={() => handleQuickSelect("year")}>
+          Last Year
+        </button>
+        <button className={buttonClassName} onClick={() => handleQuickSelect("year")}>
+          Custom
+        </button>
+      </div>
+      <Separator orientation="vertical" className="data-[orientation=vertical]:h-auto" />
+      <Calendar
+        className="py-2"
+        mode="range"
+        month={month}
+        onMonthChange={setMonth}
+        selected={range}
+        onSelect={setRange}
+      />
     </Card>
   );
 }

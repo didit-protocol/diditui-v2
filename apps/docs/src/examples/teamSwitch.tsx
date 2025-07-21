@@ -15,7 +15,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@diditui/core";
-import { AddCircleIcon, Edit2Icon } from "@diditui/icons-react";
+import { Setting4Icon } from "@diditui/icons-react";
 import { TeamButton } from "./teamButton";
 
 export function TeamSwitcher({
@@ -70,17 +70,9 @@ export function TeamSwitcher({
             <DropdownMenuItem className="text-neutral-high border-error-primary gap-4 px-2.5 py-2">
               <div className="flex grow items-center gap-3 overflow-hidden">
                 <div className="flex size-10 items-center justify-center">
-                  <Edit2Icon className="size-6" />
+                  <Setting4Icon className="size-6" />
                 </div>
-                <span className="text-headline-mid truncate">Team Setting</span>
-              </div>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="text-neutral-high border-error-primary gap-4 px-2.5 py-2">
-              <div className="flex grow items-center gap-3 overflow-hidden">
-                <div className="flex size-10 items-center justify-center">
-                  <AddCircleIcon className="size-6" />
-                </div>
-                <span className="text-headline-mid truncate">Add new team</span>
+                <span className="text-headline-mid truncate">Organization settings</span>
               </div>
             </DropdownMenuItem>
           </DropdownMenuContent>

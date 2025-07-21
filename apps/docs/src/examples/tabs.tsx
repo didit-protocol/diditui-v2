@@ -1,5 +1,5 @@
-import { Button, Label, TabButton, Tabs } from "@diditui/core";
-import { Card, CardContent, TabsContent, TabsList, TabsTrigger } from "@diditui/core";
+import { Button, CardTitle, Label, TabButton, Tabs } from "@diditui/core";
+import { Card, TabsContent, TabsList, TabsTrigger } from "@diditui/core";
 import { GlobalIcon, ProfileCircleIcon, TickCircleIconBold } from "@diditui/icons-react";
 
 export function TabsDemo() {
@@ -20,17 +20,22 @@ export function TabsDemo() {
         <TabsContent value="account">
           <Card>
             <div>
-              <h4>Account</h4>
+              <CardTitle>
+                <ProfileCircleIcon />
+                <span>
+                  Account Account Account Account Account Account Account Account Account Account
+                </span>
+              </CardTitle>
               <p>Make changes to your account here. Click save when you&apos;re done.</p>
             </div>
-            <CardContent className="grid gap-6">
+            <div className="grid gap-6">
               <div className="grid gap-3">
                 <Label htmlFor="tabs-demo-name">Name</Label>
               </div>
               <div className="grid gap-3">
                 <Label htmlFor="tabs-demo-username">Username</Label>
               </div>
-            </CardContent>
+            </div>
             <div>
               <Button>Save changes</Button>
             </div>
@@ -42,14 +47,14 @@ export function TabsDemo() {
               <h4>Password</h4>
               <p>Change your password here. After saving, you&apos;ll be logged out.</p>
             </div>
-            <CardContent className="grid gap-6">
+            <div className="grid gap-6">
               <div className="grid gap-3">
                 <Label htmlFor="tabs-demo-current">Current password</Label>
               </div>
               <div className="grid gap-3">
                 <Label htmlFor="tabs-demo-new">New password</Label>
               </div>
-            </CardContent>
+            </div>
             <div>
               <Button>Save password</Button>
             </div>

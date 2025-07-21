@@ -29,7 +29,7 @@ function SheetOverlay({
 }: React.ComponentProps<typeof SheetPrimitive.Overlay>) {
   const overlayClassName = cn(
     "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
-    "data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/40 backdrop-blur-sm",
+    "data-[state=open]:fade-in-0 bg-neutral-white fixed inset-0 z-50 opacity-90 backdrop-blur-sm",
     className,
   );
   return (
@@ -71,7 +71,7 @@ function SheetContent({
           <Button
             variant="ghost"
             size="icon"
-            className="bg-neutral-soft text-neutral-mid absolute right-4 top-4"
+            className="bg-neutral-soft text-neutral-mid absolute right-4 top-4 size-[30px] p-1"
           >
             <CloseIcon className="text-bg-neutral-mid size-full" />
             <span className="sr-only">Close</span>

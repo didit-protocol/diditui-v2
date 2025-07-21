@@ -247,18 +247,21 @@
   --color-success-primary: var(--color-green-600);
   --color-success-hover: var(--color-green-400);
   --color-success-secondary: var(--color-green-900);
+  --color-success-tertiary: var(--color-green-100);
   --color-surface-success-secondary: var(--color-green-100);
 
   /* WARNING */
   --color-warning-primary: var(--color-orange-600);
   --color-warning-hover: var(--color-orange-400);
   --color-warning-secondary: var(--color-orange-900);
+  --color-warning-tertiary: var(--color-orange-100);
   --color-surface-warning-secondary: var(--color-orange-100);
 
   /* ERROR */
   --color-error-primary: var(--color-red-600);
   --color-error-hover: var(--color-red-400);
   --color-error-secondary: var(--color-red-900);
+  --color-error-tertiary: var(--color-red-100);
   --color-surface-error-secondary: var(--color-red-100);
 
   /* UTILITIES */
@@ -309,108 +312,108 @@
 
   /* Display */
   --text-display-large: 52px;
-  --text-display-large--line-height: 49.4px;
+  --text-display-large--line-height: 62px;
   --text-display-large--letter-spacing: -3.56px;
   --text-display-large--font-weight: var(--font-weight-semibold);
 
   --text-display-large-web: 80px;
-  --text-display-large-web--line-height: 84px;
+  --text-display-large-web--line-height: 96px;
   --text-display-large-web--letter-spacing: -3.7px;
   --text-display-large-web--font-weight: var(--font-weight-semibold);
 
-  --text-display-large-tablet: 58px;
+  --text-display-large-tablet: 68px;
   --text-display-large-tablet--line-height: 60px;
   --text-display-large-tablet--letter-spacing: -4.06px;
   --text-display-large-tablet--font-weight: var(--font-weight-semibold);
 
   --text-display-large-mobile: 34px;
-  --text-display-large-mobile--line-height: 35px;
+  --text-display-large-mobile--line-height: 40px;
   --text-display-large-mobile--letter-spacing: -2.38px;
   --text-display-large-mobile--font-weight: var(--font-weight-semibold);
 
   --text-display-mid: 42px;
-  --text-display-mid--line-height: 39.9px;
+  --text-display-mid--line-height: 50px;
   --text-display-mid--letter-spacing: -2.88px;
   --text-display-mid--font-weight: var(--font-weight-medium);
 
   --text-display-mid-web: 62px;
-  --text-display-mid-web--line-height: 62px;
+  --text-display-mid-web--line-height: 74px;
   --text-display-mid-web--letter-spacing: -3.1px;
   --text-display-mid-web--font-weight: var(--font-weight-semibold);
 
   --text-display-mid-tablet: 40px;
-  --text-display-mid-tablet--line-height: 40px;
+  --text-display-mid-tablet--line-height: 48px;
   --text-display-mid-tablet--letter-spacing: -2px;
   --text-display-mid-tablet--font-weight: var(--font-weight-semibold);
 
   --text-display-mid-mobile: 40px;
-  --text-display-mid-mobile--line-height: 40px;
+  --text-display-mid-mobile--line-height: 48px;
   --text-display-mid-mobile--letter-spacing: -2px;
   --text-display-mid-mobile--font-weight: var(--font-weight-semibold);
 
   --text-display-small: 32px;
-  --text-display-small--line-height: 33.6px;
+  --text-display-small--line-height: 38px;
   --text-display-small--letter-spacing: -2.24px;
   --text-display-small--font-weight: var(--font-weight-normal);
 
   --text-display-small-web: 48px;
-  --text-display-small-web--line-height: 50px;
+  --text-display-small-web--line-height: 58px;
   --text-display-small-web--letter-spacing: -2.88px;
   --text-display-small-web--font-weight: var(--font-weight-semibold);
 
   --text-display-small-tablet: 40px;
-  --text-display-small-tablet--line-height: 38px;
+  --text-display-small-tablet--line-height: 48px;
   --text-display-small-tablet--letter-spacing: -2.4px;
   --text-display-small-tablet--font-weight: var(--font-weight-semibold);
 
   --text-display-small-mobile: 32px;
-  --text-display-small-mobile--line-height: 33.6px;
+  --text-display-small-mobile--line-height: 40px;
   --text-display-small-mobile--letter-spacing: -2.24px;
   --text-display-small-mobile--font-weight: var(--font-weight-semibold);
 
   /* Headlines */
   --text-headline-large: 24px;
-  --text-headline-large--line-height: 26.4px;
+  --text-headline-large--line-height: 28px;
   --text-headline-large--letter-spacing: -1.2px;
   --text-headline-large--font-weight: var(--font-weight-medium);
 
   --text-headline-large-web: 40px;
-  --text-headline-large-web--line-height: 44px;
+  --text-headline-large-web--line-height: 48px;
   --text-headline-large-web--letter-spacing: -2.8px;
   --text-headline-large-web--font-weight: var(--font-weight-semibold);
 
   --text-headline-large-tablet: 40px;
-  --text-headline-large-tablet--line-height: 44px;
+  --text-headline-large-tablet--line-height: 48px;
   --text-headline-large-tablet--letter-spacing: -2.8px;
   --text-headline-large-tablet--font-weight: var(--font-weight-semibold);
 
   --text-headline-large-mobile: 38px;
-  --text-headline-large-mobile--line-height: 42px;
+  --text-headline-large-mobile--line-height: 46px;
   --text-headline-large-mobile--letter-spacing: -2.8px;
   --text-headline-large-mobile--font-weight: var(--font-weight-semibold);
 
   --text-headline-mid: 15px;
-  --text-headline-mid--line-height: 14.25px;
+  --text-headline-mid--line-height: 18px;
   --text-headline-mid--letter-spacing: -0.6px;
   --text-headline-mid--font-weight: var(--font-weight-semibold);
 
   --text-headline-mid-web: 30px;
   --text-headline-mid-web--letter-spacing: -1.8px;
-  --text-headline-mid-web--line-height: 36px;
+  --text-headline-mid-web--line-height: 38px;
   --text-headline-mid-web--font-weight: var(--font-weight-semibold);
 
   --text-headline-mid-tablet: 30px;
-  --text-headline-mid-tablet--line-height: 30px;
+  --text-headline-mid-tablet--line-height: 38px;
   --text-headline-mid-tablet--letter-spacing: -1.8px;
   --text-headline-mid-tablet--font-weight: var(--font-weight-semibold);
 
   --text-headline-mid-mobile: 28px;
-  --text-headline-mid-mobile--line-height: 33.6px;
+  --text-headline-mid-mobile--line-height: 34px;
   --text-headline-mid-mobile--letter-spacing: -1.68px;
   --text-headline-mid-mobile--font-weight: var(--font-weight-semibold);
 
   --text-headline-small: 14px;
-  --text-headline-small--line-height: 12.6px;
+  --text-headline-small--line-height: 18px;
   --text-headline-small--letter-spacing: -0.56px;
   --text-headline-small--font-weight: var(--font-weight-medium);
 
@@ -420,7 +423,7 @@
   --text-headline-small-web--font-weight: var(--font-weight-semibold);
 
   --text-headline-small-tablet: 21px;
-  --text-headline-small-tablet--line-height: 25.2px;
+  --text-headline-small-tablet--line-height: 26px;
   --text-headline-small-tablet--letter-spacing: -1.26px;
   --text-headline-small-tablet--font-weight: var(--font-weight-semibold);
 
@@ -482,7 +485,7 @@
   --text-label-large-web--font-weight: var(--font-weight-medium);
 
   --text-label-mid: 12px;
-  --text-label-mid--line-height: 14.8px;
+  --text-label-mid--line-height: 16px;
   --text-label-mid--letter-spacing: -0.24px;
   --text-label-mid--font-weight: var(--font-weight-normal);
 
@@ -527,7 +530,7 @@
   --text-label-styled-web--font-weight: var(--font-weight-semibold);
 
   --text-label-bold: 16px;
-  --text-label-bold--line-height: 14.4px;
+  --text-label-bold--line-height: 20px;
   --text-label-bold--letter-spacing: -0.32px;
   --text-label-bold--font-weight: var(--font-weight-medium);
 
@@ -538,7 +541,7 @@
 
   /* Links */
   --text-link-button: 14px;
-  --text-link-button--line-height: 12.6px;
+  --text-link-button--line-height: 17px;
   --text-link-button--letter-spacing: -0.84px;
   --text-link-button--font-weight: var(--font-weight-medium);
 

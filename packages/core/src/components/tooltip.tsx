@@ -50,7 +50,7 @@ function TooltipContent({
     "text-neutral-white text-paragraph-small z-50 w-fit text-balance rounded-[8px] px-3 py-1.5",
     {
       "text-neutral-white bg-neutral-high": variant === "dark",
-      "text-neutral-black bg-[#CECED1]": variant === "light",
+      "text-neutral-black bg-[#F4F4F5]": variant === "light",
     },
     className,
   );
@@ -59,7 +59,7 @@ function TooltipContent({
     "z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]",
     {
       "bg-neutral-high fill-neutral-high": variant === "dark",
-      "bg-[#CECED1] fill-[#CECED1]": variant === "light",
+      "bg-[#F4F4F5] fill-[#F4F4F5]": variant === "light",
     },
   );
 
