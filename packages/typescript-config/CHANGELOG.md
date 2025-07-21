@@ -1,5 +1,11 @@
 # @diditui/typescript-config
 
+## 0.0.3
+
+### Patch Changes
+
+- cf5ed38: optimize build output
+
 ## 0.0.2
 
 ### Patch Changes
