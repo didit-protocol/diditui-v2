@@ -1,0 +1,18 @@
+# Source files
+src/
+*.ts
+*.tsx
+!*.d.ts
+
+# Build artifacts
+tsconfig.tsbuildinfo
+.turbo/
+node_modules/
+
+# Development files
+vite.config.ts
+eslint.config.js
+tsconfig.json
+
+# Logs
+*.log
