@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.3
+
+### Patch Changes
+
+- cf5ed38: optimize build output
+- Updated dependencies [cf5ed38]
+  - @diditui/icons-react@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
