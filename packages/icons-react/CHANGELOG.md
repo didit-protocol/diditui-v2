@@ -1,5 +1,11 @@
 # @diditui/icons-react
 
+## 0.0.4
+
+### Patch Changes
+
+- 1fd62d0: fix forwordrefs
+
 ## 0.0.3
 
 ### Patch Changes
