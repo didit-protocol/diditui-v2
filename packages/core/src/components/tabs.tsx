@@ -4,6 +4,8 @@ import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { cn } from "@/utils";
+import { Slot } from "@radix-ui/react-slot";
+import { forwardRef, Ref } from "react";
 
 function Tabs({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Root>) {
   return (
@@ -48,10 +50,11 @@ function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPr
 }
 
 type TabButtonProps = React.ComponentProps<"button"> & {
+  asChild?: boolean;
   active?: boolean;
 };
 
-function TabButton({ className, active, ...props }: TabButtonProps) {
+const TabButton = forwardRef(({ className, active, asChild, ...props }: TabButtonProps, ref) => {
   const triggerClassName = cn(
     "inline-flex min-h-8 flex-1 items-center gap-2 border border-transparent",
     "whitespace-nowrap rounded-lg px-2 py-[7px] transition-[color,box-shadow]",
@@ -66,7 +69,11 @@ function TabButton({ className, active, ...props }: TabButtonProps) {
     className,
   );
 
-  return <button className={triggerClassName} {...props} />;
-}
+  const Comp = asChild ? Slot : "button";
+
+  return <Comp ref={ref as Ref<HTMLButtonElement>} className={triggerClassName} {...props} />;
+});
+
+TabButton.displayName = "TabButton";
 
 export { Tabs, TabsList, TabsTrigger, TabsContent, TabButton };
