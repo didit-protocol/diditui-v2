@@ -28,3 +28,5 @@ export * from "./dialog";
 export * from "./alert-dialog";
 export * from "./qrcode";
 export * from "./scroll-area";
+export * from "./badge";
+export * from "./table";

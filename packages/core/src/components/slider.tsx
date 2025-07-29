@@ -4,62 +4,39 @@ import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
 import { cn } from "@/utils";
-import { tv, type VariantProps } from "tailwind-variants";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 
-const thumbVariants = tv({
-  base: [
-    "bg-neutral-white focus-visible:outline-hidden block  shrink-0 rounded-full",
-    "ring-fill-primary shadow-md transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4",
-    "disabled:pointer-events-none disabled:opacity-50",
-  ],
-  variants: {
-    size: {
-      sm: "w-[46px] h-8",
-      md: "w-13 h-8",
-    },
-    tooltipBehavior: {
-      visible: "",
-      onDrag: "",
-    },
-    showLabels: {
-      true: "",
-    },
-    isPercentage: {
-      true: "",
-    },
-  },
-
-  defaultVariants: {
-    tooltipBehavior: "visible",
-    size: "md",
-    showLabels: false,
-    isPercentage: false,
-  },
-});
+const baseClassName = cn([
+  "bg-neutral-white focus-visible:outline-hidden block shrink-0 rounded-full",
+  "ring-fill-primary shadow-md transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4",
+  "h-6 w-[38px] disabled:pointer-events-none disabled:opacity-50",
+]);
 
 function SliderLabel({ label }: { label: string }) {
   return <span className={cn("text-label-extra-small text-neutral-mid-high")}>{label}</span>;
 }
 
-type SliderProps = React.ComponentProps<typeof SliderPrimitive.Root> &
-  VariantProps<typeof thumbVariants> & {
-    MinLabel?: typeof SliderLabel;
-    MaxLabel?: typeof SliderLabel;
-  };
+type SliderProps = React.ComponentProps<typeof SliderPrimitive.Root> & {
+  tooltipBehavior?: "visible" | "onDrag";
+  containerClassName?: string;
+  MinLabel?: typeof SliderLabel;
+  MaxLabel?: typeof SliderLabel;
+  tooltipFormatter?: (value: number) => string;
+  labelFormatter?: (value: number) => string;
+};
 
 function Slider({
   className,
+  containerClassName,
   defaultValue,
   value,
   min = 0,
   max = 100,
-  size,
   tooltipBehavior,
-  showLabels,
-  isPercentage,
   MinLabel,
   MaxLabel,
+  tooltipFormatter = (value) => value.toString(),
+  labelFormatter = (value) => value.toString(),
   ...props
 }: SliderProps) {
   const [isDragging, setIsDragging] = React.useState(false);
@@ -87,41 +64,50 @@ function Slider({
     "data-[orientation=vertical]:w-full",
   );
 
-  const minLabel = isPercentage ? `${min}%` : `${min}`;
-  const maxLabel = isPercentage ? `${max}%` : `${max}`;
-
   return (
-    <SliderPrimitive.Root
-      data-slot="slider"
-      defaultValue={defaultValue}
-      value={value}
-      min={min}
-      max={max}
-      className={rootClassName}
-      {...props}
-    >
-      {showLabels && (MinLabel ? <MinLabel label={minLabel} /> : <SliderLabel label={minLabel} />)}
-      <SliderPrimitive.Track data-slot="slider-track" className={trackClassName}>
-        <SliderPrimitive.Range data-slot="slider-range" className={rangeClassName} />
-      </SliderPrimitive.Track>
-      {showLabels && (MaxLabel ? <MaxLabel label={maxLabel} /> : <SliderLabel label={maxLabel} />)}
-      {Array.from({ length: _values.length }, (_, index) => (
-        <Tooltip key={index} open={tooltipBehavior === "onDrag" ? isDragging : true}>
-          <TooltipTrigger asChild>
-            <SliderPrimitive.Thumb
-              onPointerDown={() => setIsDragging(true)}
-              onPointerUp={() => setIsDragging(false)}
-              data-slot="slider-thumb"
-              key={index}
-              className={cn(thumbVariants({ size }))}
-            />
-          </TooltipTrigger>
-          <TooltipContent side="bottom" variant="light">
-            <p>{isPercentage ? `${_values[index]}%` : _values[index]}</p>
-          </TooltipContent>
-        </Tooltip>
-      ))}
-    </SliderPrimitive.Root>
+    <div className={cn("flex flex-col gap-2", containerClassName)}>
+      <SliderPrimitive.Root
+        data-slot="slider"
+        defaultValue={defaultValue}
+        value={value}
+        min={min}
+        max={max}
+        className={rootClassName}
+        {...props}
+      >
+        <SliderPrimitive.Track data-slot="slider-track" className={trackClassName}>
+          <SliderPrimitive.Range data-slot="slider-range" className={rangeClassName} />
+        </SliderPrimitive.Track>
+        {Array.from({ length: _values.length }, (_, index) => (
+          <Tooltip key={index} open={tooltipBehavior === "onDrag" ? isDragging : true}>
+            <TooltipTrigger asChild>
+              <SliderPrimitive.Thumb
+                onPointerDown={() => setIsDragging(true)}
+                onPointerUp={() => setIsDragging(false)}
+                data-slot="slider-thumb"
+                key={index}
+                className={baseClassName}
+              />
+            </TooltipTrigger>
+            <TooltipContent side="bottom" variant="light">
+              <p>{tooltipFormatter(_values[index])}</p>
+            </TooltipContent>
+          </Tooltip>
+        ))}
+      </SliderPrimitive.Root>
+      <div className="flex items-center justify-between gap-2">
+        {MinLabel ? (
+          <MinLabel label={labelFormatter(min)} />
+        ) : (
+          <SliderLabel label={labelFormatter(min)} />
+        )}
+        {MaxLabel ? (
+          <MaxLabel label={labelFormatter(max)} />
+        ) : (
+          <SliderLabel label={labelFormatter(max)} />
+        )}
+      </div>
+    </div>
   );
 }
 

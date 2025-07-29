@@ -6,37 +6,61 @@ import { cn } from "@/utils";
 
 const badgeVariants = tv({
   base: [
-    "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs",
-    "font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none",
-    "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-    "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40",
-    "aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+    "w-fit border px-2 py-1.5 shrink-0 inline-flex items-center justify-center",
+    "uppercase whitespace-nowrap border-transparent",
+    "focus-visible:ring-fill-primary focus-visible:ring-[3px]",
+    "aria-invalid:ring-error-primary/20 dark:aria-invalid:ring-error-primary/40",
+    "transition-[color,box-shadow] overflow-hidden rounded-lg",
   ],
   variants: {
     variant: {
-      default: "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
-      secondary:
-        "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-      destructive:
-        "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-      outline: "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+      default:
+        "bg-neutral-ultrasoft border-neutral-soft text-neutral-mid [a&]:hover:bg-neutral-ultrasoft/50",
+      success:
+        "bg-surface-success-secondary border-success-tertiary text-success-primary [a&]:hover:bg-surface-success-secondary/50",
+      error:
+        "bg-surface-error-secondary border-error-tertiary text-error-primary [a&]:hover:bg-surface-error-secondary/50",
+      warning:
+        "bg-surface-warning-secondary border-warning-tertiary text-warning-primary [a&]:hover:bg-surface-warning-secondary/50",
+      primary:
+        "bg-transparent border-surface-brand-secondary text-brand-primary [a&]:hover:bg-surface-brand-secondary",
+    },
+    rounded: {
+      "xs": "rounded-xs",
+      "sm": "rounded-sm",
+      "md": "rounded-md",
+      "lg": "rounded-lg",
+      "xl": "rounded-xl",
+      "2xl": "rounded-2xl",
+      "full": "rounded-full",
     },
   },
   defaultVariants: {
     variant: "default",
+    rounded: "lg",
   },
 });
 
 function Badge({
   className,
   variant,
+  rounded,
   asChild = false,
+  children,
   ...props
 }: React.ComponentProps<"span"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : "span";
 
   return (
-    <Comp data-slot="badge" className={cn(badgeVariants({ variant }), className)} {...props} />
+    <Comp
+      data-slot="badge"
+      className={cn(badgeVariants({ variant, rounded }), className)}
+      {...props}
+    >
+      <span className="text-label-inputs inline-flex items-center justify-center gap-1 [&>svg]:pointer-events-none [&>svg]:size-4">
+        {children}
+      </span>
+    </Comp>
   );
 }
 

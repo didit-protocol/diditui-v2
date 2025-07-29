@@ -12,7 +12,7 @@ type AvatarProps = React.ComponentProps<typeof AvatarPrimitive.Root> & {
 
 function Avatar({ className, size = "md", rounded = true, ...props }: AvatarProps) {
   const avatarClassName = cn(
-    "relative flex size-10 shrink-0 overflow-hidden rounded-full text-sm uppercase",
+    "bg-neutral-soft relative flex size-10 shrink-0 overflow-hidden rounded-full text-sm uppercase",
     {
       "size-8 text-xs": size === "sm",
       "size-10 text-sm": size === "md",
@@ -42,7 +42,7 @@ function AvatarFallback({
   return (
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
-      className={cn("bg-neutral-soft flex size-full items-center justify-center", className)}
+      className={cn("flex size-full items-center justify-center", className)}
       {...props}
     />
   );
