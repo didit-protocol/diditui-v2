@@ -17,10 +17,6 @@ const meta = {
       options: ["onDrag", "visible"],
       defaultValue: "onDrag",
     },
-    isPercentage: {
-      control: "boolean",
-      defaultValue: false,
-    },
   },
 } satisfies Meta<typeof SliderExample>;
 
@@ -30,14 +26,12 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     tooltipBehavior: "onDrag",
-    isPercentage: false,
   },
 };
 
 export const SliderWithoutLabels: Story = {
   args: {
     tooltipBehavior: "onDrag",
-    isPercentage: true,
     MinLabel: undefined,
     MaxLabel: undefined,
   },
