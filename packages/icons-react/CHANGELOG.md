@@ -1,5 +1,11 @@
 # @diditui/icons-react
 
+## 0.0.5
+
+### Patch Changes
+
+- 9a6634b: add table and badge components
+
 ## 0.0.4
 
 ### Patch Changes
