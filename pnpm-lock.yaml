@@ -60,8 +60,8 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.13
-        version: 0.6.13(prettier@3.6.2)
+        specifier: ^0.6.14
+        version: 0.6.14(prettier@3.6.2)
       rollup:
         specifier: ^4.12.0
         version: 4.44.0
@@ -167,7 +167,7 @@ importers:
         version: 1.53.1
       storybook:
         specifier: ^9.0.13
-        version: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+        version: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
@@ -304,7 +304,7 @@ importers:
         version: link:../eslint-config
       '@diditui/icons-react':
         specifier: '*'
-        version: 0.0.4(react@19.1.0)
+        version: link:../icons-react
       '@diditui/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -624,6 +624,11 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
+  /@babel/runtime@7.28.2:
+    resolution: {integrity: sha512-KHp2IflsnGywDjBWDkR9iEqiWSpc8GIi0lgTT3mOElT0PP1tG26P4tmFI2YvAdzgq9RGyoHZQEIEdZy6Ec5xCA==}
+    engines: {node: '>=6.9.0'}
+    dev: true
+
   /@babel/template@7.27.2:
     resolution: {integrity: sha512-LPDZ85aEJyYSd18/DkjNh4/y1ntkE5KwUHWTiqgRxruuZL2F1yuHligVHLvcHY2vMHXttKFpJn6LwfI7cw7ODw==}
     engines: {node: '>=6.9.0'}
@@ -858,7 +863,7 @@ packages:
       chromatic: 12.2.0
       filesize: 10.1.6
       jsonfile: 6.1.0
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       strip-ansi: 7.1.0
     transitivePeerDependencies:
       - '@chromatic-com/cypress'
@@ -1049,14 +1054,6 @@ packages:
 
   /@date-fns/tz@1.2.0:
     resolution: {integrity: sha512-LBrd7MiJZ9McsOgxqWX7AaxrDjcFVjWH/tIKJd7pnR7McaslGYOP1QmmiBXdJH/H/yLCT+rcQ7FaPBUxRGUtrg==}
-    dev: true
-
-  /@diditui/icons-react@0.0.4(react@19.1.0):
-    resolution: {integrity: sha512-oKdUUREzbZgw0prN0vMRd8kcWjDK2ohirC0lkudTcV8ffRpD6X4mI/Ba9+Bt1pgX67utls7kwkgNkaoQFyjbyg==}
-    peerDependencies:
-      react: '>= 16'
-    dependencies:
-      react: 19.1.0
     dev: true
 
   /@emnapi/core@1.4.5:
@@ -3659,7 +3656,7 @@ packages:
     dependencies:
       '@storybook/global': 5.0.0
       axe-core: 4.10.3
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
     dev: true
 
   /@storybook/addon-docs@9.0.16(@types/react@19.1.8)(storybook@9.0.13):
@@ -3673,7 +3670,7 @@ packages:
       '@storybook/react-dom-shim': 9.0.16(react-dom@19.1.0)(react@19.1.0)(storybook@9.0.13)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@types/react'
@@ -3698,7 +3695,7 @@ packages:
       '@storybook/icons': 1.4.0(react-dom@19.1.0)(react@19.1.0)
       '@vitest/browser': 3.2.4(playwright@1.53.1)(vite@7.0.0)(vitest@3.2.4)
       prompts: 2.4.2
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       ts-dedent: 2.2.0
       vitest: 3.2.4(@types/node@24.1.0)(@vitest/browser@3.2.4)
     transitivePeerDependencies:
@@ -3713,7 +3710,7 @@ packages:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0
     dependencies:
       '@storybook/csf-plugin': 9.0.16(storybook@9.0.13)
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       ts-dedent: 2.2.0
       vite: 7.0.0(@types/node@24.1.0)
     dev: true
@@ -3723,7 +3720,7 @@ packages:
     peerDependencies:
       storybook: ^9.0.16
     dependencies:
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       unplugin: 1.16.1
     dev: true
 
@@ -3751,7 +3748,7 @@ packages:
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
     dev: true
 
   /@storybook/react-vite@9.0.16(react-dom@19.1.0)(react@19.1.0)(rollup@4.44.0)(storybook@9.0.13)(typescript@5.8.3)(vite@7.0.0):
@@ -3773,7 +3770,7 @@ packages:
       react-docgen: 8.0.0
       react-dom: 19.1.0(react@19.1.0)
       resolve: 1.22.10
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       tsconfig-paths: 4.2.0
       vite: 7.0.0(@types/node@24.1.0)
     transitivePeerDependencies:
@@ -3798,7 +3795,7 @@ packages:
       '@storybook/react-dom-shim': 9.0.16(react-dom@19.1.0)(react@19.1.0)(storybook@9.0.13)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
-      storybook: 9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2)
       typescript: 5.8.3
     dev: true
 
@@ -4115,6 +4112,20 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
+  /@testing-library/dom@10.4.1:
+    resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@babel/code-frame': 7.27.1
+      '@babel/runtime': 7.28.2
+      '@types/aria-query': 5.0.4
+      aria-query: 5.3.0
+      dom-accessibility-api: 0.5.16
+      lz-string: 1.5.0
+      picocolors: 1.1.1
+      pretty-format: 27.5.1
+    dev: true
+
   /@testing-library/jest-dom@6.6.3:
     resolution: {integrity: sha512-IteBhl4XqYNkM54f4ejhLRJiZNqcSCoXUOG2CPK7qbD322KjQozM4kHQOfkG2oln9b9HTYqs+Sae8vBATubxxA==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
@@ -4128,6 +4139,19 @@ packages:
       redent: 3.0.0
     dev: true
 
+  /@testing-library/jest-dom@6.6.4:
+    resolution: {integrity: sha512-xDXgLjVunjHqczScfkCJ9iyjdNOVHvvCdqHSSxwM9L0l/wHkTRum67SDc020uAlCoqktJplgO2AAQeLP1wgqDQ==}
+    engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
+    dependencies:
+      '@adobe/css-tools': 4.4.3
+      aria-query: 5.3.2
+      css.escape: 1.5.1
+      dom-accessibility-api: 0.6.3
+      lodash: 4.17.21
+      picocolors: 1.1.1
+      redent: 3.0.0
+    dev: true
+
   /@testing-library/user-event@14.6.1(@testing-library/dom@10.4.0):
     resolution: {integrity: sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==}
     engines: {node: '>=12', npm: '>=6'}
@@ -4135,6 +4159,15 @@ packages:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
       '@testing-library/dom': 10.4.0
+    dev: true
+
+  /@testing-library/user-event@14.6.1(@testing-library/dom@10.4.1):
+    resolution: {integrity: sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      '@testing-library/dom': '>=7.21.4'
+    dependencies:
+      '@testing-library/dom': 10.4.1
     dev: true
 
   /@tootallnate/once@2.0.0:
@@ -7019,7 +7052,7 @@ packages:
     dependencies:
       '@typescript-eslint/utils': 8.34.1(eslint@9.30.1)(typescript@5.8.3)
       eslint: 9.30.1
-      storybook: 9.0.18(@testing-library/dom@10.4.0)(prettier@3.6.2)
+      storybook: 9.0.18(@testing-library/dom@10.4.1)(prettier@3.6.2)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -10198,11 +10231,13 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss@0.6.13(prettier@3.6.2):
-    resolution: {integrity: sha512-uQ0asli1+ic8xrrSmIOaElDu0FacR4x69GynTh2oZjFY10JUt6EEumTQl5tB4fMeD6I1naKd+4rXQQ7esT2i1g==}
+  /prettier-plugin-tailwindcss@0.6.14(prettier@3.6.2):
+    resolution: {integrity: sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-hermes': '*'
+      '@prettier/plugin-oxc': '*'
       '@prettier/plugin-pug': '*'
       '@shopify/prettier-plugin-liquid': '*'
       '@trivago/prettier-plugin-sort-imports': '*'
@@ -10221,6 +10256,10 @@ packages:
       prettier-plugin-svelte: '*'
     peerDependenciesMeta:
       '@ianvs/prettier-plugin-sort-imports':
+        optional: true
+      '@prettier/plugin-hermes':
+        optional: true
+      '@prettier/plugin-oxc':
         optional: true
       '@prettier/plugin-pug':
         optional: true
@@ -11282,7 +11321,7 @@ packages:
       internal-slot: 1.1.0
     dev: true
 
-  /storybook@9.0.13(@testing-library/dom@10.4.0)(prettier@3.6.2):
+  /storybook@9.0.13(@testing-library/dom@10.4.1)(prettier@3.6.2):
     resolution: {integrity: sha512-RMCTZ24IF8cMu1Ru1vUfnsP+w/OfI6Wm/wjjXaDMoTrriuQG24AF+VL+UipEoqkmZtqoZcfwRyiOgnEWQX8akw==}
     hasBin: true
     peerDependencies:
@@ -11293,7 +11332,7 @@ packages:
     dependencies:
       '@storybook/global': 5.0.0
       '@testing-library/jest-dom': 6.6.3
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
+      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
       '@vitest/expect': 3.0.9
       '@vitest/spy': 3.0.9
       better-opn: 3.0.2
@@ -11310,7 +11349,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /storybook@9.0.18(@testing-library/dom@10.4.0)(prettier@3.6.2):
+  /storybook@9.0.18(@testing-library/dom@10.4.1)(prettier@3.6.2):
     resolution: {integrity: sha512-ruxpEpizwoYQTt1hBOrWyp9trPYWD9Apt1TJ37rs1rzmNQWpSNGJDMg91JV4mUhBChzRvnid/oRBFFCWJz/dfw==}
     hasBin: true
     peerDependencies:
@@ -11320,8 +11359,8 @@ packages:
         optional: true
     dependencies:
       '@storybook/global': 5.0.0
-      '@testing-library/jest-dom': 6.6.3
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
+      '@testing-library/jest-dom': 6.6.4
+      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
       '@vitest/expect': 3.2.4
       '@vitest/spy': 3.2.4
       better-opn: 3.0.2
