@@ -9,9 +9,9 @@ const Sonner = ({ className, style, ...props }: ToasterProps) => {
       className={cn("toaster group", className)}
       style={
         {
-          "--normal-bg": "var(--popover)",
-          "--normal-text": "var(--popover-foreground)",
-          "--normal-border": "var(--border)",
+          "--normal-bg": "var(--color-neutral-ultrasoft)",
+          "--normal-text": "var(--color-neutral-black)",
+          "--normal-border": "var(--color-neutral-mid)",
           ...style,
         } as React.CSSProperties
       }

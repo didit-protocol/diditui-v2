@@ -142,7 +142,7 @@
 
 @theme {
   /* I - FONT */
-  --font-inter: "Inter", sans-serif;
+  --font-inter: var(--font-inter);
 
   /* BASE COLORS */
   --color-gray-100: var(--color-gray-100);

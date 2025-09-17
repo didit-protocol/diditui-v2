@@ -60,7 +60,7 @@ const TabButton = forwardRef(({ className, active, asChild, ...props }: TabButto
     "whitespace-nowrap rounded-lg px-2 py-[7px] transition-[color,box-shadow]",
     "hover:bg-neutral-ultrasoft hover:border-neutral-soft transition-colors",
     "focus-visible:ring-fill-primary outline-none focus-visible:ring-[3px]",
-    "&_svg:not([class*='size-'])]:size-4.5 disabled:pointer-events-none",
+    "[&_svg:not([class*='size-'])]:size-4.5 disabled:pointer-events-none",
     "disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
     "text-neutral-high text-label-inputs uppercase",
     {

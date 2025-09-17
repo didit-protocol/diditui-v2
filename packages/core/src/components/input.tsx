@@ -47,6 +47,7 @@ type InputProps = ComponentProps<"input"> &
     icon?: ElementType;
     onClear?: () => void;
     containerClassName?: string;
+    showClearButton?: boolean;
   };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -58,8 +59,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       icon: Icon,
       value,
       containerClassName,
+      showClearButton = true,
       onChange,
       onClear,
+      disabled,
       ...props
     },
     ref,
@@ -86,6 +89,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         "inline-flex": !!value,
         "right-1.5": variant === "small",
         "right-3": variant === "large",
+        "hidden": disabled,
       },
     );
 
@@ -103,18 +107,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           value={value}
           onChange={onChange}
           ref={ref}
+          disabled={disabled}
           {...props}
         />
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          className={clearButtonClassName}
-          onClick={onClear}
-        >
-          <CloseIcon />
-          <span className="sr-only">Clear</span>
-        </Button>
+        {showClearButton && (
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className={clearButtonClassName}
+            onClick={onClear}
+          >
+            <CloseIcon />
+            <span className="sr-only">Clear</span>
+          </Button>
+        )}
       </div>
     );
   },

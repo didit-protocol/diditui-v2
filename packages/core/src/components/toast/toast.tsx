@@ -7,7 +7,7 @@ import {
   InfoCircleIconBold,
   TickCircleIconBold,
 } from "@diditui/icons-react";
-import { toast as sonnerToast } from "sonner";
+import { ExternalToast, toast as sonnerToast } from "sonner";
 import { tv, type VariantProps } from "tailwind-variants";
 
 export interface ToastBaseProps {
@@ -39,6 +39,7 @@ type ToastIcon = "info" | "warning" | "success" | "error";
 type ToastProps = ToastBaseProps &
   ToastVariants & {
     className?: string;
+    data?: ExternalToast;
   };
 
 const ICONS_MAP: Record<ToastIcon, React.ReactNode> = {
@@ -49,7 +50,7 @@ const ICONS_MAP: Record<ToastIcon, React.ReactNode> = {
 };
 
 /** A fully custom toast that still maintains the animations and interactions. */
-function Toast(props: ToastProps) {
+export function Toast(props: ToastProps) {
   const { title, description, id, variant = "info", className } = props;
 
   return (
@@ -75,5 +76,3 @@ function Toast(props: ToastProps) {
     </div>
   );
 }
-
-export { Toast };
