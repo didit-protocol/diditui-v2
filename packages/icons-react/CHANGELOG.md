@@ -1,5 +1,11 @@
 # @diditui/icons-react
 
+## 0.0.6
+
+### Patch Changes
+
+- a11a9b5: add more icons
+
 ## 0.0.5
 
 ### Patch Changes
