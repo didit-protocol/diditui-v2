@@ -409,9 +409,9 @@ export type SidebarMenuButtonProps = React.ComponentProps<"button"> & {
 } & VariantProps<typeof sidebarMenuButtonVariants>;
 
 const SidebarMenuButton = React.forwardRef<HTMLButtonElement, SidebarMenuButtonProps>(
-  ({ asChild = false, isActive = false, tooltip, className, ...props }, ref) => {
+  ({ asChild = false, isActive = false, tooltip, className, onClick, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    const { isMobile, state } = useSidebar();
+    const { isMobile, state, setOpenMobile } = useSidebar();
     const button = (
       <Comp
         ref={ref}
@@ -420,6 +420,10 @@ const SidebarMenuButton = React.forwardRef<HTMLButtonElement, SidebarMenuButtonP
         data-size="default"
         data-active={isActive}
         className={cn(sidebarMenuButtonVariants(), className)}
+        onClick={(event) => {
+          onClick?.(event);
+          setOpenMobile(false);
+        }}
         {...props}
       />
     );
