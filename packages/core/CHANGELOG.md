@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.7
+
+### Patch Changes
+
+- 76724f0: close sidebar on mobile when a link is clicked
+- Updated dependencies [76724f0]
+  - @diditui/icons-react@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes
