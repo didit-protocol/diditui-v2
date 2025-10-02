@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.8
+
+### Patch Changes
+
+- e10fec9: update small button border radius
+- Updated dependencies [e10fec9]
+  - @diditui/icons-react@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
