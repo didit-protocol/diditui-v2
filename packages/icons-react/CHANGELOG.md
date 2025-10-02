@@ -1,5 +1,11 @@
 # @diditui/icons-react
 
+## 0.0.8
+
+### Patch Changes
+
+- e10fec9: update small button border radius
+
 ## 0.0.7
 
 ### Patch Changes
