@@ -19,7 +19,7 @@ export const buttonVariants = tv({
   variants: {
     size: {
       icon: "rounded-full size-8 [&_svg:not([class*='size-'])]:size-4.5",
-      md: "rounded-full py-1.5 px-3 h-8 [&_svg:not([class*='size-'])]:size-4",
+      md: "rounded-sm py-1.5 px-3 h-8 [&_svg:not([class*='size-'])]:size-4",
       lg: "py-2.5 px-3 h-12 rounded-sm [&_svg:not([class*='size-'])]:size-6",
     },
     variant: {
