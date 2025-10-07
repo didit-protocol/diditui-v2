@@ -1,6 +1,6 @@
 {
   "name": "@diditui/core",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "publishConfig": {
     "access": "public"
@@ -43,8 +43,8 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-tabs": "^1.1.12",
-    "@radix-ui/react-tooltip": "^1.2.7",
     "@radix-ui/react-toggle-group": "^1.1.11",
+    "@radix-ui/react-tooltip": "^1.2.7",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^1.0.0"
@@ -74,7 +74,7 @@
     "vite-plugin-static-copy": "^3.1.1"
   },
   "peerDependencies": {
-    "@diditui/icons-react": "^0.0.7",
+    "@diditui/icons-react": "^0.0.8",
     "input-otp": "^1.4.2",
     "qrcode": "^1.5.4",
     "react": ">=18",
