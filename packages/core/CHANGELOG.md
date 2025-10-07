@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.9
+
+### Patch Changes
+
+- ba588a9: add toggle-group component
+- Updated dependencies [ba588a9]
+  - @diditui/icons-react@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

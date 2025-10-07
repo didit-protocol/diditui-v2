@@ -1,5 +1,11 @@
 # @diditui/icons
 
+## 0.0.9
+
+### Patch Changes
+
+- ba588a9: add toggle-group component
+
 ## 0.0.8
 
 ### Patch Changes
