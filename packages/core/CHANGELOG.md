@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.10
+
+### Patch Changes
+
+- c41b2d2: added chevron down squared icon
+- Updated dependencies [c41b2d2]
+  - @diditui/icons-react@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
