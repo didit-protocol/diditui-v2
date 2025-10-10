@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.12
+
+### Patch Changes
+
+- 22d07ad: fix colors
+- Updated dependencies [22d07ad]
+  - @diditui/icons-react@0.0.12
+
 ## 0.0.11
 
 ### Patch Changes
