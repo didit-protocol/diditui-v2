@@ -1,4 +1,4 @@
-import { MediaQuery } from "@diditui/core";
+import { MediaQuery } from "@/utils";
 import * as React from "react";
 
 export function useMediaQueryMatch(
