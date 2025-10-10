@@ -1,5 +1,12 @@
 # @diditui/eslint-config
 
+## 0.0.11
+
+### Patch Changes
+
+- 3934f8d: fix toggle-group
+- ec89d71: added icons
+
 ## 0.0.10
 
 ### Patch Changes
