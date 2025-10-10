@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
-
-import { cn } from "@diditui/core";
+import { cn } from "@/utils";
 
 function ToggleGroup({
   className,
