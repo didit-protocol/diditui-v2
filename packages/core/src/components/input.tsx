@@ -69,8 +69,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const inputClassName = cn(
       {
-        "pr-9.5": value && variant === "small",
-        "pr-12.5": value && variant === "large",
+        "pr-9.5": showClearButton && value && variant === "small",
+        "pr-12.5": showClearButton && value && variant === "large",
       },
       className,
     );

@@ -31,3 +31,4 @@ export * from "./scroll-area";
 export * from "./badge";
 export * from "./table";
 export * from "./collapsible";
+export * from "./toggle-group";
