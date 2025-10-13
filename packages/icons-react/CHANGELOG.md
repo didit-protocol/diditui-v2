@@ -1,5 +1,11 @@
 # @diditui/icons-react
 
+## 0.0.13
+
+### Patch Changes
+
+- b98bfd6: small fixes
+
 ## 0.0.12
 
 ### Patch Changes
