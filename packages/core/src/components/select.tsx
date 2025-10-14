@@ -61,12 +61,16 @@ function SelectTrigger({
   );
 }
 
+type SelectContentProps = React.ComponentProps<typeof SelectPrimitive.Content> & {
+  viewportClassName?: string;
+};
 function SelectContent({
+  viewportClassName,
   className,
   children,
   position = "popper",
   ...props
-}: React.ComponentProps<typeof SelectPrimitive.Content>) {
+}: SelectContentProps) {
   const contentClassName = cn(
     "bg-neutral-white text-neutral-black data-[state=open]:animate-in data-[state=closed]:animate-out",
     "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95",
@@ -91,10 +95,14 @@ function SelectContent({
       >
         <SelectScrollUpButton />
         <SelectPrimitive.Viewport
-          className={cn("p-2", {
-            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)] scroll-my-1":
-              position === "popper",
-          })}
+          className={cn(
+            "p-2",
+            {
+              "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)] scroll-my-1":
+                position === "popper",
+            },
+            viewportClassName,
+          )}
         >
           {children}
         </SelectPrimitive.Viewport>
