@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.14
+
+### Patch Changes
+
+- e3e8478: add chevron icon all directions
+- Updated dependencies [e3e8478]
+  - @diditui/icons-react@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

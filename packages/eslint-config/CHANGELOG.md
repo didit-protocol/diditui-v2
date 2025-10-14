@@ -1,5 +1,11 @@
 # @diditui/eslint-config
 
+## 0.0.14
+
+### Patch Changes
+
+- e3e8478: add chevron icon all directions
+
 ## 0.0.13
 
 ### Patch Changes
