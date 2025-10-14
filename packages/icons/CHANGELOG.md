@@ -1,5 +1,11 @@
 # @diditui/icons
 
+## 0.0.15
+
+### Patch Changes
+
+- 914a044: add classname to selectContent
+
 ## 0.0.14
 
 ### Patch Changes
