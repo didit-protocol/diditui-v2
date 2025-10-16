@@ -1,5 +1,11 @@
 # @diditui/icons
 
+## 0.0.16
+
+### Patch Changes
+
+- b76cdbf: remove forward ref since we are using react 19
+
 ## 0.0.15
 
 ### Patch Changes
