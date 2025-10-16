@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, forwardRef } from "react";
+import { ComponentProps, ElementType } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/utils";
 import { CloseIcon } from "@diditui/icons-react";
@@ -50,83 +50,75 @@ type InputProps = ComponentProps<"input"> &
     showClearButton?: boolean;
   };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  (
+const Input = function Input({
+  className,
+  type,
+  variant = "small",
+  icon: Icon,
+  value,
+  containerClassName,
+  showClearButton = true,
+  onChange,
+  onClear,
+  disabled,
+  ...props
+}: InputProps) {
+  const inputClassName = cn(
     {
-      className,
-      type,
-      variant = "small",
-      icon: Icon,
-      value,
-      containerClassName,
-      showClearButton = true,
-      onChange,
-      onClear,
-      disabled,
-      ...props
+      "pr-9.5": showClearButton && value && variant === "small",
+      "pr-12.5": showClearButton && value && variant === "large",
     },
-    ref,
-  ) => {
-    const inputClassName = cn(
-      {
-        "pr-9.5": showClearButton && value && variant === "small",
-        "pr-12.5": showClearButton && value && variant === "large",
-      },
-      className,
-    );
+    className,
+  );
 
-    const iconClassName = cn(
-      "bg-fill-quaternary text-neutral-mid-high absolute flex items-center justify-center rounded-full",
-      {
-        "left-2 size-6 [&>svg]:size-3.5": variant === "small",
-        "[&>svg]:size-4.5 left-4 size-8": variant === "large",
-      },
-    );
+  const iconClassName = cn(
+    "bg-fill-quaternary text-neutral-mid-high absolute flex items-center justify-center rounded-full",
+    {
+      "left-2 size-6 [&>svg]:size-3.5": variant === "small",
+      "[&>svg]:size-4.5 left-4 size-8": variant === "large",
+    },
+  );
 
-    const clearButtonClassName = cn(
-      "hover:bg-fill-quaternary hover:text-neutral-mid-high size-6.5 absolute hidden",
-      {
-        "inline-flex": !!value,
-        "right-1.5": variant === "small",
-        "right-3": variant === "large",
-        "hidden": disabled,
-      },
-    );
+  const clearButtonClassName = cn(
+    "hover:bg-fill-quaternary hover:text-neutral-mid-high size-6.5 absolute hidden",
+    {
+      "inline-flex": !!value,
+      "right-1.5": variant === "small",
+      "right-3": variant === "large",
+      "hidden": disabled,
+    },
+  );
 
-    return (
-      <div className={cn("relative flex w-full items-center", containerClassName)}>
-        {Icon && (
-          <span className={iconClassName}>
-            <Icon />
-          </span>
-        )}
-        <input
-          type={type}
-          data-slot="input"
-          className={cn(inputVariants({ variant, withIcon: !!Icon }), inputClassName)}
-          value={value}
-          onChange={onChange}
-          ref={ref}
-          disabled={disabled}
-          {...props}
-        />
-        {showClearButton && (
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            className={clearButtonClassName}
-            onClick={onClear}
-          >
-            <CloseIcon />
-            <span className="sr-only">Clear</span>
-          </Button>
-        )}
-      </div>
-    );
-  },
-);
-
-Input.displayName = "Input";
+  return (
+    <div className={cn("relative flex w-full items-center", containerClassName)}>
+      {Icon && (
+        <span className={iconClassName}>
+          <Icon />
+        </span>
+      )}
+      <input
+        type={type}
+        data-slot="input"
+        className={cn(inputVariants({ variant, withIcon: !!Icon }), inputClassName)}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+        {...props}
+      />
+      {showClearButton && (
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className={clearButtonClassName}
+          onClick={onClear}
+        >
+          <CloseIcon />
+          <span className="sr-only">Clear</span>
+        </Button>
+      )}
+    </div>
+  );
+};
 
 export { Input };
