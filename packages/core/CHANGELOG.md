@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.16
+
+### Patch Changes
+
+- b76cdbf: remove forward ref since we are using react 19
+- Updated dependencies [b76cdbf]
+  - @diditui/icons-react@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes
