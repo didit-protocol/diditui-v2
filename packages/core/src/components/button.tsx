@@ -1,6 +1,5 @@
 "use client";
 
-import { forwardRef, Ref } from "react";
 import { cn } from "@/utils";
 import { tv, type VariantProps } from "tailwind-variants";
 
@@ -79,33 +78,27 @@ type ButtonProps = React.ComponentProps<"button"> &
     asChild?: boolean;
   };
 
-export const Button = forwardRef(
-  (
-    {
-      size = "md",
-      variant = "primary",
-      className,
-      disabled = false,
-      asChild,
-      isLoading = false,
-      children,
-      ...props
-    }: ButtonProps,
-    ref,
-  ) => {
-    const Comp = asChild ? Slot : "button";
+export function Button({
+  size = "md",
+  variant = "primary",
+  className,
+  disabled = false,
+  asChild,
+  isLoading = false,
+  children,
+  ref,
+  ...props
+}: ButtonProps) {
+  const Comp = asChild ? Slot : "button";
 
-    return (
-      <Comp
-        ref={ref as Ref<HTMLButtonElement>}
-        className={cn(buttonVariants({ size, variant, disabled, isLoading, className }))}
-        {...props}
-      >
-        {size === "icon" && isLoading ? null : <Slottable>{children}</Slottable>}
-        {isLoading && <SpinnerIcon className="animate-spin" />}
-      </Comp>
-    );
-  },
-);
-
-Button.displayName = "Button";
+  return (
+    <Comp
+      ref={ref}
+      className={cn(buttonVariants({ size, variant, disabled, isLoading, className }))}
+      {...props}
+    >
+      {size === "icon" && isLoading ? null : <Slottable>{children}</Slottable>}
+      {isLoading && <SpinnerIcon className="animate-spin" />}
+    </Comp>
+  );
+}
