@@ -1,5 +1,11 @@
 # @diditui/icons
 
+## 0.0.17
+
+### Patch Changes
+
+- fb14450: support tree shaking
+
 ## 0.0.16
 
 ### Patch Changes

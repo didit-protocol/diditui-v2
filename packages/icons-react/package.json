@@ -1,6 +1,6 @@
 {
   "name": "@diditui/icons-react",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "license": "MIT",
   "main": "./dist/cjs/didit-icons.cjs",
   "types": "./dist/esm/didit-icons.d.ts",
