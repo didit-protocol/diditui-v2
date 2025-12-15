@@ -4,11 +4,6 @@ import { resolve } from 'node:path'
 import dts from 'vite-plugin-dts'
 import tailwindcss from '@tailwindcss/vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-import { name } from './package.json'
-
-
-const formattedName = name.match(/[^/]+$/)?.[0] ?? name
-
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -17,10 +12,56 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: formattedName,
-      formats: ['es', 'umd'],
-      fileName: (format) => `${formattedName}.${format}.js`
+      entry: {
+        // Main entry point
+        index: resolve(__dirname, 'src/index.ts'),
+        // Components
+        'alert-dialog': resolve(__dirname, 'src/components/alert-dialog.tsx'),
+        avatar: resolve(__dirname, 'src/components/avatar.tsx'),
+        badge: resolve(__dirname, 'src/components/badge.tsx'),
+        button: resolve(__dirname, 'src/components/button.tsx'),
+        calendar: resolve(__dirname, 'src/components/calendar.tsx'),
+        card: resolve(__dirname, 'src/components/card.tsx'),
+        checkbox: resolve(__dirname, 'src/components/checkbox.tsx'),
+        collapsible: resolve(__dirname, 'src/components/collapsible.tsx'),
+        dialog: resolve(__dirname, 'src/components/dialog.tsx'),
+        'dropdown-menu': resolve(__dirname, 'src/components/dropdown-menu.tsx'),
+        form: resolve(__dirname, 'src/components/form.tsx'),
+        'hover-card': resolve(__dirname, 'src/components/hover-card.tsx'),
+        'input-otp': resolve(__dirname, 'src/components/input-otp.tsx'),
+        input: resolve(__dirname, 'src/components/input.tsx'),
+        label: resolve(__dirname, 'src/components/label.tsx'),
+        popover: resolve(__dirname, 'src/components/popover.tsx'),
+        progress: resolve(__dirname, 'src/components/progress.tsx'),
+        qrcode: resolve(__dirname, 'src/components/qrcode/index.tsx'),
+        'radio-group': resolve(__dirname, 'src/components/radio-group.tsx'),
+        'scroll-area': resolve(__dirname, 'src/components/scroll-area.tsx'),
+        select: resolve(__dirname, 'src/components/select.tsx'),
+        separator: resolve(__dirname, 'src/components/separator.tsx'),
+        sheet: resolve(__dirname, 'src/components/sheet.tsx'),
+        sidebar: resolve(__dirname, 'src/components/sidebar/index.tsx'),
+        skeleton: resolve(__dirname, 'src/components/skeleton.tsx'),
+        slider: resolve(__dirname, 'src/components/slider.tsx'),
+        spinner: resolve(__dirname, 'src/components/spinner.tsx'),
+        switch: resolve(__dirname, 'src/components/switch.tsx'),
+        table: resolve(__dirname, 'src/components/table.tsx'),
+        tabs: resolve(__dirname, 'src/components/tabs.tsx'),
+        textarea: resolve(__dirname, 'src/components/textarea.tsx'),
+        toast: resolve(__dirname, 'src/components/toast/index.tsx'),
+        'toggle-group': resolve(__dirname, 'src/components/toggle-group.tsx'),
+        tooltip: resolve(__dirname, 'src/components/tooltip.tsx'),
+        // Hooks
+        hooks: resolve(__dirname, 'src/hooks/index.ts'),
+        'use-mobile': resolve(__dirname, 'src/hooks/use-mobile.ts'),
+        'use-media-query-match': resolve(__dirname, 'src/hooks/use-media-query-match.ts'),
+        // Utils
+        utils: resolve(__dirname, 'src/utils/index.ts'),
+        cn: resolve(__dirname, 'src/utils/cn.ts'),
+        'media-queries': resolve(__dirname, 'src/utils/media-queries.ts'),
+        // Types
+        types: resolve(__dirname, 'src/types/index.ts'),
+      },
+      formats: ['es'],
     },
     rollupOptions: {
       external: [
@@ -37,50 +78,32 @@ export default defineConfig({
         'tailwind-merge',
         'tailwind-variants',
         // Peer dependencies
+        '@diditui/icons-react',
         'input-otp',
         'react-hook-form',
         'sonner'
       ],
       output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'react/jsx-runtime': 'react/jsx-runtime',
-          tailwindcss: 'tailwindcss',
-          clsx: 'clsx',
-          qrcode: 'QRCode',
-          'react-day-picker': 'ReactDayPicker',
-          'tailwind-merge': 'tailwindMerge',
-          'tailwind-variants': 'tailwindVariants',
-          'input-otp': 'InputOTP',
-          'react-hook-form': 'ReactHookForm',
-          'sonner': 'Sonner',
-          // Radix UI globals
-          '@radix-ui/react-slot': 'RadixSlot',
-          '@radix-ui/react-label': 'RadixLabel',
-          '@radix-ui/react-switch': 'RadixSwitch',
-          '@radix-ui/react-slider': 'RadixSlider',
-          '@radix-ui/react-tooltip': 'RadixTooltip',
-          '@radix-ui/react-radio-group': 'RadixRadioGroup',
-          '@radix-ui/react-checkbox': 'RadixCheckbox',
-          '@radix-ui/react-popover': 'RadixPopover',
-          '@radix-ui/react-select': 'RadixSelect',
-          '@radix-ui/react-dropdown-menu': 'RadixDropdownMenu',
-          '@radix-ui/react-hover-card': 'RadixHoverCard',
-          '@radix-ui/react-avatar': 'RadixAvatar',
-          '@radix-ui/react-progress': 'RadixProgress',
-          '@radix-ui/react-separator': 'RadixSeparator',
-          '@radix-ui/react-dialog': 'RadixDialog',
-          '@radix-ui/react-tabs': 'RadixTabs',
-          '@radix-ui/react-alert-dialog': 'RadixAlertDialog',
-          '@radix-ui/react-scroll-area': 'RadixScrollArea'
-        },
+        // Preserve the module structure for tree-shaking
+        preserveModules: true,
+        preserveModulesRoot: 'src',
+        entryFileNames: '[name].js',
+        // Ensure chunks have meaningful names
+        chunkFileNames: '[name].js',
       },
     },
   },
   plugins: [
     react(),
-    dts({ rollupTypes: true }),
+    dts({
+      // Generate declaration files for each module
+      rollupTypes: false,
+      include: ['src/**/*'],
+      outDir: 'dist',
+      // Preserve module structure for types
+      entryRoot: 'src',
+    }),
+    // @ts-expect-error - Type mismatch due to different @types/node versions in monorepo
     tailwindcss(),
     viteStaticCopy({
       targets: [
