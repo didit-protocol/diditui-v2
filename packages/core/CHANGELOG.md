@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.15
+
+### Patch Changes
+
+- 914a044: add classname to selectContent
+- Updated dependencies [914a044]
+  - @diditui/icons-react@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes
