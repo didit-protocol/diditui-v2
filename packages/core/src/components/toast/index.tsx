@@ -1,5 +1,5 @@
 import { toast as sonnerToast } from "sonner";
-import { ToastBaseProps as ToastProps, Toast } from "./toast";
+import { ToastBaseProps as ToastProps, Toast, toastVariants } from "./toast";
 import { Toaster, ToasterProps } from "./toaster";
 
 function errorToast(toast: Omit<ToastProps, "id">) {
@@ -33,5 +33,5 @@ const toast = {
   error: errorToast,
 };
 
-export { toast, Toaster, Toast };
+export { toast, Toaster, Toast, toastVariants };
 export type { ToasterProps, ToastProps };
