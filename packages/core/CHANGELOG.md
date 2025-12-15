@@ -1,5 +1,15 @@
 # @diditui/core
 
+## 0.0.16
+
+### Patch Changes
+
+- b76cdbf: remove forward ref since we are using react 19
+- ec53c6c: remove arrel pattern to improve tree shaking
+- Updated dependencies [b76cdbf]
+- Updated dependencies [ec53c6c]
+  - @diditui/icons-react@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes
