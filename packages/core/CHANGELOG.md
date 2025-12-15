@@ -1,5 +1,13 @@
 # @diditui/core
 
+## 0.0.17
+
+### Patch Changes
+
+- fb14450: support tree shaking
+- Updated dependencies [fb14450]
+  - @diditui/icons-react@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes
