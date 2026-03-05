@@ -24,6 +24,8 @@ const badgeVariants = tv({
         "bg-surface-warning-secondary border-warning-tertiary text-warning-primary [a&]:hover:bg-surface-warning-secondary/50",
       primary:
         "bg-transparent border-surface-brand-secondary text-brand-primary [a&]:hover:bg-surface-brand-secondary",
+      resubmit:
+        "bg-surface-resubmit-secondary border-resubmit-secondary text-resubmit-primary [a&]:hover:bg-surface-resubmit-secondary/50",
     },
     rounded: {
       "xs": "rounded-xs",
