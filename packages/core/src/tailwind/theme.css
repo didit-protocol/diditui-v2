@@ -264,6 +264,12 @@
   --color-error-tertiary: var(--color-red-100);
   --color-surface-error-secondary: var(--color-red-100);
 
+  /* RESUBMIT */
+  --color-resubmit-primary: #5c6b00;
+  --color-resubmit-secondary: #cde600;
+  --color-resubmit-tertiary: #cde60033;
+  --color-surface-resubmit-secondary: #cde60033;
+
   /* UTILITIES */
   --color-utility-overlay: var(--color-black);
   --color-utility-measurement: var(--color-measurement);
