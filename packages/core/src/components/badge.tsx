@@ -25,7 +25,7 @@ const badgeVariants = tv({
       primary:
         "bg-transparent border-surface-brand-secondary text-brand-primary [a&]:hover:bg-surface-brand-secondary",
       resubmit:
-        "bg-surface-resubmit-secondary border-resubmit-secondary text-resubmit-primary [a&]:hover:bg-surface-resubmit-secondary/50",
+        "bg-surface-resubmit-secondary border-resubmit-tertiary text-resubmit-primary [a&]:hover:bg-surface-resubmit-secondary/50",
     },
     rounded: {
       "xs": "rounded-xs",
