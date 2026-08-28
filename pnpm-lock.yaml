@@ -24,7 +24,7 @@ importers:
         specifier: ^0.24.0
         version: 0.24.0
       cheerio:
-        specifier: ^1.2.0
+        specifier: ^1.0.0-rc.12
         version: 1.2.0
       child_process:
         specifier: ^1.0.2
@@ -117,8 +117,8 @@ importers:
         specifier: ^19.1.0
         version: 19.2.8(react@19.2.8)
       react-hook-form:
-        specifier: ^7.60.0
-        version: 7.60.0(react@19.2.8)
+        specifier: ^7.71.2
+        version: 7.86.0(react@19.2.8)
       sonner:
         specifier: ^2.0.6
         version: 2.0.6(react-dom@19.2.8)(react@19.2.8)
@@ -351,8 +351,8 @@ importers:
         specifier: ^19.1.0
         version: 19.2.8(react@19.2.8)
       react-hook-form:
-        specifier: ^7.60.0
-        version: 7.60.0(react@19.2.8)
+        specifier: ^7.71.2
+        version: 7.86.0(react@19.2.8)
       sonner:
         specifier: ^2.0.6
         version: 2.0.6(react-dom@19.2.8)(react@19.2.8)
@@ -11620,8 +11620,8 @@ packages:
       react: 19.2.8
       scheduler: 0.27.0
 
-  /react-hook-form@7.60.0(react@19.2.8):
-    resolution: {integrity: sha512-SBrYOvMbDB7cV8ZfNpaiLcgjH/a1c7aK0lK+aNigpf4xWLO8q+o4tcvVurv3c4EOyzn/3dCsYt4GKD42VvJ/+A==}
+  /react-hook-form@7.86.0(react@19.2.8):
+    resolution: {integrity: sha512-4kbWJrh5jPZt1+YqVcXcGKffGcXV/XVbozknLh0Yjh0KhpoAkus21TAQhzRYqNwFkkObmnSvRlZZ3GT+ehoIrA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
