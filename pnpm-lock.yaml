@@ -24,8 +24,8 @@ importers:
         specifier: ^0.24.0
         version: 0.24.0
       cheerio:
-        specifier: ^1.0.0-rc.12
-        version: 1.1.0
+        specifier: ^1.2.0
+        version: 1.2.0
       child_process:
         specifier: ^1.0.2
         version: 1.0.2
@@ -114,7 +114,7 @@ importers:
         specifier: ^19.1.0
         version: 19.2.8
       react-dom:
-        specifier: ^19.2.8
+        specifier: ^19.1.0
         version: 19.2.8(react@19.2.8)
       react-hook-form:
         specifier: ^7.60.0
@@ -148,7 +148,7 @@ importers:
         specifier: ^19.1.8
         version: 19.2.18
       '@types/react-dom':
-        specifier: ^19.2.5
+        specifier: ^19.1.6
         version: 19.2.5(@types/react@19.2.18)
       '@vitejs/plugin-react-swc':
         specifier: ^3.10.2
@@ -199,7 +199,7 @@ importers:
         specifier: ^19.1.0
         version: 19.2.8
       react-dom:
-        specifier: ^19.2.8
+        specifier: ^19.1.0
         version: 19.2.8(react@19.2.8)
     devDependencies:
       '@diditui/eslint-config':
@@ -218,7 +218,7 @@ importers:
         specifier: ^19.1.8
         version: 19.2.18
       '@types/react-dom':
-        specifier: ^19.2.5
+        specifier: ^19.1.6
         version: 19.2.5(@types/react@19.2.18)
       eslint:
         specifier: ^9.30.1
@@ -327,7 +327,7 @@ importers:
         specifier: ^19.1.8
         version: 19.2.18
       '@types/react-dom':
-        specifier: ^19.2.5
+        specifier: ^19.1.6
         version: 19.2.5(@types/react@19.2.18)
       '@vitejs/plugin-react':
         specifier: ^4.6.0
@@ -348,7 +348,7 @@ importers:
         specifier: ^9.8.1
         version: 9.8.1(react@19.2.8)
       react-dom:
-        specifier: ^19.2.8
+        specifier: ^19.1.0
         version: 19.2.8(react@19.2.8)
       react-hook-form:
         specifier: ^7.60.0
@@ -443,7 +443,7 @@ importers:
         specifier: ^19.1.0
         version: 19.2.8
       react-dom:
-        specifier: ^19.2.8
+        specifier: ^19.1.0
         version: 19.2.8(react@19.2.8)
       tailwindcss:
         specifier: ^4.1.11
@@ -6768,20 +6768,20 @@ packages:
       domutils: 3.2.2
     dev: true
 
-  /cheerio@1.1.0:
-    resolution: {integrity: sha512-+0hMx9eYhJvWbgpKV9hN7jg0JcwydpopZE4hgi+KvQtByZXPp04NiCWU0LzcAbP63abZckIHkTQaXVF52mX3xQ==}
-    engines: {node: '>=18.17'}
+  /cheerio@1.2.0:
+    resolution: {integrity: sha512-WDrybc/gKFpTYQutKIK6UvfcuxijIZfMfXaYm8NMsPQxSYvf+13fXUJ4rztGGbJcBQ/GF55gvrZ0Bc0bj/mqvg==}
+    engines: {node: '>=20.18.1'}
     dependencies:
       cheerio-select: 2.1.0
       dom-serializer: 2.0.0
       domhandler: 5.0.3
       domutils: 3.2.2
       encoding-sniffer: 0.2.1
-      htmlparser2: 10.0.0
+      htmlparser2: 10.1.0
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
-      undici: 7.10.0
+      undici: 7.29.0
       whatwg-mimetype: 4.0.0
     dev: true
 
@@ -7550,6 +7550,11 @@ packages:
 
   /entities@6.0.1:
     resolution: {integrity: sha512-aN97NXWF6AWBTahfVOIrB/NShkzi5H7F9r1s9mD3cDj4Ko5f2qhhVoYMibXF7GlLveb/D2ioWay8lxI97Ven3g==}
+    engines: {node: '>=0.12'}
+    dev: true
+
+  /entities@7.0.1:
+    resolution: {integrity: sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==}
     engines: {node: '>=0.12'}
     dev: true
 
@@ -8939,13 +8944,13 @@ packages:
       uglify-js: 3.19.3
     dev: true
 
-  /htmlparser2@10.0.0:
-    resolution: {integrity: sha512-TwAZM+zE5Tq3lrEHvOlvwgj1XLWQCtaaibSN11Q+gGBAS7Y1uZSWwXXRe4iF6OXnaq1riyQAPFOBtYc77Mxq0g==}
+  /htmlparser2@10.1.0:
+    resolution: {integrity: sha512-VTZkM9GWRAtEpveh7MSF6SjjrpNVNNVJfFup7xTY3UpFtm67foy9HDVXneLtFVt4pMz5kZtgNcvCniNFb1hlEQ==}
     dependencies:
       domelementtype: 2.3.0
       domhandler: 5.0.3
       domutils: 3.2.2
-      entities: 6.0.1
+      entities: 7.0.1
     dev: true
 
   /http-cache-semantics@4.2.0:
@@ -13187,8 +13192,8 @@ packages:
     resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
     dev: true
 
-  /undici@7.10.0:
-    resolution: {integrity: sha512-u5otvFBOBZvmdjWLVW+5DAc9Nkq8f24g0O9oY7qw2JVIF1VocIFoyz9JFkuVOS2j41AufeO0xnlweJ2RLT8nGw==}
+  /undici@7.29.0:
+    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
     engines: {node: '>=20.18.1'}
     dev: true
 
@@ -13710,6 +13715,7 @@ packages:
   /whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
     dependencies:
       iconv-lite: 0.6.3
     dev: true
