@@ -96,7 +96,7 @@ importers:
         specifier: ^5.3.1
         version: 5.3.1
       turbo:
-        specifier: ^2.8.14
+        specifier: ^2.5.5
         version: 2.10.12
       url:
         specifier: ^0.11.4
@@ -390,8 +390,8 @@ importers:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.30.1)
       eslint-config-turbo:
-        specifier: ^2.5.8
-        version: 2.5.8(eslint@9.30.1)(turbo@2.10.12)
+        specifier: ^2.8.14
+        version: 2.10.12(eslint@9.30.1)(turbo@2.10.12)
       eslint-plugin-mdx:
         specifier: ^3.6.2
         version: 3.6.2(eslint@9.30.1)
@@ -7859,14 +7859,14 @@ packages:
       eslint: 9.30.1
     dev: true
 
-  /eslint-config-turbo@2.5.8(eslint@9.30.1)(turbo@2.10.12):
-    resolution: {integrity: sha512-wzxmN7dJNFGDwOvR/4j8U2iaIH/ruYez8qg/sCKrezJ3+ljbFMvJLmgKKt/1mDuyU9wj5aZqO6VijP3QH169FA==}
+  /eslint-config-turbo@2.10.12(eslint@9.30.1)(turbo@2.10.12):
+    resolution: {integrity: sha512-XwFVvJ2zL12024P6vIn8aiI4eMKMmGTF7za5wpHuZzzbL5GAqI8Fr9usXlKzhHbdigIULOH+b5lvbwEyWiAzvw==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
     dependencies:
       eslint: 9.30.1
-      eslint-plugin-turbo: 2.5.8(eslint@9.30.1)(turbo@2.10.12)
+      eslint-plugin-turbo: 2.10.12(eslint@9.30.1)(turbo@2.10.12)
       turbo: 2.10.12
     dev: true
 
@@ -8113,8 +8113,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-turbo@2.5.8(eslint@9.30.1)(turbo@2.10.12):
-    resolution: {integrity: sha512-bVjx4vTH0oTKIyQ7EGFAXnuhZMrKIfu17qlex/dps7eScPnGQLJ3r1/nFq80l8xA+8oYjsSirSQ2tXOKbz3kEw==}
+  /eslint-plugin-turbo@2.10.12(eslint@9.30.1)(turbo@2.10.12):
+    resolution: {integrity: sha512-QZ9u3sV3ky4bl3XUpsVG8Ehk11I0omsGV2K7dCDut6sGvaVErFvWbgd46oh5tsnLt/5i+KvuOWgKJneleMqk2Q==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
