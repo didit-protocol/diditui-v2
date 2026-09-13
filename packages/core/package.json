@@ -219,7 +219,7 @@
     "@diditui/eslint-config": "workspace:*",
     "@diditui/icons-react": "*",
     "@diditui/typescript-config": "workspace:*",
-    "@tailwindcss/vite": "^4.1.11",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.1.0",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19.1.8",
