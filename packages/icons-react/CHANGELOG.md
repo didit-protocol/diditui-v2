@@ -1,5 +1,11 @@
 # @diditui/icons-react
 
+## 0.0.19
+
+### Patch Changes
+
+- 39287d6: Add semantic React aliases for bank account holder, account number, balance, income, and transaction icons.
+
 ## 0.0.17
 
 ### Patch Changes
