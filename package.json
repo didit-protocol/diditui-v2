@@ -55,7 +55,7 @@
     "html-minifier": "^4.0.0",
     "husky": "^9.1.5",
     "minimist": "1.2.8",
-    "parse-svg-path": "^0.1.2",
+    "parse-svg-path": "^0.2.0",
     "path": "^0.12.7",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
