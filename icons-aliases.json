@@ -1,4 +1,10 @@
 {
-  "linear": {},
+  "linear": {
+    "bank-account-holder": "profile-tick",
+    "bank-account-number": "card",
+    "bank-balance": "wallet-money",
+    "bank-income": "money-recive",
+    "bank-transactions": "receipt-text"
+  },
   "bold": {}
 }
