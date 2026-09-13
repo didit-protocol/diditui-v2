@@ -1,5 +1,12 @@
 # @diditui/core
 
+## 0.0.19
+
+### Patch Changes
+
+- Updated dependencies [39287d6]
+  - @diditui/icons-react@0.0.19
+
 ## 0.0.17
 
 ### Patch Changes
