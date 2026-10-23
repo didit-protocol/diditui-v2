@@ -20,12 +20,12 @@
   "devDependencies": {
     "@diditui/eslint-config": "workspace:*",
     "@diditui/typescript-config": "workspace:*",
-    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "eslint": "^9.30.1",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.3.3",
     "tw-animate-css": "^1.3.6",
     "typescript": "~5.8.3"
   }
