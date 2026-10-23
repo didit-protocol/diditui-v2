@@ -1,5 +1,11 @@
 # @diditui/core
 
+## 0.0.20
+
+### Patch Changes
+
+- 2131eec: Make `useMediaQueryMatch` read the media query with `useSyncExternalStore` instead of setting state inside an effect, and derive the `SidebarMenuSkeleton` width from the React instance id instead of `Math.random()`, so rendering is pure and server and client markup match.
+
 ## 0.0.19
 
 ### Patch Changes
