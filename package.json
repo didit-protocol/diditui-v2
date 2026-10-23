@@ -27,7 +27,7 @@
     "CI": "pnpm build-packages && pnpm typecheck && pnpm lint && pnpm prettier && pnpm build",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "release": "turbo run build && changeset publish",
+    "release": "turbo run build && node scripts/publish-packages.mjs && changeset tag",
     "postinstall": "manypkg check",
     "manypkg:check": "manypkg check",
     "manypkg:fix": "manypkg fix",
