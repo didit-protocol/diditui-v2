@@ -1,6 +1,11 @@
 {
   "name": "@diditui/icons",
   "version": "0.0.18",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didit-protocol/diditui-v2.git",
+    "directory": "packages/icons"
+  },
   "license": "MIT",
   "exports": {
     "./*": [
@@ -22,6 +27,7 @@
     "clean": "rm -rf .turbo dist && find . ! -name '.gitkeep' -path '*/categories/*' -exec rm -rf {} + && rm -rf dist && find . ! -name '.gitkeep' -path '*/icons/*' -exec rm -rf {} +"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }

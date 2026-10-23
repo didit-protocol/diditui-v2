@@ -1,6 +1,11 @@
 {
   "name": "@diditui/icons-react",
   "version": "0.0.19",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didit-protocol/diditui-v2.git",
+    "directory": "packages/icons-react"
+  },
   "license": "MIT",
   "main": "./dist/cjs/didit-icons.cjs",
   "types": "./dist/esm/didit-icons.d.ts",
@@ -34,5 +39,9 @@
   },
   "peerDependencies": {
     "react": ">= 16"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
