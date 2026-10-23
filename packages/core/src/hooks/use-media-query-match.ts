@@ -5,18 +5,21 @@ export function useMediaQueryMatch(
   mediaQuery: (typeof MediaQuery)[keyof typeof MediaQuery] = MediaQuery.MD,
   type: "min" | "max" = "min",
 ) {
-  const [isMobile, setIsMobile] = React.useState<boolean>(false);
+  const query = type === "min" ? `(min-width: ${mediaQuery}px)` : `(max-width: ${mediaQuery}px)`;
 
-  React.useEffect(() => {
-    const query = type === "min" ? `(min-width: ${mediaQuery}px)` : `(max-width: ${mediaQuery}px)`;
-    const mql = window.matchMedia(query);
-    const onChange = (mql: MediaQueryListEvent) => {
-      setIsMobile(mql.matches);
-    };
-    mql.addEventListener("change", onChange);
-    setIsMobile(mql.matches);
-    return () => mql.removeEventListener("change", onChange);
-  }, [mediaQuery, type]);
+  const subscribe = React.useCallback(
+    (onStoreChange: () => void) => {
+      const mql = window.matchMedia(query);
+      mql.addEventListener("change", onStoreChange);
+      return () => mql.removeEventListener("change", onStoreChange);
+    },
+    [query],
+  );
 
-  return isMobile;
+  // The server snapshot is false, matching the previous initial state before the effect ran.
+  return React.useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
 }

@@ -7,13 +7,13 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@diditui/core": "workspace:*",
     "@diditui/icons-react": "workspace:*",
-    "next": "15.4.4",
+    "next": "16.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
