@@ -13,6 +13,12 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # id-token: write lets npm exchange the GitHub OIDC token for a short-lived
+    # publish credential (npm Trusted Publishing, needs npm >= 11.5.1).
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -23,6 +29,10 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Upgrade npm for Trusted Publishing
+        run: npm install -g npm@^11.5.1 && npm --version
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -35,5 +45,9 @@ jobs:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Fallback only: when the packages have a Trusted Publisher configured on
+          # npmjs.com, npm uses OIDC and this token is not needed.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"
           HUSKY: 0
