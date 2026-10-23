@@ -19,7 +19,7 @@ const eslintConfig = [
           allowList: ["^ENV_[A-Z]+$"],
         },
       ],
-      "no-html-link-for-pages": "off",
+      "@next/next/no-html-link-for-pages": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
