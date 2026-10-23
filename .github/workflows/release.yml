@@ -29,7 +29,6 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
-          registry-url: "https://registry.npmjs.org"
 
       - name: Upgrade npm for Trusted Publishing
         run: npm install -g npm@^11.5.1 && npm --version
@@ -45,9 +44,7 @@ jobs:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Fallback only: when the packages have a Trusted Publisher configured on
-          # npmjs.com, npm uses OIDC and this token is not needed.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # OIDC only (npm Trusted Publishing): no npm token and no registry-url, so no
+          # _authToken line is written to .npmrc and npm uses the OIDC exchange.
           NPM_CONFIG_PROVENANCE: "true"
           HUSKY: 0
