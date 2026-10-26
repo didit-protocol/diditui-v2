@@ -110,6 +110,7 @@ export default defineConfig({
         {
           src: resolve(__dirname, 'src/tailwind/theme.css'),
           dest: './',
+          rename: { stripBase: true },
         },
       ],
     }),
