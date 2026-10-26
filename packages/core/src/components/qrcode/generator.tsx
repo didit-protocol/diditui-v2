@@ -76,13 +76,11 @@ export const QrCodeUtil = {
     matrix.forEach((row: QRCodeUtil.QRCode[], i: number) => {
       row.forEach((_, j: number) => {
         if (matrix[i][j]) {
-          if (
-            !(
-              (i < QRCODE_MATRIX_MARGIN && j < QRCODE_MATRIX_MARGIN) ||
-              (i > matrix.length - (QRCODE_MATRIX_MARGIN + 1) && j < QRCODE_MATRIX_MARGIN) ||
-              (i < QRCODE_MATRIX_MARGIN && j > matrix.length - (QRCODE_MATRIX_MARGIN + 1))
-            )
-          ) {
+          if (!(
+            (i < QRCODE_MATRIX_MARGIN && j < QRCODE_MATRIX_MARGIN) ||
+            (i > matrix.length - (QRCODE_MATRIX_MARGIN + 1) && j < QRCODE_MATRIX_MARGIN) ||
+            (i < QRCODE_MATRIX_MARGIN && j > matrix.length - (QRCODE_MATRIX_MARGIN + 1))
+          )) {
             if (
               !logoSize || // Skip logo space check if logoSize is not provided
               !(
