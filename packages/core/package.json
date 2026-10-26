@@ -1,6 +1,6 @@
 {
   "name": "@diditui/core",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/didit-protocol/diditui-v2.git",
@@ -246,7 +246,7 @@
     "vite-plugin-static-copy": "^4.1.1"
   },
   "peerDependencies": {
-    "@diditui/icons-react": "^0.0.19",
+    "@diditui/icons-react": "^0.0.20",
     "input-otp": "^1.5.0",
     "qrcode": "^1.5.4",
     "react": ">=18",
