@@ -372,8 +372,8 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@26.6.5)(rollup@4.63.1)(typescript@5.8.3)(vite@7.0.6)
       vite-plugin-static-copy:
-        specifier: ^3.1.1
-        version: 3.1.1(vite@7.0.6)
+        specifier: ^4.1.1
+        version: 4.1.1(vite@7.0.6)
 
   packages/eslint-config:
     devDependencies:
@@ -2304,7 +2304,7 @@ packages:
     engines: {node: '>=20.0.0'}
     dependencies:
       jju: 1.4.0
-      tinyglobby: 0.2.14
+      tinyglobby: 0.2.17
       yaml: 2.9.0
     dev: true
 
@@ -11372,8 +11372,8 @@ packages:
       aggregate-error: 3.1.0
     dev: true
 
-  /p-map@7.0.3:
-    resolution: {integrity: sha512-VkndIv2fIB99swvQoA65bm+fsmt6UNdGeIB0oxBs+WhAhdh08QA04JXpI7rbB9r08/nkbysKoya9rtDERYOYMA==}
+  /p-map@7.1.1:
+    resolution: {integrity: sha512-6Lh3jQPLthYujSrlw6ccWXBGZTkoTCz27Hd92g79LH/kjAbgoEu0t442cCCNbegPSJsA0lwDX8z0bcKtkpA32g==}
     engines: {node: '>=18'}
     dev: true
 
@@ -13768,17 +13768,16 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-static-copy@3.1.1(vite@7.0.6):
-    resolution: {integrity: sha512-oR53SkL5cX4KT1t18E/xU50vJDo0N8oaHza4EMk0Fm+2/u6nQivxavOfrDk3udWj+dizRizB/QnBvJOOQrTTAQ==}
-    engines: {node: ^18.0.0 || >=20.0.0}
+  /vite-plugin-static-copy@4.1.1(vite@7.0.6):
+    resolution: {integrity: sha512-GrlA8YklrAfSyxJ4M3fdQLOo9oNkp56IM9FYgX/WtEgeIFkPwhu4wzpufBCIuNKCa6Fn77FkRdYxkHqV0FwjAw==}
+    engines: {node: ^22.0.0 || >=24.0.0}
     peerDependencies:
-      vite: ^5.0.0 || ^6.0.0 || ^7.0.0
+      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       chokidar: 3.6.0
-      fs-extra: 11.3.0
-      p-map: 7.0.3
+      p-map: 7.1.1
       picocolors: 1.1.1
-      tinyglobby: 0.2.14
+      tinyglobby: 0.2.17
       vite: 7.0.6(@types/node@26.6.5)
     dev: true
 
