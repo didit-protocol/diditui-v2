@@ -44,7 +44,7 @@
     "@changesets/cli": "^3.0.1",
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/cz-commitlint": "^19.4.0",
+    "@commitlint/cz-commitlint": "^21.2.4",
     "@manypkg/cli": "^0.25.1",
     "cheerio": "^1.0.0-rc.12",
     "child_process": "^1.0.2",
