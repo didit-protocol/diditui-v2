@@ -1,5 +1,11 @@
 # @diditui/core
 
+## 0.0.21
+
+### Patch Changes
+
+- 2baef75: Update Radix UI primitives, react-hook-form and tailwind-merge to their latest minor versions, and move the `react-day-picker` peer dependency to `^10.0.2` (the calendar now styles the `month_grid` element, which replaces the removed `table` class key).
+
 ## 0.0.20
 
 ### Patch Changes
