@@ -72,7 +72,7 @@ function Calendar({
           },
           defaultClassNames.caption_label,
         ),
-        table: "w-full border-collapse",
+        month_grid: cn("w-full border-collapse", defaultClassNames.month_grid),
         weekdays: cn("flex", defaultClassNames.weekdays),
         weekday: cn(
           "text-label-extra-small text-neutral-mid flex-1 select-none rounded-md font-normal",

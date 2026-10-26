@@ -348,8 +348,8 @@ importers:
         specifier: ^19.1.0
         version: 19.2.8
       react-day-picker:
-        specifier: ^9.8.1
-        version: 9.8.1(react@19.2.8)
+        specifier: ^10.0.2
+        version: 10.0.2(@types/react@19.2.18)(react@19.2.8)
       react-dom:
         specifier: ^19.1.0
         version: 19.2.8(react@19.2.8)
@@ -1172,8 +1172,8 @@ packages:
     engines: {node: '>=22'}
     dev: true
 
-  /@date-fns/tz@1.2.0:
-    resolution: {integrity: sha512-LBrd7MiJZ9McsOgxqWX7AaxrDjcFVjWH/tIKJd7pnR7McaslGYOP1QmmiBXdJH/H/yLCT+rcQ7FaPBUxRGUtrg==}
+  /@date-fns/tz@1.5.0:
+    resolution: {integrity: sha512-lwYN/vDPeNRULcepoE/LO2Pgx+7/RV+S9ARfbc9lr2DtGkOD7pAiruHvbR1RX3Qyf6ja47EWJDMsNK5vK08DJg==}
     dev: true
 
   /@dual-bundle/import-meta-resolve@4.2.1:
@@ -7588,10 +7588,6 @@ packages:
       is-data-view: 1.0.2
     dev: true
 
-  /date-fns-jalali@4.1.0-0:
-    resolution: {integrity: sha512-hTIP/z+t+qKwBDcmmsnmjWTduxCg+5KfdqWQvb2X/8C9+knYY6epN/pfxdDuyVlSVeFz0sM5eEfwIUQ70U4ckg==}
-    dev: true
-
   /date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
     dev: true
@@ -11855,15 +11851,19 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
-  /react-day-picker@9.8.1(react@19.2.8):
-    resolution: {integrity: sha512-kMcLrp3PfN/asVJayVv82IjF3iLOOxuH5TNFWezX6lS/T8iVRFPTETpHl3TUSTH99IDMZLubdNPJr++rQctkEw==}
+  /react-day-picker@10.0.2(@types/react@19.2.18)(react@19.2.8):
+    resolution: {integrity: sha512-QetiKtZWE9Uaw/pM/SYNv6WPYOTRnSJ2puL0GgwkmUFMIwiY0dtjH1W4B7DOVXVNQM0ZOClGpH/heOfBSzWeiA==}
     engines: {node: '>=18'}
     peerDependencies:
+      '@types/react': '>=16.8.0'
       react: '>=16.8.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     dependencies:
-      '@date-fns/tz': 1.2.0
+      '@date-fns/tz': 1.5.0
+      '@types/react': 19.2.18
       date-fns: 4.1.0
-      date-fns-jalali: 4.1.0-0
       react: 19.2.8
     dev: true
 
