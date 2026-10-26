@@ -1,5 +1,11 @@
 # @diditui/icons-react
 
+## 0.0.20
+
+### Patch Changes
+
+- 8e5c974: Update Radix UI primitives (dialog, switch, collapsible, label, separator, select), input-otp and the React and TypeScript type packages to their latest compatible versions.
+
 ## 0.0.19
 
 ### Patch Changes
