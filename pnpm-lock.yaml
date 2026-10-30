@@ -120,8 +120,8 @@ importers:
         specifier: ^7.90.0
         version: 7.91.0(@types/react@19.3.0)(react@19.3.1)
       sonner:
-        specifier: ^2.0.6
-        version: 2.0.6(react-dom@19.3.1)(react@19.3.1)
+        specifier: ^2.0.8
+        version: 2.0.8(@types/react@19.3.0)(react-dom@19.3.1)(react@19.3.1)
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^5.3.0
@@ -357,8 +357,8 @@ importers:
         specifier: ^7.90.0
         version: 7.91.0(@types/react@19.3.0)(react@19.3.1)
       sonner:
-        specifier: ^2.0.6
-        version: 2.0.6(react-dom@19.3.1)(react@19.3.1)
+        specifier: ^2.0.8
+        version: 2.0.8(@types/react@19.3.0)(react-dom@19.3.1)(react@19.3.1)
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
@@ -12357,12 +12357,17 @@ packages:
       smart-buffer: 4.2.0
     dev: true
 
-  /sonner@2.0.6(react-dom@19.3.1)(react@19.3.1):
-    resolution: {integrity: sha512-yHFhk8T/DK3YxjFQXIrcHT1rGEeTLliVzWbO0xN8GberVun2RiBnxAjXAYpZrqwEVHBG9asI/Li8TAAhN9m59Q==}
+  /sonner@2.0.8(@types/react@19.3.0)(react-dom@19.3.1)(react@19.3.1):
+    resolution: {integrity: sha512-UM/ByIoFra8yzV75n1o0Puu0bw5U/9UNnDacrJNspekBewIfsQ3D6ez1nvlWpt7aTsO6rujQtifBpycwIivqlg==}
     peerDependencies:
+      '@types/react': ^18.0.0 || ^19.0.0
       react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     dependencies:
+      '@types/react': 19.3.0
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
