@@ -47,7 +47,7 @@ function TooltipContent({
     "data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2",
     "data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2",
     "data-[side=top]:slide-in-from-bottom-2 origin-(--radix-tooltip-content-transform-origin)",
-    "text-neutral-white text-paragraph-small z-50 w-fit text-balance rounded-[8px] px-3 py-1.5",
+    "text-neutral-white text-paragraph-small z-50 w-fit rounded-[8px] px-3 py-1.5 text-balance",
     {
       "text-neutral-white bg-neutral-high": variant === "dark",
       "text-neutral-black bg-[#F4F4F5]": variant === "light",

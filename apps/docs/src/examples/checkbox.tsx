@@ -25,7 +25,7 @@ export function CheckboxExample() {
       <Label className="hover:bg-neutral-ultrasoft has-[[aria-checked=true]]:border-brand-primary has-[[aria-checked=true]]:bg-brand-primary/10 border-neutral-mid-soft flex items-start gap-3 rounded-lg border p-3">
         <Checkbox id="toggle-2" defaultChecked />
         <div className="grid gap-1.5 font-normal">
-          <p className="text-sm font-medium leading-none">Enable notifications</p>
+          <p className="text-sm leading-none font-medium">Enable notifications</p>
           <p className="text-muted-foreground text-sm">
             You can enable or disable notifications at any time.
           </p>

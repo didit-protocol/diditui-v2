@@ -27,7 +27,7 @@ function PopoverContent({
     "data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2",
     "data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2",
     "data-[side=top]:slide-in-from-bottom-2 origin-(--radix-popover-content-transform-origin)",
-    "outline-hidden z-50 w-72 rounded-lg p-4 shadow-md",
+    "z-50 w-72 rounded-lg p-4 shadow-md outline-hidden",
     className,
   );
   return (

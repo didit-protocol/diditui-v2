@@ -7,7 +7,7 @@ import { cn } from "@/utils";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 
 const baseClassName = cn([
-  "bg-neutral-white focus-visible:outline-hidden block shrink-0 rounded-full",
+  "bg-neutral-white block shrink-0 rounded-full focus-visible:outline-hidden",
   "ring-fill-primary shadow-md transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4",
   "h-6 w-[38px] disabled:pointer-events-none disabled:opacity-50",
 ]);
@@ -51,15 +51,15 @@ export function Slider({
   );
 
   const rootClassName = cn(
-    "relative flex w-full touch-none select-none items-center gap-4 data-[orientation=vertical]:h-full",
+    "relative flex w-full touch-none items-center gap-4 select-none data-[orientation=vertical]:h-full",
     "data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto",
-    "data-[orientation=vertical]:flex-col data-[disabled]:opacity-50",
+    "data-[disabled]:opacity-50 data-[orientation=vertical]:flex-col",
     className,
   );
 
   const trackClassName = cn(
     "bg-neutral-mid-soft relative grow overflow-hidden rounded-full data-[orientation=horizontal]:h-1.5",
-    "data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full",
+    "data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full",
     "data-[orientation=vertical]:w-1.5",
   );
 

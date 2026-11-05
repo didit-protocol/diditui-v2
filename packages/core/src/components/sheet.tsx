@@ -71,7 +71,7 @@ function SheetContent({
           <Button
             variant="ghost"
             size="icon"
-            className="bg-neutral-soft text-neutral-mid absolute right-4 top-4 size-[30px] p-1"
+            className="bg-neutral-soft text-neutral-mid absolute top-4 right-4 size-[30px] p-1"
           >
             <CloseIcon className="text-bg-neutral-mid size-full" />
             <span className="sr-only">Close</span>

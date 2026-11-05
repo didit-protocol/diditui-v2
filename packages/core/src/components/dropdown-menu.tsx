@@ -33,7 +33,7 @@ function DropdownMenuContent({
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Content>) {
   const contentClassName = cn(
     "bg-neutral-white text-neutral-black relative z-50 min-w-[8rem]",
-    "overflow-y-auto overflow-x-hidden rounded-lg p-2 shadow-md",
+    "overflow-x-hidden overflow-y-auto rounded-lg p-2 shadow-md",
     "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
     "data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
     "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2",
@@ -70,12 +70,12 @@ function DropdownMenuItem({
   variant?: "default" | "destructive";
 }) {
   const itemClassName = cn(
-    "outline-hidden text-paragraph-small-regular text-neutral-mid-high rounded-sm",
-    "relative flex min-h-12 cursor-default select-none items-center justify-between gap-2 px-4",
+    "text-paragraph-small-regular text-neutral-mid-high rounded-sm outline-hidden",
+    "relative flex min-h-12 cursor-default items-center justify-between gap-2 px-4 select-none",
     "focus:bg-neutral-ultrasoft focus:text-neutral-high data-[disabled]:pointer-events-none",
     "data-[variant=destructive]:text-error-primary data-[variant=destructive]:focus:bg-surface-error-secondary/50",
     "data-[variant=destructive]:focus:text-error-primary data-[variant=destructive]:*:[svg]:!text-error-primary",
-    "data-[inset]:pl-8 data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-5",
+    "data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg:not([class*='size-'])]:size-5",
     "truncate whitespace-nowrap [&_svg]:pointer-events-none [&_svg]:shrink-0",
     "[&_span]:truncate [&_span]:whitespace-nowrap",
     className,
@@ -98,8 +98,8 @@ function DropdownMenuCheckboxItem({
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>) {
   const checkboxItemClassName = cn(
-    "focus:bg-neutral-ultrasoft focus:text-neutral-high outline-hidden relative flex",
-    "h-12 cursor-default select-none items-center justify-between gap-2 px-4",
+    "focus:bg-neutral-ultrasoft focus:text-neutral-high relative flex outline-hidden",
+    "h-12 cursor-default items-center justify-between gap-2 px-4 select-none",
     "text-paragraph-small text-neutral-high data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
     "truncate whitespace-nowrap [&_svg]:pointer-events-none [&_svg]:shrink-0",
     "[&_svg:not([class*='size-'])]:size-3",
@@ -132,8 +132,8 @@ function DropdownMenuRadioItem({
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>) {
   const radioItemClassName = cn(
-    "focus:bg-neutral-ultrasoft focus:text-neutral-high outline-hidden relative flex",
-    "h-12 cursor-default select-none items-center justify-between gap-2 px-4",
+    "focus:bg-neutral-ultrasoft focus:text-neutral-high relative flex outline-hidden",
+    "h-12 cursor-default items-center justify-between gap-2 px-4 select-none",
     "text-paragraph-small text-neutral-high data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
     "truncate whitespace-nowrap [&_svg]:pointer-events-none [&_svg]:shrink-0",
     "[&_svg:not([class*='size-'])]:size-3",
@@ -142,7 +142,7 @@ function DropdownMenuRadioItem({
 
   const indicatorClassName = cn(
     "border-fill-secondary text-primary data-[state=checked]:border-brand-primary",
-    "shadow-xs aspect-square size-4 shrink-0 rounded-full border-2 outline-none",
+    "aspect-square size-4 shrink-0 rounded-full border-2 shadow-xs outline-none",
     "flex items-center justify-center transition-[color,box-shadow]",
   );
   return (
@@ -209,9 +209,9 @@ function DropdownMenuSubTrigger({
 }) {
   const subTriggerClassName = cn(
     "text-paragraph-small-regular text-neutral-black flex items-center justify-between",
-    "focus:bg-neutral-ultrasoft focus:text-neutral-high outline-hidden cursor-default",
+    "focus:bg-neutral-ultrasoft focus:text-neutral-high cursor-default outline-hidden",
     "data-[state=open]:bg-neutral-ultrasoft data-[state=open]:text-neutral-high",
-    "h-12 select-none px-4 data-[inset]:pl-8",
+    "h-12 px-4 select-none data-[inset]:pl-8",
     className,
   );
   return (

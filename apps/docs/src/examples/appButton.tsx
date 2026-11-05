@@ -18,7 +18,7 @@ export function AppButton({ name, logo, kpi, className, ...props }: AppButtonPro
   const buttonClassName = cn(
     "min-h-16 justify-between gap-4 px-4 py-2",
     "bg-fill-quaternary hover:bg-fill-tertiary active:bg-fill-secondary",
-    "group-has-data-[sidebar=menu-action]/menu-item:border outline-none",
+    "outline-none group-has-data-[sidebar=menu-action]/menu-item:border",
     "group-has-data-[sidebar=menu-action]/menu-item:border-error-primary",
     "data-[active=true]:bg-fill-secondary data-[state=open]:bg-fill-secondary",
     "group-has-data-[collapsible=icon]:size-16! group-has-data-[collapsible=icon]:p-0!",

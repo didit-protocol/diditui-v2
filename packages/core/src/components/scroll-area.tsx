@@ -31,7 +31,7 @@ function ScrollArea({ className, fadeBottom = true, children, ...props }: Scroll
       <ScrollBar />
       <ScrollAreaPrimitive.Corner />
       {fadeBottom && (
-        <div className="from-neutral-white absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t to-transparent" />
+        <div className="from-neutral-white absolute right-0 bottom-0 left-0 h-10 bg-gradient-to-t to-transparent" />
       )}
     </ScrollAreaPrimitive.Root>
   );
@@ -47,7 +47,7 @@ function ScrollBar({
       data-slot="scroll-area-scrollbar"
       orientation={orientation}
       className={cn(
-        "flex touch-none select-none p-px transition-colors",
+        "flex touch-none p-px transition-colors select-none",
         orientation === "vertical" && "h-full w-2.5 border-l border-l-transparent",
         orientation === "horizontal" && "h-2.5 flex-col border-t border-t-transparent",
         className,

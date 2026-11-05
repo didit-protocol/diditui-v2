@@ -47,7 +47,7 @@ function DialogContent({
   showCloseButton?: boolean;
 }) {
   const contentClassName = cn(
-    "bg-neutral-white fixed left-[50%] top-[50%] z-50 grid w-full max-w-[calc(100%-2rem)]",
+    "bg-neutral-white fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)]",
     "translate-x-[-50%] translate-y-[-50%] gap-6 rounded-lg p-6 shadow-md duration-200 sm:max-w-lg",
     "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
     "data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -68,7 +68,7 @@ function DialogContent({
             <Button
               variant="ghost"
               size="icon"
-              className="bg-neutral-soft text-neutral-mid absolute right-4 top-4 size-[30px] p-1"
+              className="bg-neutral-soft text-neutral-mid absolute top-4 right-4 size-[30px] p-1"
             >
               <CloseIcon className="text-bg-neutral-mid size-full" />
               <span className="sr-only">Close</span>

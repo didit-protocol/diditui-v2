@@ -18,11 +18,11 @@ function Checkbox({ className, size = "default", ...props }: CheckboxProps) {
     "data-[state=checked]:gradient-brand-700-500 data-[state=checked]:text-neutral-white",
     "aria-invalid:ring-error-secondary data-[state=checked]:border-transparent",
     "aria-invalid:border-error-primary disabled:cursor-not-allowed disabled:opacity-50",
-    "shadow-xs peer shrink-0 border outline-none transition-shadow",
+    "peer shrink-0 border shadow-xs transition-shadow outline-none",
     {
       "rounded-2xs size-4": size === "xs",
       "rounded-2xs size-5": size === "sm",
-      "rounded-xs size-6": size === "default",
+      "size-6 rounded-xs": size === "default",
     },
     className,
   );

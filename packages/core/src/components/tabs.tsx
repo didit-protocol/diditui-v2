@@ -29,7 +29,7 @@ function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimi
 function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
   const triggerClassName = cn(
     "inline-flex min-h-8 flex-1 items-center gap-2 border border-transparent px-2 py-[7px]",
-    "whitespace-nowrap rounded-lg transition-[color,box-shadow]",
+    "rounded-lg whitespace-nowrap transition-[color,box-shadow]",
     "hover:bg-neutral-ultrasoft hover:border-neutral-soft transition-colors",
     "data-[state=active]:bg-neutral-soft data-[state=active]:border-neutral-mid-soft",
     "focus-visible:ring-fill-primary outline-none focus-visible:ring-[3px]",
@@ -56,10 +56,10 @@ type TabButtonProps = React.ComponentProps<"button"> & {
 function TabButton({ className, active, asChild, ...props }: TabButtonProps) {
   const triggerClassName = cn(
     "inline-flex min-h-8 flex-1 items-center gap-2 border border-transparent",
-    "whitespace-nowrap rounded-lg px-2 py-[7px] transition-[color,box-shadow]",
+    "rounded-lg px-2 py-[7px] whitespace-nowrap transition-[color,box-shadow]",
     "hover:bg-neutral-ultrasoft hover:border-neutral-soft transition-colors",
     "focus-visible:ring-fill-primary outline-none focus-visible:ring-[3px]",
-    "[&_svg:not([class*='size-'])]:size-4.5 disabled:pointer-events-none",
+    "disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4.5",
     "disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
     "text-neutral-high text-label-inputs uppercase",
     {
