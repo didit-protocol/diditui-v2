@@ -34,7 +34,7 @@ function SelectTrigger({
   const triggerClassName = cn(
     "data-[placeholder]:text-neutral-mid-soft text-paragraph-mid h-12",
     "border-neutral-soft hover:border-neutral-high flex w-fit items-center justify-between gap-6 rounded-sm border",
-    "truncate whitespace-nowrap bg-transparent p-4 outline-none transition-all",
+    "truncate bg-transparent p-4 whitespace-nowrap transition-all outline-none",
     "data-[state=open]:bg-neutral-ultrasoft data-[state=open]:border-neutral-black",
     "data-[state=open]:ring-neutral-black data-[state=open]:ring",
     "focus-visible:ring-neutral-black focus-visible:border-neutral-black focus-visible:ring",
@@ -76,7 +76,7 @@ function SelectContent({
     "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95",
     "data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2",
     "data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 max-h-(--radix-select-content-available-height)",
-    "origin-(--radix-select-content-transform-origin) relative z-50 min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-lg shadow-md",
+    "relative z-50 min-w-[8rem] origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-lg shadow-md",
     {
       "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1":
         position === "popper",
@@ -131,16 +131,16 @@ function SelectItem({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Item>) {
   const itemClassName = cn(
-    "outline-hidden flex w-full items-center justify-between gap-2 rounded-sm",
+    "flex w-full items-center justify-between gap-2 rounded-sm outline-hidden",
     "*:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
     "focus:bg-neutral-ultrasoft focus:text-neutral-high",
-    "text-paragraph-small h-12 cursor-default select-none pl-4 pr-1 font-normal",
+    "text-paragraph-small h-12 cursor-default pr-1 pl-4 font-normal select-none",
     "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
     className,
   );
   return (
     <SelectPrimitive.Item data-slot="select-item" className={itemClassName} {...props}>
-      <SelectPrimitive.ItemText className="grow overflow-hidden truncate whitespace-nowrap">
+      <SelectPrimitive.ItemText className="grow truncate overflow-hidden whitespace-nowrap">
         {children}
       </SelectPrimitive.ItemText>
       <span className="flex shrink-0 items-center justify-center">

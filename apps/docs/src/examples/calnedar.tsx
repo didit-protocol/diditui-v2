@@ -54,7 +54,7 @@ export function CalendarWithButtons() {
   };
 
   const buttonClassName = cn(
-    "text-paragraph-small text-neutral-mid-high truncate whitespace-nowrap px-1.5 py-0.5 text-start",
+    "text-paragraph-small text-neutral-mid-high truncate px-1.5 py-0.5 text-start whitespace-nowrap",
     "hover:bg-fill-tertiary rounded-[2px]",
   );
 

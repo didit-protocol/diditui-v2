@@ -18,7 +18,7 @@ export function TeamButton({ name, logo, sold, className, ...props }: TeamButton
   const buttonClassName = cn(
     "justify-between gap-4 p-1",
     "hover:bg-fill-tertiary active:bg-fill-secondary",
-    "group-has-data-[sidebar=menu-action]/menu-item:border outline-none",
+    "outline-none group-has-data-[sidebar=menu-action]/menu-item:border",
     "group-has-data-[sidebar=menu-action]/menu-item:border-error-primary",
     "data-[active=true]:bg-fill-secondary data-[state=open]:bg-fill-secondary",
     "group-has-data-[collapsible=icon]:size-11! group-has-data-[collapsible=icon]:p-0!",

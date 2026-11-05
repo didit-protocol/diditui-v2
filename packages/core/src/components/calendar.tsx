@@ -41,25 +41,25 @@ function Calendar({
           defaultClassNames.nav,
         ),
         button_previous: cn(
-          "rounded-xs hover:bg-fill-tertiary flex items-center justify-center",
-          "size-(--cell-size) select-none p-0 aria-disabled:opacity-50",
+          "hover:bg-fill-tertiary flex items-center justify-center rounded-xs",
+          "size-(--cell-size) p-0 select-none aria-disabled:opacity-50",
           defaultClassNames.button_previous,
         ),
         button_next: cn(
-          "rounded-xs hover:bg-fill-tertiary flex items-center justify-center",
-          "size-(--cell-size) select-none p-0 aria-disabled:opacity-50",
+          "hover:bg-fill-tertiary flex items-center justify-center rounded-xs",
+          "size-(--cell-size) p-0 select-none aria-disabled:opacity-50",
           defaultClassNames.button_next,
         ),
         month_caption: cn(
-          "h-(--cell-size) px-(--cell-size) flex w-full items-center justify-center",
+          "flex h-(--cell-size) w-full items-center justify-center px-(--cell-size)",
           defaultClassNames.month_caption,
         ),
         dropdowns: cn(
-          "h-(--cell-size) text-paragraph-small text-neutral-mid-high flex w-full items-center justify-center gap-2",
+          "text-paragraph-small text-neutral-mid-high flex h-(--cell-size) w-full items-center justify-center gap-2",
           defaultClassNames.dropdowns,
         ),
         dropdown_root: cn(
-          "border-neutral-soft bg-neutral-white shadow-xs has-focus:ring-brand-primary has-focus:ring-[3px]",
+          "border-neutral-soft bg-neutral-white has-focus:ring-brand-primary shadow-xs has-focus:ring-[3px]",
           "relative rounded-sm border",
           defaultClassNames.dropdown_root,
         ),
@@ -67,7 +67,7 @@ function Calendar({
         caption_label: cn(
           "text-paragraph-small text-neutral-mid-high select-none",
           {
-            "[&>svg]:text-neutral-mid-high flex h-8 items-center gap-1 rounded-md pl-2 pr-1 [&>svg]:size-3.5":
+            "[&>svg]:text-neutral-mid-high flex h-8 items-center gap-1 rounded-md pr-1 pl-2 [&>svg]:size-3.5":
               captionLayout !== "label",
           },
           defaultClassNames.caption_label,
@@ -75,7 +75,7 @@ function Calendar({
         month_grid: cn("w-full border-collapse", defaultClassNames.month_grid),
         weekdays: cn("flex", defaultClassNames.weekdays),
         weekday: cn(
-          "text-label-extra-small text-neutral-mid flex-1 select-none rounded-md font-normal",
+          "text-label-extra-small text-neutral-mid flex-1 rounded-md font-normal select-none",
           defaultClassNames.weekday,
         ),
         week: cn("mt-2 flex w-full", defaultClassNames.week),
@@ -85,7 +85,7 @@ function Calendar({
           defaultClassNames.week_number,
         ),
         day: cn(
-          "group/day text-neutral-mid-high text-label-mid relative aspect-square h-full w-full select-none p-0 text-center font-normal",
+          "group/day text-neutral-mid-high text-label-mid relative aspect-square h-full w-full p-0 text-center font-normal select-none",
           defaultClassNames.day,
         ),
         range_start: cn("bg-fill-tertiary rounded-l-xs", defaultClassNames.range_start),
@@ -127,7 +127,7 @@ function Calendar({
         WeekNumber: ({ children, ...props }) => {
           return (
             <td {...props}>
-              <div className="size-(--cell-size) flex items-center justify-center text-center">
+              <div className="flex size-(--cell-size) items-center justify-center text-center">
                 {children}
               </div>
             </td>
@@ -156,15 +156,15 @@ function CalendarDayButton({
   const buttonClassNames = cn(
     "border border-transparent",
     "aria-invalid:ring-error-secondary aria-invalid:border-error-primary inline-flex",
-    "rounded-xs shrink-0 items-center justify-center gap-2 outline-none transition-all",
+    "shrink-0 items-center justify-center gap-2 rounded-xs transition-all outline-none",
     "focus-visible:ring-fill-primary focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
-    "[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
     "hover:bg-fill-tertiary size-9 whitespace-nowrap",
     "data-[selected-single=true]:bg-brand-primary data-[selected-single=true]:text-neutral-white",
     "data-[range-start=true]:bg-brand-primary data-[range-start=true]:text-neutral-white",
     "data-[range-end=true]:bg-brand-primary data-[range-end=true]:text-neutral-white",
     "group-data-[focused=true]/day:border-neutral-ultrasoft group-data-[focused=true]/day:ring-brand-primary",
-    "min-w-(--cell-size) flex aspect-square size-auto",
+    "flex aspect-square size-auto min-w-(--cell-size)",
     "group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10",
     "[&>span]:text-label-mid group-data-[focused=true]/day:ring-[3px] [&>span]:opacity-70",
     defaultClassNames.day,

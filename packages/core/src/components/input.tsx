@@ -75,12 +75,12 @@ const Input = function Input({
     "bg-fill-quaternary text-neutral-mid-high absolute flex items-center justify-center rounded-full",
     {
       "left-2 size-6 [&>svg]:size-3.5": variant === "small",
-      "[&>svg]:size-4.5 left-4 size-8": variant === "large",
+      "left-4 size-8 [&>svg]:size-4.5": variant === "large",
     },
   );
 
   const clearButtonClassName = cn(
-    "hover:bg-fill-quaternary hover:text-neutral-mid-high size-6.5 absolute hidden",
+    "hover:bg-fill-quaternary hover:text-neutral-mid-high absolute hidden size-6.5",
     {
       "inline-flex": !!value,
       "right-1.5": variant === "small",

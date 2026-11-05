@@ -36,7 +36,7 @@ function QrCode({ uri, size = "md", color, cutoutElement, className, ...props }:
   );
 
   const cutoutClassName = cn([
-    "absolute left-1/2 top-1/2 size-full",
+    "absolute top-1/2 left-1/2 size-full",
     "-translate-x-1/2 -translate-y-1/2 scale-[0.25] transform",
     "border-error-primary overflow-hidden rounded-lg",
   ]);

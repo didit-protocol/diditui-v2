@@ -177,25 +177,25 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col flex-wrap items-center gap-4 sm:flex-row">
-          <div className="size-30 shadow-xs flex items-center justify-center rounded-sm">
+          <div className="flex size-30 items-center justify-center rounded-sm shadow-xs">
             shadow-xs
           </div>
-          <div className="size-30 flex items-center justify-center rounded-sm shadow-sm">
+          <div className="flex size-30 items-center justify-center rounded-sm shadow-sm">
             shadow-sm
           </div>
-          <div className="size-30 flex items-center justify-center rounded-sm shadow-md">
+          <div className="flex size-30 items-center justify-center rounded-sm shadow-md">
             shadow-md
           </div>
-          <div className="size-30 flex items-center justify-center rounded-sm shadow-lg">
+          <div className="flex size-30 items-center justify-center rounded-sm shadow-lg">
             shadow-lg
           </div>
-          <div className="size-30 flex items-center justify-center rounded-sm shadow-xl">
+          <div className="flex size-30 items-center justify-center rounded-sm shadow-xl">
             shadow-xl
           </div>
-          <div className="size-30 flex items-center justify-center rounded-sm shadow-2xl">
+          <div className="flex size-30 items-center justify-center rounded-sm shadow-2xl">
             shadow-2xl
           </div>
-          <div className="size-30 shadow-3xl flex items-center justify-center rounded-sm">
+          <div className="shadow-3xl flex size-30 items-center justify-center rounded-sm">
             shadow-3xl
           </div>
         </div>
