@@ -52,7 +52,7 @@
     "fs-extra": "^11.4.1",
     "glob": "13.0.6",
     "gray-matter": "^4.0.3",
-    "html-minifier": "^4.0.0",
+    "html-minifier": "^5.0.0",
     "husky": "^9.1.5",
     "minimist": "1.2.8",
     "parse-svg-path": "^0.2.0",
