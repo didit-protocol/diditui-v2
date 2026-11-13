@@ -25,7 +25,7 @@
     "@chromatic-com/storybook": "^5.3.0",
     "@diditui/eslint-config": "workspace:*",
     "@storybook/addon-a11y": "^10.6.7",
-    "@storybook/addon-docs": "^10.6.5",
+    "@storybook/addon-docs": "^10.6.7",
     "@storybook/addon-vitest": "^10.6.7",
     "@storybook/react-vite": "^10.6.5",
     "@tailwindcss/vite": "^4.3.5",
